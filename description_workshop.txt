@@ -1,0 +1,4 @@
+[h1][b] Obbax’s Pixel Art Helper [/b][/h1]
+This is a simple mod which creates an in-game hologram to assist the user in making pixel art. Hovering over the pixels will tell the user the name of the block and paint required.
+
+For a usage guide and required files, go to this github: [url=https://github.com/Obbaxobax/Terraria-Pixel-Art-Helper]https://github.com/Obbaxobax/Terraria-Pixel-Art-Helper[/url]

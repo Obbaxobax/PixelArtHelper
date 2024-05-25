@@ -1,0 +1,4 @@
+displayName = Obbax's Pixel Art Helper
+author = Obbax
+side = Client
+version = 0.3.0

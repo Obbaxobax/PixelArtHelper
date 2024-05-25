@@ -1,0 +1,15 @@
+Configs: {
+	ClientConfig: {
+		DisplayName: Client Config
+
+		folderLocation: {
+			Label: Location to find files
+			Tooltip: Set to the folder where the generated file is.
+		}
+
+		hologramMode: {
+			Label: Highlight Mode
+			Tooltip: If enabled, only pixels of the held block will be shown. Best used along with a list of the required blocks.
+		}
+	}
+}
