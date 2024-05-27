@@ -1,4 +1,5 @@
-﻿using Terraria.ModLoader.Config;
+﻿using ClientSideTest.HologramUI;
+using Terraria.ModLoader.Config;
 
 namespace ClientSideTest
 {
@@ -6,13 +7,10 @@ namespace ClientSideTest
     {
         public override ConfigScope Mode => ConfigScope.ClientSide;
 
-        public string folderLocation;
-
         public bool hologramMode;
 
         public override void OnChanged()
         {
-            MenuBar.folderLocation = folderLocation;
             Hologram.hologramMode = hologramMode;
         }
     }

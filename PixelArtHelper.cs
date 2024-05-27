@@ -1,60 +1,92 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using ReLogic.Content;
 using Terraria;
-using Terraria.GameContent.UI.Elements;
 using Terraria.ModLoader;
 using Terraria.UI;
 using System.IO;
-using log4net.Repository.Hierarchy;
-using System.Security.Cryptography.X509Certificates;
-using PixelArtHelper;
+using ClientSideTest.HologramUI;
+using ClientSideTest.UIAssets;
+using ClientSideTest.UIAssets.States;
 
 namespace ClientSideTest
 {
-	public class PixelArtHelper : ModSystem
+    public class PixelArtHelper : ModSystem
 	{
-		public static MenuBar menuBar;
-		private UserInterface _menuBar;
+		public static HologramUIState hologramUIState;
+		private UserInterface _hologramUIState;
         public static ImageMenuState imageMenu;
         private UserInterface _imageMenu;
         public static Mod m;
 
+		private bool active;
+		public Vector2 openPos;
+
         public override void Load()
 		{
-			menuBar = new MenuBar();
-			menuBar.Activate();
-			_menuBar = new UserInterface();
-			_menuBar.SetState(menuBar);
+			hologramUIState = new HologramUIState();
+			hologramUIState.Activate();
+			_hologramUIState = new UserInterface();
+			_hologramUIState.SetState(null);
 
 			imageMenu = new ImageMenuState();
 			imageMenu.Activate();
 			_imageMenu = new UserInterface();
 			_imageMenu.SetState(imageMenu);
+
+            if (!Main.dedServ)
+            {
+                Directory.CreateDirectory(MainMenu.savePath);
+            }
         }
 
 		public override void UpdateUI(GameTime gameTime)
 		{
 			_imageMenu?.Update(gameTime);
-			if (MenuBar.active)
+			if (active)
 			{
-				_menuBar?.Update(gameTime);
+				_hologramUIState?.Update(gameTime);
 			}
-		}
 
-		public void hideUi()
+            if (hologramUIState.imageReady == true && Main.mouseLeft)
+            {
+                Vector2 pos = Main.MouseWorld;
+                float dif = pos.X % 16;
+                if (dif != 0)
+                {
+                    pos.X = pos.X - dif;
+                }
+
+                float dif2 = pos.Y % 16;
+                if (dif2 != 0)
+                {
+                    pos.Y = pos.Y - dif2;
+                }
+                openPos = pos;
+
+                showUi();
+                hologramUIState.imageReady = false;
+            }
+        }
+
+        public void hideUi()
 		{
-			_menuBar?.SetState(null);
+			active = false;
+			_hologramUIState?.SetState(null);
 		}
 
         public void showUi()
         {
-            _menuBar?.SetState(menuBar);
+			active = true;
+            _hologramUIState?.SetState(hologramUIState);
         }
 
+        public override void OnWorldLoad()
+        {
+			imageMenu.menu.Reinitialize();
+			hologramUIState.RemoveAllChildren();
+
+            base.OnWorldLoad();
+        }
         public override void ModifyInterfaceLayers(List<GameInterfaceLayer> layers)
 		{
 			int mouseTextIndex = layers.FindIndex(layer => layer.Name.Equals("Vanilla: Inventory"));
@@ -64,7 +96,7 @@ namespace ClientSideTest
 					"PixelArtHelper: PIXEL ART",
 					delegate
 					{
-						_menuBar.Draw(Main.spriteBatch, new GameTime());
+						_hologramUIState.Draw(Main.spriteBatch, new GameTime());
                         _imageMenu.Draw(Main.spriteBatch, new GameTime());
                         return true;
 					},
@@ -73,17 +105,4 @@ namespace ClientSideTest
 			}
 		}
 	}
-
-	public class PixelArtHelperMod : Mod
-	{
-        public override void Load()
-        {
-			if (!Main.dedServ)
-			{
-				Directory.CreateDirectory(Menu.savePath);
-			}
-
-            base.Load();
-        }
-    }
 }

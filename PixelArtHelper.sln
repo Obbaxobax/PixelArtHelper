@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PixelArtHelper", "PixelArtHelper.csproj", "{6E0599FF-95A3-4EAC-BA11-0B9719654D93}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClientSideTest", "ClientSideTest.csproj", "{6E0599FF-95A3-4EAC-BA11-0B9719654D93}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
