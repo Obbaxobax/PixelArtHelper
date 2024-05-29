@@ -12,6 +12,8 @@ using System.Threading.Tasks;
 using System.Linq;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework.Input;
+using ClientSideTest.UIAssets;
+using ClientSideTest.UIAssets.HologramUI;
 
 namespace ClientSideTest.HologramUI
 {
@@ -21,12 +23,15 @@ namespace ClientSideTest.HologramUI
         private static HologramUIState menuBar;
 
         public Vector2 openPos;
+        public Vector2 currentDimensions = new Vector2(0, 0);
 
         public bool imageReady = false;
+        public bool usePaints = false;
 
         public override void OnInitialize()
         {
             menuBar = PixelArtHelper.hologramUIState;
+            HologramOutline ho = new HologramOutline();
         }
 
         public void Update()
@@ -57,7 +62,7 @@ namespace ClientSideTest.HologramUI
                 //Store the pixels in a temp cache to avoid deleting existing pixels in the case this process fails
                 List<Pixel> pixelCache = new List<Pixel>();
 
-                byte[] tileColors = GetFileBytes("ClientSideTest/Assets/tiles2.json");
+                byte[] tileColors = GetFileBytes("ClientSideTest/Assets/tiles.json");
                 List<tileColor> tiles = JsonSerializer.Deserialize<List<tileColor>>(tileColors);
 
                 byte[] text = GetFileBytes($"{nameof(ClientSideTest)}/Assets/blockIDs.json");
@@ -65,6 +70,8 @@ namespace ClientSideTest.HologramUI
 
                 List<Tile> tile = JsonSerializer.Deserialize<List<Tile>>(text);
                 List<Tile> wall = JsonSerializer.Deserialize<List<Tile>>(text2);
+
+                currentDimensions = new Vector2(bm.Width, bm.Height);
 
 
                 for (int y = 0; y < bm.Height; y++)
@@ -103,6 +110,14 @@ namespace ClientSideTest.HologramUI
                         //Calculate the deltaE between the tiles and are pixel, storing the tile which is closest
                         foreach (tileColor tc in tiles)
                         {
+                            if (!usePaints && tc.Color != "0") continue;
+
+                            string[] temp = tc.Tile.Split(" : ");
+                            string temp2 = temp[0].Split(": ")[0];
+
+                            if (temp2 == "TILE" && !ExceptionsMenu.exTiles.exceptionsDict[temp[1]]) continue;
+                            if (temp2 == "WALL" && !ExceptionsMenu.exWalls.exceptionsDict[temp[1]]) continue;
+
                             deltaE = calculateDeltaE(tc.LAB, labColorsValues);
                             if (deltaE < lowestDeltaE)
                             {
@@ -115,6 +130,7 @@ namespace ClientSideTest.HologramUI
                         pix.paintId = paintID;
 
                         //Grab the if the tile is a wall and it's ID
+                        closestTile = closestTile.Split(" : ")[0];
                         string[] info = closestTile.Split(": ");
 
                         pix.id = int.Parse(info[1]);
@@ -124,7 +140,7 @@ namespace ClientSideTest.HologramUI
                             pix.wall = true;
                             foreach (Tile t in wall.ToList())
                             {
-                                if (t.ID == pix.id)
+                                if (t.ID == info[1])
                                 {
                                     pix.name = t.Name;
                                     break;
@@ -136,7 +152,7 @@ namespace ClientSideTest.HologramUI
                             pix.wall = false;
                             foreach (Tile t in tile.ToList())
                             {
-                                if (t.ID - 1 == pix.id)
+                                if (t.ID == info[1])
                                 {
                                     pix.id += 1;
                                     pix.name = t.Name;
@@ -158,7 +174,7 @@ namespace ClientSideTest.HologramUI
             }
             catch (Exception ex)
             {
-                Main.NewText(ex.Message);
+                Main.NewText("There seems to have been a issue. Please report this on the github, with your client.log file attached.", Color.PaleVioletRed);
                 return ex.Message;
             }
         }

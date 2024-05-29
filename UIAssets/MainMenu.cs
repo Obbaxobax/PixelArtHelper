@@ -14,7 +14,7 @@ using System.Linq;
 
 namespace ClientSideTest.UIAssets
 {
-    public class MainMenu : DraggableUIMenu
+    public class MainMenu : UIMenu
     {
         private HttpClient client;
         public readonly static string savePath = Path.Combine(Main.SavePath, "PixelArtHelperImages/");
@@ -48,33 +48,55 @@ namespace ClientSideTest.UIAssets
             client = new HttpClient();
 
             sizeX = new TextField();
-            sizeX.Width.Set(170, 0);
-            sizeX.Height.Set(50, 0);
-            sizeX.Top.Set(15, 0);
+            sizeX.Width.Set(175f, 0);
+            sizeX.Height.Set(50f, 0);
+            sizeX.Top.Set(41f, 0);
 
             sizeY = new TextField();
             sizeY.CopyStyle(sizeX);
-            sizeY.Left.Set(190, 0);
+            sizeY.Left.Set(190f, 0);
             sizeY.placeholderText = "Height";
-            sizeY.hoverText = "Defaults to the height of the image";
+            sizeY.hoverText = "Defaults to the height of the image (Not required)";
 
-            sizeX.Left.Set(15, 0);
+            sizeX.Left.Set(10f, 0);
             sizeX.placeholderText = "Width";
-            sizeX.hoverText = "Defaults to the width of the image";
+            sizeX.hoverText = "Defaults to the width of the image (Not required)";
 
             saveName = new TextField();
-            saveName.Width.Set(345, 0);
-            saveName.Height.Set(50, 0);
-            saveName.Left.Set(15, 0);
-            saveName.Top.Set(70, 0);
+            saveName.Width.Set(300f, 0);
+            saveName.Height.Set(50f, 0);
+            saveName.Left.Set(10f, 0);
+            saveName.Top.Set(97f, 0);
             saveName.placeholderText = "Name to save as...";
+            saveName.hoverText = "Name which this image will be saved to list as. (Required)";
+
+            PaintToggleButton ptb = new PaintToggleButton();
+            ptb.Width.Set(50f, 0);
+            ptb.Height.Set(50f, 0);
+            ptb.Left.Set(315f, 0);
+            ptb.Top.Set(97f, 0);
+            ptb.hoverText = "Use paints?";
+            ptb.texture = "ClientSideTest/Assets/deleteButton";
+
+            TextButton exButt = new TextButton();
+            exButt.Width.Set(355f, 0);
+            exButt.Height.Set(50f, 0);
+            exButt.Left.Set(10f, 0);
+            exButt.Top.Set(152f, 0);
+            exButt.hoverText = "Choose blocks not to include. (Some values are preset)";
+            exButt.displayText = "Exceptions";
+
+            exButt.OnLeftMouseDown += (evt, args) =>
+            {
+                PixelArtHelper.imageMenu.state = "exceptions";
+            };
 
             Button butt = new Button();
-            butt.Width.Set(50, 0);
-            butt.Height.Set(50, 0);
-            butt.Left.Set(15, 0);
-            butt.Top.Set(125, 0);
-            butt.hoverText = "Add image from current link or path.";
+            butt.Width.Set(50f, 0);
+            butt.Height.Set(50f, 0);
+            butt.Left.Set(10f, 0);
+            butt.Top.Set(207f, 0);
+            butt.hoverText = "Add image from current link or path.\nPastes the current clipboard if field is empty.";
 
             butt.OnLeftMouseDown += (evt, args) =>
             {
@@ -88,22 +110,26 @@ namespace ClientSideTest.UIAssets
             };
 
             locationField = new TextField();
-            locationField.Width.Set(285, 0);
-            locationField.Height.Set(50, 0);
-            locationField.Top.Set(125f, 0);
-            locationField.Left.Set(75f, 0);
+            locationField.Width.Set(300f, 0);
+            locationField.Height.Set(50f, 0);
+            locationField.Top.Set(207f, 0);
+            locationField.Left.Set(65f, 0);
             locationField.placeholderText = "Input link or file path";
+            locationField.hoverText = "The file path or the link to the image (Required)";
 
-            List il = new List();
+            ImageList il = new ImageList();
             il.Width.Set(345f, 0);
-            il.Height.Set(300f, 0);
+            il.Height.Set(220f, 0);
             il.Left.Set(15f, 0);
-            il.Top.Set(180f, 0);
+            il.Top.Set(267f, 0);
             il.names = images.Keys.ToArray();
+            il.elementPerRow = 2;
 
             Append(sizeX);
             Append(sizeY);
             Append(saveName);
+            Append(ptb);
+            Append(exButt);
             Append(butt);
             Append(locationField);
             Append(il);
@@ -154,7 +180,7 @@ namespace ClientSideTest.UIAssets
                     }
                     else
                     {
-                        Main.NewText(ex.Message);
+                        Main.NewText("Something unexpected occured. Please open an issue on the github with your client.log file included.");
                     }
                     return;
                 }
@@ -189,9 +215,9 @@ namespace ClientSideTest.UIAssets
                         Main.NewText("Please provide a name to save as.", Color.PaleVioletRed);
                     }
                 }
-                catch (Exception ex)
+                catch
                 {
-                    Main.NewText(ex.Message, Color.PaleVioletRed);
+                    Main.NewText("Something unexpected occured. Please open an issue on the github with your client.log file included.", Color.PaleVioletRed);
                     return;
                 }
             }
@@ -215,18 +241,6 @@ namespace ClientSideTest.UIAssets
             }
 
             return new Vector2(width, height);
-        }
-
-        public override void Draw(SpriteBatch spriteBatch)
-        {
-            //Recalculate dimensions, turn them to a rectangle, and draw the input box
-            Recalculate();
-
-            Rectangle rect = GetDimensions().ToRectangle();
-
-            spriteBatch.Draw((Texture2D)ModContent.Request<Texture2D>("ClientSideTest/Assets/bg"), rect, Color.White);
-
-            base.Draw(spriteBatch);
         }
     }
 }

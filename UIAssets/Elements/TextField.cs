@@ -39,7 +39,7 @@ namespace ClientSideTest.UIAssets
 
             Rectangle rect = GetDimensions().ToRectangle();
 
-            UITools.DrawBoxWith(spriteBatch, (Texture2D)ModContent.Request<Texture2D>("ClientSideTest/Assets/Box"), rect, Color.CornflowerBlue);
+            UITools.DrawBoxWith(spriteBatch, (Texture2D)ModContent.Request<Texture2D>("ClientSideTest/Assets/Box"), rect, Color.BlueViolet);
 
             //Cancel typing if escape is clicked
             if (Main.keyState.IsKeyDown(Keys.Escape))
@@ -102,16 +102,16 @@ namespace ClientSideTest.UIAssets
                     displayed += " ";
                 }
 
-                Utils.DrawBorderString(spriteBatch, displayed + currentValueSubText, pos, Color.White, 1.2f, maxCharactersDisplayed: 20);
+                Utils.DrawBorderString(spriteBatch, displayed + currentValueSubText, pos, Color.LightPink, 1.2f, maxCharactersDisplayed: 20);
                 currentValue = currentValue + currentValueSubText;
             }
             else if (currentValue != "")
             {
-                Utils.DrawBorderString(spriteBatch, currentValue, pos, Color.White, 1.2f);
+                Utils.DrawBorderString(spriteBatch, currentValue, pos, Color.LightPink, 1.2f);
             }
             else
             {
-                Utils.DrawBorderString(spriteBatch, placeholderText, pos, Color.Gray, 1.2f);
+                Utils.DrawBorderString(spriteBatch, placeholderText, pos, Color.Lerp(Color.LightPink, Color.Gray, 0.7f), 1.2f);
             }
 
             if (IsMouseHovering)

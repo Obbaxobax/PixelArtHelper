@@ -1,19 +1,4 @@
 Mods: {
 	PixelArtHelper: {
-		Configs: {
-			ClientConfig: {
-				DisplayName: Client Config
-
-				folderLocation: {
-					Label: folder Location
-					Tooltip: ""
-				}
-
-				hologramMode: {
-					Label: hologram Mode
-					Tooltip: ""
-				}
-			}
-		}
 	}
 }

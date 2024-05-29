@@ -13,3 +13,8 @@ Configs: {
 		}
 	}
 }
+
+Keybinds: {
+	toggleImageMenu.DisplayName: toggle Image Menu
+	ToggleImageMenu.DisplayName: Toggle Image Menu
+}

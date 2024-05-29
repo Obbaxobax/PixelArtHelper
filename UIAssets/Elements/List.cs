@@ -8,6 +8,8 @@ using Terraria.UI;
 using Terraria;
 using Microsoft.Xna.Framework;
 using Tile = ClientSideTest.HologramUI.Tile;
+using Terraria.ID;
+using Terraria.Enums;
 
 namespace ClientSideTest.UIAssets
 {
@@ -26,7 +28,7 @@ namespace ClientSideTest.UIAssets
                 le.Top.Set(i * 35f + scrollPos, 0);
 
 
-                Button butt = new deleteButton(this, i, le);
+                Button butt = new DeleteButton(this, i, le);
                 butt.Width.Set(30f, 0);
                 butt.Height.Set(30f, 0);
                 butt.Left.Set(315f, 0);
@@ -58,6 +60,10 @@ namespace ClientSideTest.UIAssets
     public class List : UIElement
     {
         public int scrollPos = 0;
+        public int scrollSpeed = 10;
+        public float elementHeight = 30;
+        public float elementPerRow = 1;
+        public Color color = Color.Lerp(Color.BlueViolet, Color.Black, 0.5f);
 
         public override void OnInitialize()
         {   
@@ -67,27 +73,59 @@ namespace ClientSideTest.UIAssets
 
         public override void ScrollWheel(UIScrollWheelEvent evt)
         {
-            scrollPos += (int)Math.Floor((double)(evt.ScrollWheelValue / 120)) * 10;
-            float min = Children.Count() * 35 - Height.Pixels > 0 ? Children.Count() * -35 + Height.Pixels : 0;
+            scrollPos += (int)Math.Floor((double)(evt.ScrollWheelValue / 120)) * scrollSpeed;
+
+            int numberOfRows = (int)Math.Floor(Children.Count() / elementPerRow);
+
+            float min = numberOfRows * (elementHeight + 5) - Height.Pixels > 0 ? numberOfRows * -(elementHeight + 5) + Height.Pixels : 0;
             scrollPos = (int)Math.Clamp(scrollPos, min, 0);
-            //Main.NewText(scrollPos);
 
             base.ScrollWheel(evt);
+        }
+
+        public override void Draw(SpriteBatch spriteBatch)
+        {
+            Recalculate();
+
+            Rectangle rect = GetDimensions().ToRectangle();
+            rect = new Rectangle(rect.X - 5, rect.Y - 5, rect.Width + 10, rect.Height + 10);
+
+            UITools.DrawBoxThinBorder(spriteBatch, ModContent.Request<Texture2D>("ClientSideTest/Assets/Box").Value, rect, color);
+
+            base.Draw(spriteBatch);
         }
     }
 
     public class ExceptionsList : List
     {
         public List<Tile> elements;
+        private Exceptions exList;
+
+        public ExceptionsList(Exceptions exList)
+        {
+            this.exList = exList;  
+        }
 
         public override void OnInitialize()
         {
-            int i = 0;
-            foreach(Tile tile in elements)
+            elementHeight = 50f;
+            scrollSpeed = 50;
+
+            for (int i = 0; i < elements.Count; i++)
             {
-                i++;
+                ExceptionsListElement ele = new ExceptionsListElement(i, elements[i].Name, this);
+                ele.Width.Set(295f, 0);
+                ele.Height.Set(50f, 0);
+                ele.stringOffset = 8f;
+                Append(ele);
 
+                ExceptionsListButton butt = new ExceptionsListButton(this, i, ele, elements, exList);
+                butt.Width.Set(50f, 0);
+                butt.Height.Set(50f, 0);
+                butt.Left.Set(295f, 0);
+                butt.texture = exList.exceptionsDict[elements[i].Name] ? "ClientSideTest/Assets/activeButton" : "ClientSideTest/Assets/deleteButton";
 
+                Append(butt);
             }
 
             base.OnInitialize();
@@ -130,30 +168,57 @@ namespace ClientSideTest.UIAssets
     {
         private int i;
         private string text;
-        private List parent;
+        public readonly List parent;
+
+        private float elementHeight;
+
+        public float stringOffset = 6f;
 
         public ListElement(int i, string text, List parent)
         {
             this.i = i;
             this.text = text;
             this.parent = parent;
+
+            elementHeight = parent.elementHeight;
         }
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            Top.Set(i * 35f + parent.scrollPos, 0);
+            Top.Set(i * (elementHeight + 5) + parent.scrollPos, 0);
 
             //Gets the size and position of the ui element
             Rectangle rect = GetDimensions().ToRectangle();
 
             //Create the position for the text, offsetting it slightly to line up with the boxes
-            Vector2 pos = new Vector2(rect.X, rect.Y) + Vector2.One * 6;
+            Vector2 pos = new Vector2(rect.X, rect.Y) + Vector2.One * stringOffset;
 
             //First draw the box, then the text.
-            UITools.DrawBoxWith(spriteBatch, (Texture2D)ModContent.Request<Texture2D>("ClientSideTest/Assets/Box"), rect, Color.CornflowerBlue);
-            Utils.DrawBorderString(spriteBatch, text, pos, Color.White, 1f);
+            UITools.DrawBoxWith(spriteBatch, (Texture2D)ModContent.Request<Texture2D>("ClientSideTest/Assets/Box"), rect, Color.BlueViolet);
+            Utils.DrawBorderString(spriteBatch, text, pos, Color.LightPink, 1f);
 
             base.Draw(spriteBatch);
+        }
+    }
+
+    public class RequiredList : List
+    {
+        public Dictionary<string, int> list = new Dictionary<string, int>();
+
+        public override void OnInitialize()
+        {
+            list = list.OrderByDescending(pair => pair.Value).ToDictionary(pair => pair.Key, pair => pair.Value);
+            for (int i = 0; i < list.Count; i++)
+            {
+                string displayString = $"{list.ElementAt(i).Key}: {list.ElementAt(i).Value}";
+                ListElement le = new ListElement(i, displayString, this);
+                le.Height.Set(30f, 0);
+                le.Width.Set(345f, 0);
+
+                Append(le);
+            }
+
+            base.OnInitialize();
         }
     }
 }
