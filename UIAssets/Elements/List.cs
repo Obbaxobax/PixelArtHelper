@@ -47,7 +47,7 @@ namespace ClientSideTest.UIAssets
         public override void Draw(SpriteBatch spriteBatch)
         {
             //Update the ui if there is a new image
-            if (names.Length != Children.Count())
+            if (names.Length != Children.Count()/2)
             {
                 RemoveAllChildren();
                 OnInitialize();

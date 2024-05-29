@@ -31,6 +31,11 @@ namespace ClientSideTest
 
             ToggleImageMenu = KeybindLoader.RegisterKeybind(m, "ToggleImageMenu", Microsoft.Xna.Framework.Input.Keys.P);
 
+            if (!Main.dedServ)
+            {
+                Directory.CreateDirectory(MainMenu.savePath);
+            }
+
             if (File.Exists($"{MainMenu.savePath}wallExceptions.json"))
             {
                 using (StreamReader r = new StreamReader($"{MainMenu.savePath}wallExceptions.json"))
@@ -75,11 +80,6 @@ namespace ClientSideTest
             imageMenu.Activate();
             _imageMenu = new UserInterface();
             _imageMenu.SetState(null);
-
-            if (!Main.dedServ)
-            {
-                Directory.CreateDirectory(MainMenu.savePath);
-            }
         }
 
         public override void UpdateUI(GameTime gameTime)

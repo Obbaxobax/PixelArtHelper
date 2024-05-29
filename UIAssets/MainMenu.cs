@@ -23,6 +23,7 @@ namespace ClientSideTest.UIAssets
         private TextField sizeX;
         private TextField sizeY;
         private TextField saveName;
+        private ImageList il;
 
         public static Dictionary<string, Bitmap> images = new Dictionary<string, Bitmap>();
 
@@ -117,7 +118,7 @@ namespace ClientSideTest.UIAssets
             locationField.placeholderText = "Input link or file path";
             locationField.hoverText = "The file path or the link to the image (Required)";
 
-            ImageList il = new ImageList();
+            il = new ImageList();
             il.Width.Set(345f, 0);
             il.Height.Set(220f, 0);
             il.Left.Set(15f, 0);
@@ -164,6 +165,7 @@ namespace ClientSideTest.UIAssets
                     {
                         bm.Save(savePath + saveName.currentValue + ".png");
                         images[saveName.currentValue] = bm;
+                        il.names = il.names.Append(saveName.currentValue).ToArray();
                         return;
                     }
                     else
@@ -208,6 +210,7 @@ namespace ClientSideTest.UIAssets
                     {
                         bm.Save(savePath + saveName.currentValue + ".png");
                         images[saveName.currentValue] = bm;
+                        il.names = il.names.Reverse().Append(saveName.currentValue).Reverse().ToArray();
                         return;
                     }
                     else
