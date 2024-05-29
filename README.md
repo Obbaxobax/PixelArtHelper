@@ -24,4 +24,5 @@ It is important to note that a larger image will take longer to process and will
 At this point, you know the basics and are ready to start, but you may have noticed the other button present after you load a hologram. Clicking that button will toggle between modes, with the default mode showing the whole hologram. The other mode will only show pixels if they match the held block. I.E. if my pixel art required Diamond Gemspark, holding that block would display all the places I need to place it. Naturally, if you aren't holding a correct block, this will make the hologram completely invisible.
 
 ## Credits
-Mod created by [Obbax](https://github.com/Obbaxobax)
+Mod created by [Obbax](https://github.com/Obbaxobax)\
+Box.png and and main draw box function from [UltraSonic](https://github.com/OliHeamon/UltraSonic) (Really cool mod you should use)
