@@ -16,6 +16,7 @@ namespace ClientSideTest.UIAssets
         public string currentValue { get; set; } = ""; //The text that is currently written
         public string placeholderText = ""; //Text displayed if nothing written
         public string hoverText = "";
+        public int maxChar = 24; //The maximum number of characters allowed to display at once
 
         private int position = 0; //position in the string
         private uint prevTime = 0; //Previous time the string was moved through (Used to slow down right and left arrow keys). Probably a better way.
@@ -114,14 +115,14 @@ namespace ClientSideTest.UIAssets
 
                 //Epic math for preventing string overflow
                 var lengthOfStr = (currentValue.Length + currentValueSubText.Length);
-                if(lengthOfStr > 30 && position > 13)
+                if(lengthOfStr > maxChar && position > maxChar / 2)
                 {
-                    displayed = displayed.Substring(Math.Clamp(-13 + position, 0, lengthOfStr - 13));
-                    displayed += currentValueSubText.Insert(Math.Clamp(lengthOfStr - position, 0, 13), "\n").Split("\n")[0];
+                    displayed = displayed.Substring(Math.Clamp(-(maxChar/2) + position, 0, lengthOfStr - (maxChar / 2)));
+                    displayed += currentValueSubText.Insert(Math.Clamp(lengthOfStr - position, 0, (maxChar / 2)), "\n").Split("\n")[0];
                 }
                 else
                 {
-                    displayed += currentValueSubText.Insert(Math.Clamp(lengthOfStr - position, 0, 26 - position), "\n").Split("\n")[0];
+                    displayed += currentValueSubText.Insert(Math.Clamp(lengthOfStr - position, 0, maxChar - position), "\n").Split("\n")[0];
                 }
 
 
@@ -132,7 +133,7 @@ namespace ClientSideTest.UIAssets
             else if (currentValue != "")
             {
                 //3 display only the current text
-                Utils.DrawBorderString(spriteBatch, currentValue.Substring(Math.Clamp(currentValue.Length - 26, 0, currentValue.Length)), pos, Color.LightPink, 1.2f, maxCharactersDisplayed: 15);
+                Utils.DrawBorderString(spriteBatch, currentValue.Substring(Math.Clamp(currentValue.Length - maxChar, 0, currentValue.Length)), pos, Color.LightPink, 1.2f, maxCharactersDisplayed: 15);
             }
             else
             {

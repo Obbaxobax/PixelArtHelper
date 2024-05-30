@@ -51,6 +51,7 @@ namespace ClientSideTest.UIAssets
             sizeX.Width.Set(175f, 0);
             sizeX.Height.Set(50f, 0);
             sizeX.Top.Set(41f, 0);
+            sizeX.maxChar = 8;
 
             sizeY = new TextField();
             sizeY.CopyStyle(sizeX);
