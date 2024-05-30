@@ -1,2 +1,2 @@
-Obbax's Pixel Art Helper is a mod which uses some external tools to help in the creation of pixel art from a given image. 
-Go to the github for a tutorial on how to use it => https://github.com/Obbaxobax/Terraria-Pixel-Art-Helper
+Obbax's Pixel Art Helper is a mod which provides the user with an easier means of making pixel art.
+Go to the github for breakdown on how to use it => https://github.com/Obbaxobax/PixelArtHelper
