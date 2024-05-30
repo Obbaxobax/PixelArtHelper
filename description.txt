@@ -1,2 +1,3 @@
 Obbax's Pixel Art Helper is a mod which provides the user with an easier means of making pixel art.
+There has been a major update, so any returning users may want to visit the github again.
 Go to the github for breakdown on how to use it => https://github.com/Obbaxobax/PixelArtHelper

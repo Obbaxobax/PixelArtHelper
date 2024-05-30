@@ -2,3 +2,5 @@
 This is a simple mod which provides a UI to help the user create pixel art. Simply pick an image, load it using the ingame UI, and activate it to display an outline of each block which needs to be placed.
 
 For more info on usage, read the readme here: [url=https://github.com/Obbaxobax/PixelArtHelper]https://github.com/Obbaxobax/PixelArtHelper[/url]
+
+[u]There has been a major update, so any returning users may want to visit the github again.[/u]
