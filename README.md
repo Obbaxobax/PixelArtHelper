@@ -21,7 +21,7 @@ It is important to note that a larger image will take longer to process and will
   
   ![image showing save name box and paint toggle button](https://github.com/Obbaxobax/PixelArtHelper/assets/70305616/fe149076-085d-45d9-8efb-a37633fed26c)
 * The below button will take you to a page of the menu which will allow you to set the blocks which you do not want to use. For some, this task may be tedious, and I have gone through the effort of pre-setting some values which I believe should be sufficient. You may want to change these values if you want to use blocks which are easily obtainable for your stage in progression. To return, press the red button in the top right.\
-  <img src="https://github.com/Obbaxobax/PixelArtHelper/assets/70305616/1c9f93df-bc72-4be1-b66d-4b21684a2ab9" alt="image showing exceptions button"/>
+  <img src="https://github.com/Obbaxobax/PixelArtHelper/assets/70305616/1c9f93df-bc72-4be1-b66d-4b21684a2ab9" alt="image showing exceptions button"/> \
   <img src="https://github.com/Obbaxobax/PixelArtHelper/assets/70305616/b39dbae0-788b-42b2-999b-1563edf128c5" alt="image showing exceptions page" height="400"/>
 
 * The last two remaining elements are the most important. The text field on the right is the location in which you will specify your link or file path. If the field is empty, the button can be used to paste the text which is currently copied. However, if the field is not empty, the button will attempt to grab the image from the specified location, adding it to the list if it is successful.\
