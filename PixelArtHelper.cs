@@ -20,24 +20,29 @@ namespace ClientSideTest
         private UserInterface _imageMenu;
         public static Mod m;
 
-        private bool active;
-        public Vector2 openPos;
+        private bool active; //Bool for if the hologram is active
+        public Vector2 openPos; //position which the hologram is opened at
 
-        public ModKeybind ToggleImageMenu;
+        public ModKeybind toggleImageMenu; //Keybind
 
         public override void Load()
         {
+            //Assign variable for mod
             m = Mod;
 
-            ToggleImageMenu = KeybindLoader.RegisterKeybind(m, "ToggleImageMenu", Microsoft.Xna.Framework.Input.Keys.P);
+            //Create keybind
+            toggleImageMenu = KeybindLoader.RegisterKeybind(m, "ToggleImageMenu", Microsoft.Xna.Framework.Input.Keys.P);
 
+            //Create the save data directory if it doesn't exist
             if (!Main.dedServ)
             {
                 Directory.CreateDirectory(MainMenu.savePath);
             }
 
+            //Load the exceptions files
             if (File.Exists($"{MainMenu.savePath}wallExceptions.json"))
             {
+                //Opens the saved file and copies it to the dictionary
                 using (StreamReader r = new StreamReader($"{MainMenu.savePath}wallExceptions.json"))
                 {
                     string json = r.ReadToEnd();
@@ -46,6 +51,7 @@ namespace ClientSideTest
             }
             else
             {
+                //Creates a new file, copying the preset one from assets
                 string fileBytes = Encoding.UTF8.GetString(ModContent.GetFileBytes("ClientSideTest/Assets/wallExceptions.json"));
                 ExceptionsMenu.exWalls.exceptionsDict = JsonSerializer.Deserialize<Dictionary<string, bool>>(fileBytes);
 
@@ -55,6 +61,7 @@ namespace ClientSideTest
 
             if (File.Exists($"{MainMenu.savePath}tileExceptions.json")) 
             {
+                //Opens the saved file and copies it to the dictionary
                 using (StreamReader r = new StreamReader($"{MainMenu.savePath}tileExceptions.json"))
                 {
                     string json = r.ReadToEnd();
@@ -64,6 +71,7 @@ namespace ClientSideTest
             }
             else
             {
+                //Creates a new file, copying the preset one from assets
                 string fileBytes = Encoding.UTF8.GetString(ModContent.GetFileBytes("ClientSideTest/Assets/tileExceptions.json"));
                 ExceptionsMenu.exTiles.exceptionsDict = JsonSerializer.Deserialize<Dictionary<string, bool>>(fileBytes);
 
@@ -71,6 +79,7 @@ namespace ClientSideTest
                 JsonSerializer.Serialize(stream, ExceptionsMenu.exTiles.exceptionsDict);
             }
 
+            //Setup the UI
             hologramUIState = new HologramUIState();
             hologramUIState.Activate();
             _hologramUIState = new UserInterface();
@@ -84,47 +93,49 @@ namespace ClientSideTest
 
         public override void UpdateUI(GameTime gameTime)
         {
+            //Update the UI's if they exist/Are active
             _imageMenu?.Update(gameTime);
             if (active)
             {
                 _hologramUIState?.Update(gameTime);
             }
 
+            //Update the position and check for placement of hologram
             if (hologramUIState.imageReady == true && Main.mouseLeft)
             {
                 Vector2 pos = Main.MouseWorld;
-                float dif = pos.X % 16;
-                if (dif != 0)
-                {
-                    pos.X = pos.X - dif;
-                }
 
-                float dif2 = pos.Y % 16;
-                if (dif2 != 0)
-                {
-                    pos.Y = pos.Y - dif2;
-                }
+                //Round coordinates to nearest multiple of 16 (because tiles are 16x16)
+                float dif = pos.X % 16;
+                pos.X = pos.X - dif;
+
+                dif = pos.Y % 16;
+                pos.Y = pos.Y - dif;
+
                 openPos = pos;
 
-                showUi();
-                imageMenu.state = "required";
+                //Show the hologram and change the menu to the required blocks page
+                ShowUi();
                 hologramUIState.imageReady = false;
             }
         }
 
-        public void hideUi()
+        //Hides the hologram
+        public void HideUi()
         {
             active = false;
             _hologramUIState?.SetState(null);
         }
 
-        public void showUi()
+        //Shows the hologram
+        public void ShowUi()
         {
             active = true;
             _hologramUIState?.SetState(hologramUIState);
         }
 
-        public void ToggleImageMneu()
+        //Toggles the image menu
+        public void ToggleImageMenu()
         {
             if (_imageMenu.CurrentState != null)
             {
@@ -138,13 +149,16 @@ namespace ClientSideTest
 
         public override void OnWorldLoad()
         {
+            //Reinitialize the menu to avoid ghost images/missing images
             imageMenu.mainMenu.Reinitialize();
             hologramUIState.RemoveAllChildren();
 
             base.OnWorldLoad();
         }
+
         public override void ModifyInterfaceLayers(List<GameInterfaceLayer> layers)
         {
+            //Add the UI's to their own layers
             int mouseTextIndex = layers.FindIndex(layer => layer.Name.Equals("Vanilla: Inventory"));
             if (mouseTextIndex != -1)
             {
@@ -172,11 +186,11 @@ namespace ClientSideTest
 
         public override void OnWorldUnload()
         {
+            //Save the exceptions, creating the file if it does not exist
             if (File.Exists($"{MainMenu.savePath}tileExceptions.json"))
             {
                 FileStream stream = File.OpenWrite($"{MainMenu.savePath}tileExceptions.json");
                 JsonSerializer.Serialize(stream, ExceptionsMenu.exTiles.exceptionsDict);
-
             }
             else
             {
@@ -188,13 +202,14 @@ namespace ClientSideTest
             {
                 FileStream stream = File.OpenWrite($"{MainMenu.savePath}wallExceptions.json");
                 JsonSerializer.Serialize(stream, ExceptionsMenu.exWalls.exceptionsDict);
-
             }
             else
             {
                 FileStream stream = File.Create($"{MainMenu.savePath}wallExceptions.json");
                 JsonSerializer.Serialize(stream, ExceptionsMenu.exWalls.exceptionsDict);
             }
+
+            imageMenu.state = "main";
 
             base.OnWorldUnload();
         }

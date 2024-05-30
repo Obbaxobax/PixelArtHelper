@@ -6,13 +6,29 @@ using Terraria.UI;
 
 namespace ClientSideTest.UIAssets.HologramUI
 {
+    //The outline displayed to help line up the hologram
     public class HologramOutline : UIElement
     {
         public override void Draw(SpriteBatch spriteBatch)
         {
-            if(PixelArtHelper.hologramUIState.imageReady)
+            //This is necessary to ensure the hologram lines up at all sizes
+            float scale = 1 / Main.UIScale;
+
+            //Only draw if actively placing the hologram
+            if (PixelArtHelper.hologramUIState.imageReady)
             {
-                Rectangle rect = new Rectangle((int)Main.MouseScreen.X, (int)Main.MouseScreen.Y, (int)PixelArtHelper.hologramUIState.currentDimensions.X * 16, (int)PixelArtHelper.hologramUIState.currentDimensions.Y * 16);
+                Vector2 pos = Main.MouseWorld;
+
+                //Round coordinates to nearest multiple of 16 (because tiles are 16x16)
+                float dif = pos.X % 16;
+                pos.X = pos.X - dif;
+
+                dif = pos.Y % 16;
+                pos.Y = pos.Y - dif;
+
+                pos = pos.ToScreenPosition();
+
+                Rectangle rect = new Rectangle((int)pos.X, (int)pos.Y, (int)(PixelArtHelper.hologramUIState.currentDimensions.X * 16 * scale), (int)(PixelArtHelper.hologramUIState.currentDimensions.Y * 16 * scale));
 
                 spriteBatch.Draw(ModContent.Request<Texture2D>("ClientSideTest/Assets/Blank").Value, rect, Color.Lerp(Color.Black, Color.Transparent, 0.5f));
             }

@@ -4,37 +4,12 @@ using Terraria;
 using Terraria.ModLoader;
 using Terraria.UI;
 using Terraria.ID;
-using Newtonsoft.Json;
-using ClientSideTest.UIAssets;
 
 namespace ClientSideTest.HologramUI
 {
-    public class Tile
-    {
-        public string Name { get; set; }
-        public string ID { get; set; }
-    }
-
-    public class Pixel
-    {
-        public Color color { get; set; }
-        public int id { get; set; }
-        public string paintId { get; set; }
-        public string name { get; set; }
-        public Vector2 position { get; set; }
-        public bool wall { get; set; }
-
-    }
-
-    public class tileColor
-    {
-        public string Tile { get; set; }
-        public string Color { get; set; }
-        public float[] LAB { get; set; }
-    }
     public class Hologram : UIElement
     {
-        public static bool hologramMode;
+        public static bool hologramMode; //Used to determine the mode (normal versus highlight)
 
         public Vector2 positionId { get; set; }
         public Color color { get; set; }
@@ -64,6 +39,7 @@ namespace ClientSideTest.HologramUI
                     //Return the name of the variable which has a matching id
                     paintName = paint.Name.Replace("/([A-Z])/g", " $1").Trim();
 
+                    //Add paint to required paints list
                     if (PixelArtHelper.imageMenu.reqMenu.requiredPaints.ContainsKey(paintName))
                     {
                         PixelArtHelper.imageMenu.reqMenu.requiredPaints[paintName] += 1;
@@ -77,6 +53,7 @@ namespace ClientSideTest.HologramUI
                 }
             }
 
+            //Add the tile of this pixel to required tiles list
             if (PixelArtHelper.imageMenu.reqMenu.requiredTiles.ContainsKey(name))
             {
                 PixelArtHelper.imageMenu.reqMenu.requiredTiles[name] += 1;
@@ -93,7 +70,7 @@ namespace ClientSideTest.HologramUI
             Vector2 pixelWorldPos = ModContent.GetInstance<PixelArtHelper>().openPos / 16 + positionId;
 
             //Check if the tile in the pixel position is correct. If so, don't render the pixel to make it much easier to see
-            if (wall == false && Main.tile[(int)pixelWorldPos.X, (int)pixelWorldPos.Y].TileType + 1 == id)
+            if (wall == false && Main.tile[(int)pixelWorldPos.X, (int)pixelWorldPos.Y].TileType == id)
             {
                 return;
             }
@@ -102,26 +79,28 @@ namespace ClientSideTest.HologramUI
                 return;
             }
 
+            //Return if highlight mode is enabled and we are not holding a valid block
             if (hologramMode == true && !(wall == false && Main.player[Main.myPlayer].HeldItem.createTile + 1 == id || wall == true && Main.player[Main.myPlayer].HeldItem.createWall + 1 == id)) return;
 
+            //This is necessary to ensure the hologram lines up at all sizes
+            float scale = Main.Camera.UnscaledSize.X / Main.Camera.ScaledSize.X;
+            scale = scale / Main.UIScale / 1.2f;
+
+            float offset = (16 - (16 *  scale)) / 2;
+
+            //Calculate the position of the pixel
             Vector2 basePos;
-            basePos = ModContent.GetInstance<PixelArtHelper>().openPos + new Vector2(16 * positionId.X + 1.3f, 16 * positionId.Y + 1.3f); // Get the position of each pixel in worldSpace then convert it to screen position. (1.3 is to center tile)
+            basePos = ModContent.GetInstance<PixelArtHelper>().openPos + new Vector2(16 * positionId.X + offset, 16 * positionId.Y + offset); // Get the position of each pixel in worldSpace then convert it to screen position. (1.3 is to center tile)
             basePos = basePos.ToScreenPosition();
 
-            float scale = Main.Camera.UnscaledSize.X / Main.Camera.ScaledSize.X;
-
-            spriteBatch.Draw(ModContent.Request<Texture2D>("ClientSideTest/Assets/Blank").Value, basePos, null, color, 0f, Vector2.Zero, scale / 1.2f, SpriteEffects.None, 0f);
+            //Draw the pixel
+            spriteBatch.Draw(ModContent.Request<Texture2D>("ClientSideTest/Assets/Blank").Value, basePos, null, color, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
 
             //check is mouse is over a pixel and give it hovername
-            if (Main.MouseScreen.X >= basePos.X && Main.MouseScreen.Y >= basePos.Y && Main.MouseScreen.X < basePos.X + 15.85 * scale && Main.MouseScreen.Y < basePos.Y + 15.85 * scale)
+            if (Main.MouseScreen.X >= basePos.X && Main.MouseScreen.Y >= basePos.Y && Main.MouseScreen.X < basePos.X + 15.85 && Main.MouseScreen.Y < basePos.Y + 15.85)
             {
                 Main.hoverItemName = $"{name}\n{paintName}";
             }
-        }
-
-        public override void MouseOver(UIMouseEvent evt)
-        {
-            Deactivate();
         }
     }
 }

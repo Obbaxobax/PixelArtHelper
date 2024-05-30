@@ -1,37 +1,36 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
-using Terraria;
 using Terraria.UI;
-using System.IO;
 using static Terraria.ModLoader.ModContent;
 using System.Text.Json;
 using System.Drawing;
 using Color = Microsoft.Xna.Framework.Color;
-using System.Threading.Tasks;
 using System.Linq;
-using Terraria.ModLoader;
-using Microsoft.Xna.Framework.Input;
 using ClientSideTest.UIAssets;
-using ClientSideTest.UIAssets.HologramUI;
+using ClientSideTest.DataClasses;
+using Terraria;
+using Tile = ClientSideTest.DataClasses.Tile;
 
 namespace ClientSideTest.HologramUI
 {
     public class HologramUIState : UIState
     {
-        public static List<Pixel> pixels = new List<Pixel>();
-        private static HologramUIState menuBar;
+        public static List<Pixel> pixels = new List<Pixel>(); //The list of the pixels for the hologram
+        private static HologramUIState hologramUIState; //This
 
+        //Hologram position
         public Vector2 openPos;
+
+        //Dimensions of the hologram
         public Vector2 currentDimensions = new Vector2(0, 0);
 
-        public bool imageReady = false;
-        public bool usePaints = false;
+        public bool imageReady = false; //Is the hologram ready to display
+        public bool usePaints = false; //Should we use paints
 
         public override void OnInitialize()
         {
-            menuBar = PixelArtHelper.hologramUIState;
-            HologramOutline ho = new HologramOutline();
+            hologramUIState = PixelArtHelper.hologramUIState;
         }
 
         public void Update()
@@ -41,8 +40,9 @@ namespace ClientSideTest.HologramUI
             //Iterate through the list of pixels
             for (int i = 0; i < pixels.Count; i++)
             {
-                if (pixels[i].id == -1) continue;
+                if (pixels[i].id == -1) continue; //Skips pixel if it is transparent
 
+                //Create a hologram for each pixel and add it to the UI.
                 Hologram hg = new Hologram(pixels[i].position, pixels[i].color, pixels[i].paintId, pixels[i].name, pixels[i].id, pixels[i].wall);
 
                 Append(hg);
@@ -52,19 +52,21 @@ namespace ClientSideTest.HologramUI
             Main.NewText("Click to place the hologram!", Color.CornflowerBlue);
         }
 
-        public string createPixels(Bitmap bm)
+        public void createPixels(Bitmap bm)
         {
             try
             {
                 Main.NewText("Processing image. Please wait", Color.CornflowerBlue);
-                GetInstance<PixelArtHelper>().hideUi();
+                GetInstance<PixelArtHelper>().HideUi(); //Hide the previous hologram
 
                 //Store the pixels in a temp cache to avoid deleting existing pixels in the case this process fails
                 List<Pixel> pixelCache = new List<Pixel>();
 
+                //Get the tiles from json (includes name, id, tile-type, lab color)
                 byte[] tileColors = GetFileBytes("ClientSideTest/Assets/tiles.json");
-                List<tileColor> tiles = JsonSerializer.Deserialize<List<tileColor>>(tileColors);
+                List<TileData> tiles = JsonSerializer.Deserialize<List<TileData>>(tileColors);
 
+                //Get lists with proper names and load them
                 byte[] text = GetFileBytes($"{nameof(ClientSideTest)}/Assets/blockIDs.json");
                 byte[] text2 = GetFileBytes($"{nameof(ClientSideTest)}/Assets/wallIDs.json");
 
@@ -73,14 +75,14 @@ namespace ClientSideTest.HologramUI
 
                 currentDimensions = new Vector2(bm.Width, bm.Height);
 
-
+                //Iterate through each pixel in the target image
                 for (int y = 0; y < bm.Height; y++)
                 {
                     for (int x = 0; x < bm.Width; x++)
                     {
                         Pixel pix = new Pixel();
 
-                        //If the pixel is sufficiently transparent, create a dummy pixel
+                        //If the pixel's alpha is beyond a given threshold create a dummy pixel
                         if (bm.GetPixel(x, y).A < 50)
                         {
                             pix.position = new Vector2(x, y);
@@ -100,6 +102,7 @@ namespace ClientSideTest.HologramUI
                         Vector4 labColorsVector = RGBToLab(pix.color.ToVector4());
                         float[] labColorsValues = [labColorsVector.X, labColorsVector.Y, labColorsVector.Z];
 
+                        //preset values
                         double lowestDeltaE = 100000000;
                         double deltaE = 0;
                         string closestTile = "";
@@ -108,13 +111,16 @@ namespace ClientSideTest.HologramUI
 
                         //Iterate through a list of tiles and their corresponding L*A*B* colors
                         //Calculate the deltaE between the tiles and are pixel, storing the tile which is closest
-                        foreach (tileColor tc in tiles)
+                        foreach (TileData tc in tiles)
                         {
+                            //Return if the tile uses a paint and use paints is false
                             if (!usePaints && tc.Color != "0") continue;
 
+                            //Split the tile name to get tile-type, id, and name
                             string[] temp = tc.Tile.Split(" : ");
                             string temp2 = temp[0].Split(": ")[0];
 
+                            //Return if the tile is in the exceptions list
                             if (temp2 == "TILE" && !ExceptionsMenu.exTiles.exceptionsDict[temp[1]]) continue;
                             if (temp2 == "WALL" && !ExceptionsMenu.exWalls.exceptionsDict[temp[1]]) continue;
 
@@ -133,11 +139,15 @@ namespace ClientSideTest.HologramUI
                         closestTile = closestTile.Split(" : ")[0];
                         string[] info = closestTile.Split(": ");
 
+                        //Get the id from string
                         pix.id = int.Parse(info[1]);
 
+                        //Check if chosen tile is a wall or block
                         if (info[0] == "WALL")
                         {
                             pix.wall = true;
+
+                            //Go through the list of proper names and find the one for the chosen tile
                             foreach (Tile t in wall.ToList())
                             {
                                 if (t.ID == info[1])
@@ -150,6 +160,8 @@ namespace ClientSideTest.HologramUI
                         else
                         {
                             pix.wall = false;
+
+                            //Go through the list of proper names and find the one for the chosen tile
                             foreach (Tile t in tile.ToList())
                             {
                                 if (t.ID == info[1])
@@ -161,6 +173,7 @@ namespace ClientSideTest.HologramUI
                             }
                         }
 
+                        //Add the pixel to the pixel cache list
                         pixelCache.Add(pix);
                     }
                 }
@@ -168,17 +181,18 @@ namespace ClientSideTest.HologramUI
                 //Upon completion, replace the old pixels with the new ones
                 pixels = pixelCache;
 
-                menuBar.Update();
+                hologramUIState.Update();
 
-                return $"{pixels.Count}";
+                return;
             }
-            catch (Exception ex)
+            catch
             {
                 Main.NewText("There seems to have been a issue. Please report this on the github, with your client.log file attached.", Color.PaleVioletRed);
-                return ex.Message;
+                return;
             }
         }
 
+        //Converts RGB color's to lab (RGB > XYZ > LAB) Uses evil math
         public static Vector4 RGBToLab(Vector4 color)
         {
             float[] xyz = new float[3];
@@ -263,6 +277,7 @@ namespace ClientSideTest.HologramUI
             return new Vector4(lab[0], lab[1], lab[2], color.W);
         }
 
+        //Calculates the deltaE shared between to LAB colors
         public static double calculateDeltaE(float[] lab1, float[] lab2)
         {
             double l = Math.Pow(lab1[0] - lab2[0], 2);

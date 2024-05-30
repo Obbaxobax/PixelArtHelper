@@ -1,16 +1,15 @@
-﻿using Microsoft.Xna.Framework.Graphics;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Net.Http;
-using Terraria.ModLoader;
 using Terraria;
 using ReLogic.OS;
 using Microsoft.Xna.Framework;
 using Color = Microsoft.Xna.Framework.Color;
-using Rectangle = Microsoft.Xna.Framework.Rectangle;
 using System.Linq;
+using ClientSideTest.UIAssets.Elements.Lists;
+using ClientSideTest.UIAssets.Elements.Buttons;
 
 namespace ClientSideTest.UIAssets
 {
@@ -108,8 +107,10 @@ namespace ClientSideTest.UIAssets
                 }
 
                 addImage();
+                locationField.currentValue = "";
             };
 
+            //FIX OVERFLOW ----------------------------------------------------------------------------
             locationField = new TextField();
             locationField.Width.Set(300f, 0);
             locationField.Height.Set(50f, 0);
@@ -123,7 +124,7 @@ namespace ClientSideTest.UIAssets
             il.Height.Set(220f, 0);
             il.Left.Set(15f, 0);
             il.Top.Set(267f, 0);
-            il.names = images.Keys.ToArray();
+            il.names = images.Keys.ToList<string>();
             il.elementPerRow = 2;
 
             Append(sizeX);
@@ -165,7 +166,7 @@ namespace ClientSideTest.UIAssets
                     {
                         bm.Save(savePath + saveName.currentValue + ".png");
                         images[saveName.currentValue] = bm;
-                        il.names = il.names.Append(saveName.currentValue).ToArray();
+                        il.names = il.names.Append(saveName.currentValue).ToList();
                         return;
                     }
                     else
@@ -210,7 +211,7 @@ namespace ClientSideTest.UIAssets
                     {
                         bm.Save(savePath + saveName.currentValue + ".png");
                         images[saveName.currentValue] = bm;
-                        il.names = il.names.Reverse().Append(saveName.currentValue).Reverse().ToArray();
+                        il.names = il.names.Reverse<string>().Append(saveName.currentValue).Reverse().ToList();
                         return;
                     }
                     else

@@ -5,18 +5,20 @@ using Terraria.GameInput;
 using Terraria.ModLoader;
 using Terraria.UI;
 using Terraria;
+using System;
 
 namespace ClientSideTest.UIAssets
 {
+    //Much of this is based on/taken from UltraSonic, so credit to OliHeamon
     public class TextField : UIElement
     {
         private bool typing = false;
-        public string currentValue { get; set; } = "";
+        public string currentValue { get; set; } = ""; //The text that is currently written
         public string placeholderText = ""; //Text displayed if nothing written
         public string hoverText = "";
 
-        private int position = 0;
-        private uint prevTime = 0;
+        private int position = 0; //position in the string
+        private uint prevTime = 0; //Previous time the string was moved through (Used to slow down right and left arrow keys). Probably a better way.
 
         public override void OnInitialize()
         {
@@ -27,8 +29,10 @@ namespace ClientSideTest.UIAssets
         {
             //Block input and start typing if box clicked on
             typing = true;
+
             Main.blockInput = true;
             position = currentValue.Length;
+
             base.LeftClick(evt);
         }
 
@@ -39,6 +43,7 @@ namespace ClientSideTest.UIAssets
 
             Rectangle rect = GetDimensions().ToRectangle();
 
+            //Draw box epicly
             UITools.DrawBoxWith(spriteBatch, (Texture2D)ModContent.Request<Texture2D>("ClientSideTest/Assets/Box"), rect, Color.BlueViolet);
 
             //Cancel typing if escape is clicked
@@ -53,12 +58,9 @@ namespace ClientSideTest.UIAssets
             Vector2 pos = GetDimensions().Position() + Vector2.One * 8 + Vector2.UnitY * 4; //Text offset
 
             //Decide what to display
-            //0 check if the arrow key is pressed to move cursor position in string
-            //1 display the current text with a blinker
-            //2 display only the current text
-            //3 display the placeholder
             if (typing == true)
             {
+                //1 check if the arrow key is pressed to move cursor position in string
                 if (Main.keyState.IsKeyDown(Keys.Left) && Main.GameUpdateCount - prevTime > 10)
                 {
                     position = position > 0 ? position - 1 : position;
@@ -70,16 +72,20 @@ namespace ClientSideTest.UIAssets
                     prevTime = Main.GameUpdateCount;
                 }
 
+                //toggle text input
                 PlayerInput.WritingText = true;
                 Main.instance.HandleIME();
 
+                //Split the current text based on the cursor position
                 string currentValueSubText = currentValue.Substring(position);
                 currentValue = currentValue.Remove(position);
 
-
+                //Check if there is new text
                 string newText = Main.GetInputText(currentValue);
                 if (newText != currentValue)
                 {
+                    //If the cursor is in the middle of the string, adjust position to match new text
+                    //Else set the position to the end of the string
                     if ((currentValue + currentValueSubText).Length > (newText + currentValueSubText).Length)
                     {
                         position = position > 0 ? position - 1 : position;
@@ -89,10 +95,14 @@ namespace ClientSideTest.UIAssets
                         position = newText.Length;
                     }
 
+                    //update the current value
                     currentValue = newText;
                 }
+
+                //Create a string to display
                 string displayed = currentValue ?? "";
 
+                //Add a blinker by counting the update count
                 if (Main.GameUpdateCount % 60 < 30)
                 {
                     displayed += "|";
@@ -102,18 +112,35 @@ namespace ClientSideTest.UIAssets
                     displayed += " ";
                 }
 
-                Utils.DrawBorderString(spriteBatch, displayed + currentValueSubText, pos, Color.LightPink, 1.2f, maxCharactersDisplayed: 20);
+                //Epic math for preventing string overflow
+                var lengthOfStr = (currentValue.Length + currentValueSubText.Length);
+                if(lengthOfStr > 30 && position > 13)
+                {
+                    displayed = displayed.Substring(Math.Clamp(-13 + position, 0, lengthOfStr - 13));
+                    displayed += currentValueSubText.Insert(Math.Clamp(lengthOfStr - position, 0, 13), "\n").Split("\n")[0];
+                }
+                else
+                {
+                    displayed += currentValueSubText.Insert(Math.Clamp(lengthOfStr - position, 0, 26 - position), "\n").Split("\n")[0];
+                }
+
+
+                //2 display the current text with a blinker
+                Utils.DrawBorderString(spriteBatch, displayed, pos, Color.LightPink, 1.2f, maxCharactersDisplayed: 15);
                 currentValue = currentValue + currentValueSubText;
             }
             else if (currentValue != "")
             {
-                Utils.DrawBorderString(spriteBatch, currentValue, pos, Color.LightPink, 1.2f);
+                //3 display only the current text
+                Utils.DrawBorderString(spriteBatch, currentValue.Substring(Math.Clamp(currentValue.Length - 26, 0, currentValue.Length)), pos, Color.LightPink, 1.2f, maxCharactersDisplayed: 15);
             }
             else
             {
-                Utils.DrawBorderString(spriteBatch, placeholderText, pos, Color.Lerp(Color.LightPink, Color.Gray, 0.7f), 1.2f);
+                //4 display the placeholder
+                Utils.DrawBorderString(spriteBatch, placeholderText, pos, Color.Lerp(Color.LightPink, Color.Gray, 0.7f), 1.2f, maxCharactersDisplayed: 15);
             }
 
+            //Display hover text if the mouse is hovering
             if (IsMouseHovering)
             {
                 Main.instance.MouseText(hoverText);

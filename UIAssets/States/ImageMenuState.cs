@@ -6,15 +6,18 @@ using ClientSideTest.UIAssets.HologramUI;
 
 namespace ClientSideTest.UIAssets.States
 {
+    //Controls all the menus and allows for dragging of menu
     public class ImageMenuState : UIState
     {
         private bool dragging = false;
-        private Vector2 offset;
+        private Vector2 offset; //Offset of the panel after dragging
 
+        //Each of the menus
         public MainMenu mainMenu;
         public ExceptionsMenu exMenu;
         public RequiredItemsMenu reqMenu;
 
+        //Variables to store the current state of the UI and update it upon change
         private string _state;
         public string state { 
             get { return _state;  } 
@@ -25,39 +28,36 @@ namespace ClientSideTest.UIAssets.States
         }
         public override void OnInitialize()
         {
+            //Set dimensions to be used by all menus
             Left.Set(700f, 0);
             Top.Set(500f, 0);
             Width.Set(375f, 0);
             Height.Set(500f, 0);
 
-            Vector2 offset = new Vector2(700, 500);
-
+            //Create all the menus
             mainMenu = new MainMenu();
             mainMenu.Height.Set(500f, 0);
             mainMenu.Width.Set(375f, 0);
-            //menu.Left.Set(700f, 0);
-            //menu.Top.Set(500f, 0);
 
             exMenu = new ExceptionsMenu();
             exMenu.Height.Set(500f, 0);
             exMenu.Width.Set(375f, 0);
-            //exMenu.Left.Set(700f, 0);
-            //exMenu.Top.Set(500f, 0);
 
             reqMenu = new RequiredItemsMenu();
             reqMenu.Height.Set(500f, 0);
             reqMenu.Width.Set(375f, 0);
-            //reqMenu.Left.Set(700f, 0);
-            //reqMenu.Top.Set(500f, 0);
 
+            //Set the starting menu to main
             state = "main";
         }
 
+        //Fires when the value of state is changed
         private void OnStateChange()
         {
             switch(state)
             {
-                case "exceptions":
+                //each removes the previous menu and appends new one
+                case "exceptions": 
                     RemoveAllChildren();
                     exMenu.Activate();
                     Append(exMenu);
@@ -66,18 +66,17 @@ namespace ClientSideTest.UIAssets.States
                     RemoveAllChildren();
                     mainMenu.Activate();
                     Append(mainMenu);
-                    Append(new HologramOutline());
                     break;
                 case "required":
                     RemoveAllChildren();
                     reqMenu.Activate();
+                    Append(new HologramOutline()); //Append the hologram outline to help show where the hologram will be placed
                     Append(reqMenu);
                     break;
             }
         }
         public override void Update(GameTime gameTime)
         {
-            //Check if mouse is on screen
             if (ContainsPoint(Main.MouseScreen))
             {
                 Main.LocalPlayer.mouseInterface = true;
@@ -86,7 +85,7 @@ namespace ClientSideTest.UIAssets.States
             //Update the panel position if the player is dragging it
             if (dragging)
             {
-                Left.Set(Main.mouseX - offset.X, 0f); // Main.MouseScreen.X and Main.mouseX are the same
+                Left.Set(Main.mouseX - offset.X, 0f);
                 Top.Set(Main.mouseY - offset.Y, 0f);
                 Recalculate();
             }
@@ -97,7 +96,7 @@ namespace ClientSideTest.UIAssets.States
         {
             base.LeftMouseDown(evt);
 
-            //Start dragging the panel if the top of it is clicked
+            //Start dragging the panel if the title bar is clicked
             if (evt.MousePosition.Y < GetDimensions().Y + 36)
             {
                 offset = new Vector2(evt.MousePosition.X - GetDimensions().X, evt.MousePosition.Y - GetDimensions().Y);
@@ -109,7 +108,7 @@ namespace ClientSideTest.UIAssets.States
         {
             base.LeftMouseUp(evt);
 
-            //Disable dragging at set the position to where it ended
+            //Disable dragging and set the position to where it ended
             if (dragging)
             {
                 Vector2 endMousePosition = evt.MousePosition;
