@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Terraria;
+using Terraria.ModLoader;
 using Terraria.UI;
 
 namespace ClientSideTest.UIAssets.Elements.Lists
@@ -67,9 +68,15 @@ namespace ClientSideTest.UIAssets.Elements.Lists
 
         async public override void LeftMouseDown(UIMouseEvent evt)
         {
-            //Generate the pixels for the hologram when clicked
-            await Task.Run(() => PixelArtHelper.hologramUIState.createPixels(MainMenu.images[text]));
-            PixelArtHelper.imageMenu.state = "required";
+            if (!PixelArtHelper.hologramUIState.processing) {
+                //Generate the pixels for the hologram when clicked
+                await Task.Run(() => PixelArtHelper.hologramUIState.createPixels(MainMenu.images[text]));
+                PixelArtHelper.imageMenu.state = "required";
+            }
+            else
+            {
+                Main.NewText("Please wait for the current image to finish processing first.", Color.PaleVioletRed);
+            }
 
             base.LeftClick(evt);
         }

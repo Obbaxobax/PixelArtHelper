@@ -17,6 +17,7 @@ namespace ClientSideTest.HologramUI
     public class HologramUIState : UIState
     {
         public static List<Pixel> pixels = new List<Pixel>(); //The list of the pixels for the hologram
+        public bool processing = false;
         private static HologramUIState hologramUIState; //This
 
         //Hologram position
@@ -56,6 +57,8 @@ namespace ClientSideTest.HologramUI
         {
             try
             {
+                processing = true;
+
                 Main.NewText("Processing image. Please wait", Color.CornflowerBlue);
                 GetInstance<PixelArtHelper>().HideUi(); //Hide the previous hologram
 
@@ -181,6 +184,9 @@ namespace ClientSideTest.HologramUI
                 //Upon completion, replace the old pixels with the new ones
                 pixels = pixelCache;
 
+                PixelArtHelper.imageMenu.reqMenu.requiredTiles.Clear();
+                PixelArtHelper.imageMenu.reqMenu.requiredPaints.Clear();
+
                 hologramUIState.Update();
 
                 return;
@@ -188,6 +194,7 @@ namespace ClientSideTest.HologramUI
             catch
             {
                 Main.NewText("There seems to have been a issue. Please report this on the github, with your client.log file attached.", Color.PaleVioletRed);
+                processing = false;
                 return;
             }
         }

@@ -29,8 +29,17 @@ namespace ClientSideTest.UIAssets.HologramUI
                 pos = pos.ToScreenPosition();
 
                 Rectangle rect = new Rectangle((int)pos.X, (int)pos.Y, (int)(PixelArtHelper.hologramUIState.currentDimensions.X * 16 * scale), (int)(PixelArtHelper.hologramUIState.currentDimensions.Y * 16 * scale));
+                Rectangle inner = rect;
+                
+                inner.Inflate(-2, -2);
+                inner.Offset(2, 2);
 
-                spriteBatch.Draw(ModContent.Request<Texture2D>("ClientSideTest/Assets/Blank").Value, rect, Color.Lerp(Color.Black, Color.Transparent, 0.5f));
+                spriteBatch.Draw(ModContent.Request<Texture2D>("ClientSideTest/Assets/Blank").Value, inner, Color.Lerp(Color.Black, Color.Transparent, 0.5f));
+
+                spriteBatch.Draw(ModContent.Request<Texture2D>("ClientSideTest/Assets/Blank").Value, new Rectangle(rect.X, rect.Y, rect.Width, 2), Color.Lerp(Color.White, Color.Transparent, 0.5f));
+                spriteBatch.Draw(ModContent.Request<Texture2D>("ClientSideTest/Assets/Blank").Value, new Rectangle(rect.X, rect.Y + 2, 2, rect.Height - 4), Color.Lerp(Color.White, Color.Transparent, 0.5f));
+                spriteBatch.Draw(ModContent.Request<Texture2D>("ClientSideTest/Assets/Blank").Value, new Rectangle(rect.X + rect.Width - 2, rect.Y + 2, 2, rect.Height - 4), Color.Lerp(Color.White, Color.Transparent, 0.5f));
+                spriteBatch.Draw(ModContent.Request<Texture2D>("ClientSideTest/Assets/Blank").Value, new Rectangle(rect.X, rect.Y + rect.Height - 2, rect.Width, 2), Color.Lerp(Color.White, Color.Transparent, 0.5f));
             }
 
             base.Draw(spriteBatch);
