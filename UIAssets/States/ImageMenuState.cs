@@ -3,6 +3,7 @@ using Terraria.UI;
 using Microsoft.Xna.Framework;
 using Terraria;
 using ClientSideTest.UIAssets.HologramUI;
+using Terraria.ModLoader;
 
 namespace ClientSideTest.UIAssets.States
 {

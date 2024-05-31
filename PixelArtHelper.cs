@@ -18,6 +18,7 @@ namespace ClientSideTest
         private UserInterface _hologramUIState;
         public static ImageMenuState imageMenu;
         private UserInterface _imageMenu;
+
         public static Mod m;
 
         private bool active; //Bool for if the hologram is active
@@ -98,25 +99,6 @@ namespace ClientSideTest
             if (active)
             {
                 _hologramUIState?.Update(gameTime);
-            }
-
-            //Update the position and check for placement of hologram
-            if (hologramUIState.imageReady == true && Main.mouseLeft)
-            {
-                Vector2 pos = Main.MouseWorld;
-
-                //Round coordinates to nearest multiple of 16 (because tiles are 16x16)
-                float dif = pos.X % 16;
-                pos.X = pos.X - dif;
-
-                dif = pos.Y % 16;
-                pos.Y = pos.Y - dif;
-
-                openPos = pos;
-
-                //Show the hologram and change the menu to the required blocks page
-                ShowUi();
-                hologramUIState.imageReady = false;
             }
         }
 
