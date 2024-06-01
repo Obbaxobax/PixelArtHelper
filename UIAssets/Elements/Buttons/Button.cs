@@ -13,6 +13,12 @@ namespace ClientSideTest.UIAssets
         public string texture = "ClientSideTest/Assets/addButton"; //Texture to display within the button
         public Color boxColor = Color.BlueViolet; //Color of the button
 
+        private int hoverTextColor;
+
+        public override void OnInitialize()
+        {
+            base.OnInitialize();
+        }
 
         public override void Draw(SpriteBatch spriteBatch)
         {
@@ -31,7 +37,8 @@ namespace ClientSideTest.UIAssets
             //Display hover text
             if (IsMouseHovering)
             {
-                Main.instance.MouseText(hoverText);
+                hoverTextColor = PixelArtHelper.hoverTextColor;
+                Main.instance.MouseText(hoverText, rare:hoverTextColor);
             }
 
             base.Draw(spriteBatch);

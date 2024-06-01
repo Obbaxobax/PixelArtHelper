@@ -10,6 +10,7 @@ using Color = Microsoft.Xna.Framework.Color;
 using System.Linq;
 using ClientSideTest.UIAssets.Elements.Lists;
 using ClientSideTest.UIAssets.Elements.Buttons;
+using Terraria.Utilities.FileBrowser;
 
 namespace ClientSideTest.UIAssets
 {
@@ -97,7 +98,7 @@ namespace ClientSideTest.UIAssets
             butt.Height.Set(50f, 0);
             butt.Left.Set(10f, 0);
             butt.Top.Set(207f, 0);
-            butt.hoverText = "Add image from current link or path.\nPastes the current clipboard if field is empty.";
+            butt.hoverText = "Add image from current link or path.\nPastes the current clipboard if field is empty.\nRight click to open to select a local file.";
 
             butt.OnLeftMouseDown += (evt, args) =>
             {
@@ -111,7 +112,9 @@ namespace ClientSideTest.UIAssets
                 locationField.currentValue = "";
             };
 
-            //FIX OVERFLOW ----------------------------------------------------------------------------
+            butt.OnRightMouseDown += (evt, args) =>
+            { openImageFile(); };
+
             locationField = new TextField();
             locationField.Width.Set(300f, 0);
             locationField.Height.Set(50f, 0);
@@ -137,6 +140,21 @@ namespace ClientSideTest.UIAssets
             Append(locationField);
             Append(il);
             base.OnInitialize();
+        }
+
+        private void openImageFile()
+        {
+            NativeFileDialog fileDialog = new NativeFileDialog();
+
+            ExtensionFilter[] filter = [new ExtensionFilter("Image Files", ["png", "jpg", "jpeg"])];
+
+            string image = fileDialog.OpenFilePanel("Select file for image", filter);
+
+            if (image == null) return;
+
+            locationField.currentValue = Path.GetFullPath(image);
+
+            return;
         }
 
         async private void addImage()
