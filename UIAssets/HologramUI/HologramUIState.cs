@@ -61,6 +61,8 @@ namespace ClientSideTest.HologramUI
 
                 Main.NewText("Processing image. Please wait", Color.CornflowerBlue);
                 GetInstance<PixelArtHelper>().HideUi(); //Hide the previous hologram
+                PixelArtHelper.imageMenu.reqMenu.requiredTiles.requiredListElements.Clear();
+                PixelArtHelper.imageMenu.reqMenu.requiredPaints.requiredListElements.Clear();
 
                 //Store the pixels in a temp cache to avoid deleting existing pixels in the case this process fails
                 List<Pixel> pixelCache = new List<Pixel>();
@@ -127,6 +129,7 @@ namespace ClientSideTest.HologramUI
                             if (temp2 == "TILE" && !ExceptionsMenu.exTiles.exceptionsDict[temp[1]]) continue;
                             if (temp2 == "WALL" && !ExceptionsMenu.exWalls.exceptionsDict[temp[1]]) continue;
 
+
                             deltaE = calculateDeltaE(tc.LAB, labColorsValues);
                             if (deltaE < lowestDeltaE)
                             {
@@ -183,9 +186,6 @@ namespace ClientSideTest.HologramUI
 
                 //Upon completion, replace the old pixels with the new ones
                 pixels = pixelCache;
-
-                PixelArtHelper.imageMenu.reqMenu.requiredTiles.Clear();
-                PixelArtHelper.imageMenu.reqMenu.requiredPaints.Clear();
 
                 hologramUIState.Update();
 

@@ -40,13 +40,13 @@ namespace ClientSideTest.HologramUI
                     paintName = paint.Name.Replace("/([A-Z])/g", " $1").Trim();
 
                     //Add paint to required paints list
-                    if (PixelArtHelper.imageMenu.reqMenu.requiredPaints.ContainsKey(paintName))
+                    if (PixelArtHelper.imageMenu.reqMenu.requiredPaints.requiredListElements.ContainsKey(paintName))
                     {
-                        PixelArtHelper.imageMenu.reqMenu.requiredPaints[paintName] += 1;
+                        PixelArtHelper.imageMenu.reqMenu.requiredPaints.requiredListElements[paintName] += 1;
                     }
                     else
                     {
-                        PixelArtHelper.imageMenu.reqMenu.requiredPaints[paintName] = 1;
+                        PixelArtHelper.imageMenu.reqMenu.requiredPaints.requiredListElements[paintName] = 1;
                     }
 
                     break;
@@ -54,13 +54,13 @@ namespace ClientSideTest.HologramUI
             }
 
             //Add the tile of this pixel to required tiles list
-            if (PixelArtHelper.imageMenu.reqMenu.requiredTiles.ContainsKey(name))
+            if (PixelArtHelper.imageMenu.reqMenu.requiredTiles.requiredListElements.ContainsKey(name))
             {
-                PixelArtHelper.imageMenu.reqMenu.requiredTiles[name] += 1;
+                PixelArtHelper.imageMenu.reqMenu.requiredTiles.requiredListElements[name] += 1;
             }
             else
             {
-                PixelArtHelper.imageMenu.reqMenu.requiredTiles[name] = 1;
+                PixelArtHelper.imageMenu.reqMenu.requiredTiles.requiredListElements[name] = 1;
             }
 
             hoverTextColor = PixelArtHelper.hoverTextColor;

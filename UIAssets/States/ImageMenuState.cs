@@ -39,14 +39,17 @@ namespace ClientSideTest.UIAssets.States
             mainMenu = new MainMenu();
             mainMenu.Height.Set(500f, 0);
             mainMenu.Width.Set(375f, 0);
+            mainMenu.Activate();
 
             exMenu = new ExceptionsMenu();
             exMenu.Height.Set(500f, 0);
             exMenu.Width.Set(375f, 0);
+            exMenu.Activate();
 
             reqMenu = new RequiredItemsMenu();
             reqMenu.Height.Set(500f, 0);
             reqMenu.Width.Set(375f, 0);
+            reqMenu.Activate();
 
             //Set the starting menu to main
             state = "main";
@@ -60,17 +63,15 @@ namespace ClientSideTest.UIAssets.States
                 //each removes the previous menu and appends new one
                 case "exceptions": 
                     RemoveAllChildren();
-                    exMenu.Activate();
                     Append(exMenu);
                     break;
                 case "main":
                     RemoveAllChildren();
-                    mainMenu.Activate();
                     Append(mainMenu);
                     break;
                 case "required":
                     RemoveAllChildren();
-                    reqMenu.Activate();
+                    reqMenu.UpdateChildren();
                     Append(new HologramOutline()); //Append the hologram outline to help show where the hologram will be placed
                     Append(reqMenu);
                     break;
