@@ -1,6 +1,7 @@
-﻿using ClientSideTest.DataClasses;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Terraria;
 using Terraria.UI;
+using Tile = ClientSideTest.DataClasses.Tile;
 
 namespace ClientSideTest.UIAssets.Elements.Buttons
 {

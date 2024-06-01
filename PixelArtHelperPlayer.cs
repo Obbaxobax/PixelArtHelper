@@ -33,7 +33,6 @@ namespace ClientSideTest
 
                 //Show the hologram and change the menu to the required blocks page
                 ModContent.GetInstance<PixelArtHelper>().ShowUi();
-                Main.NewText("Bex");
 
                 PixelArtHelper.hologramUIState.imageReady = false;
                 PixelArtHelper.hologramUIState.processing = false;
