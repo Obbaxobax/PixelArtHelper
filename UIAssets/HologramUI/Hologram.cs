@@ -11,19 +11,19 @@ namespace ClientSideTest.HologramUI
     {
         public static bool hologramMode; //Used to determine the mode (normal versus highlight)
 
-        public Vector2 positionId { get; set; }
-        public Color color { get; set; }
-        public string paintId { set; get; }
-        public string name { get; set; }
-        public bool wall { get; set; }
-        private string paintName { get; set; }
-        public int id { set; get; }
+        private Vector2 positionId;
+        private Color color;
+        private string name;
+        private bool wall;
+        private string paintName;
+        private int id;
 
-        public Hologram(Vector2 positionId, Color color, string paintId, string name, int id, bool wall)
+        private int hoverTextColor;
+
+        public Hologram(Vector2 positionId, Color color, string paintID, string name, int id, bool wall)
         {
             this.positionId = positionId;
             this.color = color;
-            this.paintId = paintId;
             this.name = name;
             this.id = id;
             this.wall = wall;
@@ -34,7 +34,7 @@ namespace ClientSideTest.HologramUI
             //iterate through list, comparing to our tile
             foreach (var paint in fields)
             {
-                if (paintId == paint.GetValue(null).ToString() && paintId != "0")
+                if (paintID == paint.GetValue(null).ToString() && paintID != "0")
                 {
                     //Return the name of the variable which has a matching id
                     paintName = paint.Name.Replace("/([A-Z])/g", " $1").Trim();
@@ -62,6 +62,8 @@ namespace ClientSideTest.HologramUI
             {
                 PixelArtHelper.imageMenu.reqMenu.requiredTiles[name] = 1;
             }
+
+            hoverTextColor = PixelArtHelper.hoverTextColor;
         }
 
         public override void Draw(SpriteBatch spriteBatch)
@@ -99,7 +101,7 @@ namespace ClientSideTest.HologramUI
             //check is mouse is over a pixel and give it hovername
             if (Main.MouseScreen.X >= basePos.X && Main.MouseScreen.Y >= basePos.Y && Main.MouseScreen.X < basePos.X + 15.85 && Main.MouseScreen.Y < basePos.Y + 15.85)
             {
-                Main.hoverItemName = $"{name}\n{paintName}";
+                Main.instance.MouseText($"{name}\n{paintName}", rare:hoverTextColor);
             }
         }
     }

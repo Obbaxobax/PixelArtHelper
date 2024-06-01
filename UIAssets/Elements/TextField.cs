@@ -20,10 +20,13 @@ namespace ClientSideTest.UIAssets
 
         private int position = 0; //position in the string
         private uint prevTime = 0; //Previous time the string was moved through (Used to slow down right and left arrow keys). Probably a better way.
+        private int hoverTextColor;
+
 
         public override void OnInitialize()
         {
             OverflowHidden = true;
+
             base.OnInitialize();
         }
         public override void LeftClick(UIMouseEvent evt)
@@ -62,12 +65,12 @@ namespace ClientSideTest.UIAssets
             if (typing == true)
             {
                 //1 check if the arrow key is pressed to move cursor position in string
-                if (Main.keyState.IsKeyDown(Keys.Left) && Main.GameUpdateCount - prevTime > 10)
+                if (Main.keyState.IsKeyDown(Keys.Left) && Main.GameUpdateCount - prevTime > 5)
                 {
                     position = position > 0 ? position - 1 : position;
                     prevTime = Main.GameUpdateCount;
                 }
-                else if (Main.keyState.IsKeyDown(Keys.Right) && Main.GameUpdateCount - prevTime > 10)
+                else if (Main.keyState.IsKeyDown(Keys.Right) && Main.GameUpdateCount - prevTime > 5)
                 {
                     position = position < currentValue.Length ? position + 1 : position;
                     prevTime = Main.GameUpdateCount;
@@ -144,7 +147,8 @@ namespace ClientSideTest.UIAssets
             //Display hover text if the mouse is hovering
             if (IsMouseHovering)
             {
-                Main.instance.MouseText(hoverText);
+                hoverTextColor = PixelArtHelper.hoverTextColor;
+                Main.instance.MouseText(hoverText, rare:hoverTextColor);
             }
 
             base.Draw(spriteBatch);

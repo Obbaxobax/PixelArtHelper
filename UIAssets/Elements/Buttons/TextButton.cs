@@ -13,6 +13,8 @@ namespace ClientSideTest.UIAssets.Elements.Buttons
         public string displayText = ""; //Text to display on the button
         public Color boxColor = Color.Lerp(Color.BlueViolet, Color.White, 0.1f); //Color of button background
 
+        private int hoverTextColor;
+
         public override void OnInitialize()
         {
             OverflowHidden = true;
@@ -38,7 +40,8 @@ namespace ClientSideTest.UIAssets.Elements.Buttons
             //Display hover text
             if (IsMouseHovering)
             {
-                Main.instance.MouseText(hoverText);
+                hoverTextColor = PixelArtHelper.hoverTextColor;
+                Main.instance.MouseText(hoverText, rare:hoverTextColor);
             }
 
             base.Draw(spriteBatch);

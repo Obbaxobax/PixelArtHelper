@@ -1,4 +1,29 @@
-Keybinds: {
-	toggleImageMenu.DisplayName: Toggle PixelArtHelper Menu
-	ToggleImageMenu.DisplayName: Toggle Image Menu
+Keybinds.TogglePixelArtHelperMenu.DisplayName: Toggle PixelArtHelper Menu
+
+Configs: {
+	ClientConfig: {
+		DisplayName: Client Config
+
+		HoverTextColor: {
+			Label: Hover Text Color
+			Tooltip: The color of text displayed when hovering over elements in the menu.
+		}
+	}
+
+	textColor: {
+		Tooltip: ""
+		White.Label: White
+		Blue.Label: Blue
+		Green.Label: Green
+		Orange.Label: Orange
+		LightRed.Label: Light Red
+		Pink.Label: Pink
+		LightPurple.Label: Light Purple
+		Lime.Label: Lime
+		Yellow.Label: Yellow
+		Cyan.Label: Cyan
+		Red.Label: Red
+		Purple.Label: Purple
+		Amber.Label: Amber
+	}
 }

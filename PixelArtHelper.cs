@@ -26,13 +26,15 @@ namespace ClientSideTest
 
         public ModKeybind toggleImageMenu; //Keybind
 
+        public static int hoverTextColor = -12; //For accessibility
+
         public override void Load()
         {
             //Assign variable for mod
             m = Mod;
 
             //Create keybind
-            toggleImageMenu = KeybindLoader.RegisterKeybind(m, "ToggleImageMenu", Microsoft.Xna.Framework.Input.Keys.P);
+            toggleImageMenu = KeybindLoader.RegisterKeybind(m, "TogglePixelArtHelperMenu", Microsoft.Xna.Framework.Input.Keys.P);
 
             //Create the save data directory if it doesn't exist
             if (!Main.dedServ)
@@ -134,6 +136,15 @@ namespace ClientSideTest
             //Reinitialize the menu to avoid ghost images/missing images
             imageMenu.mainMenu.Reinitialize();
             hologramUIState.RemoveAllChildren();
+
+            if (Main.LocalPlayer.name.ToLower() == "calamitas")
+            {
+                hoverTextColor = -12;
+            }
+            else
+            {
+                hoverTextColor = (int)ModContent.GetInstance<ClientConfig>().HoverTextColor;
+            }
 
             base.OnWorldLoad();
         }
