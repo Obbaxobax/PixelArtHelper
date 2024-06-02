@@ -22,16 +22,15 @@ namespace ClientSideTest.UIAssets.Elements.Lists
             for (int i = 0; i < names.Count; i++)
             {
                 //A list element, passing it its name
-                ImageListElement le = new ImageListElement(i, names[i], this);
+                ImageListElement le = new ImageListElement(i, names[i], this, 45);
                 le.Height.Set(30f, 0);
-                le.Width.Set(315f, 0);
                 le.Top.Set(i * 35f + scrollPos, 0);
 
                 //Generate a button used to delete the image
                 DeleteButton butt = new DeleteButton(this, i, le);
                 butt.Width.Set(30f, 0);
                 butt.Height.Set(30f, 0);
-                butt.Left.Set(315f, 0);
+                butt.Left.Set(le.Width.Pixels, 0);
                 butt.Top.Set(i * 35f + scrollPos, 0);
                 butt.hoverText = "Delete";
                 butt.texture = "ClientSideTest/Assets/deleteButton";
@@ -61,7 +60,7 @@ namespace ClientSideTest.UIAssets.Elements.Lists
     {
         private string text; //Name of the image
 
-        public ImageListElement(int i, string text, List parent) : base(i, text, parent)
+        public ImageListElement(int i, string text, List parent, int buttonOffset) : base(i, text, parent, buttonOffset)
         {
             this.text = text;
         }

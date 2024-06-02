@@ -172,7 +172,6 @@ namespace ClientSideTest.HologramUI
                             {
                                 if (t.ID == info[1])
                                 {
-                                    pix.id += 1;
                                     pix.name = t.Name;
                                     break;
                                 }

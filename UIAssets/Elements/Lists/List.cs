@@ -10,15 +10,30 @@ namespace ClientSideTest.UIAssets
 {
     public class List : UIElement
     {
+        //Scrolling
         public int scrollPos = 0; //The scroll position
         public int scrollSpeed = 10; //The scroll speed
+
+        //List elements
         public float elementHeight = 30; //The height of each element in the list (used for calculating scroll bounds)
         public float elementPerRow = 1; //The number of UI elements used for one row
+
+        private int numberOfRows;
+
+        //Main box
         public Color color = Color.Lerp(Color.BlueViolet, Color.Black, 0.5f); //The color of the background box
+        public float min = 0;
 
         public override void OnInitialize()
         {   
             OverflowHidden = true;
+
+            //Calculate how many rows there are for the sake of clamping
+            numberOfRows = (int)Math.Floor(Children.Count() / elementPerRow);
+
+            min = numberOfRows * (elementHeight + 5) - Height.Pixels > 0 ? numberOfRows * -(elementHeight + 5) + Height.Pixels : 0;
+            Append(new ScrollBar(this));
+
             base.OnInitialize();
         }
 
@@ -28,11 +43,8 @@ namespace ClientSideTest.UIAssets
             //Downwards scroll is negative multiple of 12. Below makes it a more managable number
             scrollPos += (int)Math.Floor((double)(evt.ScrollWheelValue / 120)) * scrollSpeed;
 
-            //Calculate how many rows there are for the sake of clamping
-            int numberOfRows = (int)Math.Floor(Children.Count() / elementPerRow);
-
             //Calculate the minimum y-value that can be scrolled to (number of elements * the height they take up)
-            float min = numberOfRows * (elementHeight + 5) - Height.Pixels > 0 ? numberOfRows * -(elementHeight + 5) + Height.Pixels : 0;
+            min = numberOfRows * (elementHeight + 5) - Height.Pixels > 0 ? numberOfRows * -(elementHeight + 5) + Height.Pixels : 0;
             scrollPos = (int)Math.Clamp(scrollPos, min, 0); //Clamp the scroll to be within bounds
 
             base.ScrollWheel(evt);
@@ -64,13 +76,14 @@ namespace ClientSideTest.UIAssets
 
         public float stringOffset = 6f; //The offset of the string displayed
 
-        public ListElement(int i, string text, List parent)
+        public ListElement(int i, string text, List parent, int buttonOffset = 65)
         {
             this.i = i;
             this.text = text;
             this.parent = parent;
 
             elementHeight = parent.elementHeight;
+            Width.Set(parent.Width.Pixels - buttonOffset, 0f);
         }
 
         public override void Draw(SpriteBatch spriteBatch)
@@ -89,6 +102,69 @@ namespace ClientSideTest.UIAssets
             Utils.DrawBorderString(spriteBatch, text, pos, Color.LightPink, 1f);
 
             base.Draw(spriteBatch);
+        }
+    }
+
+    public class ScrollBar : UIElement
+    {
+        private List list;
+
+        private int initialPos = -1;
+        private bool mouseDown = false;
+
+        public ScrollBar(List list) 
+        {
+            this.list = list;
+
+            Width.Set(10f, 0);
+
+            var height = list.Height.Pixels / list.min;
+            height = Math.Clamp(height, 30, list.Height.Pixels);
+
+            Height.Set(height, 0);
+            Left.Set(list.Width.Pixels - 12, 0);
+        }
+
+        public override void Draw(SpriteBatch spriteBatch)
+        {
+            Recalculate();
+
+            Rectangle scrollBar = GetDimensions().ToRectangle();
+
+            spriteBatch.Draw(ModContent.Request<Texture2D>("ClientSideTest/Assets/Blank").Value, scrollBar, list.color);
+
+            base.Draw(spriteBatch);
+        }
+
+        public override void Update(GameTime gameTime)
+        {
+            if (mouseDown)
+            {
+                list.scrollPos -= (int)((initialPos - Main.MouseScreen.Y) / list.Height.Pixels * list.min);
+                list.scrollPos = (int)Math.Clamp(list.scrollPos, list.min, 0);
+                initialPos = (int)Main.MouseScreen.Y;
+            }
+
+            float pos = list.min != 0 ? list.scrollPos / list.min : 0;
+
+            Top.Set((list.Height.Pixels - 30) * pos, 0);
+
+            base.Update(gameTime);
+        }
+
+        public override void LeftMouseDown(UIMouseEvent evt)
+        {
+            initialPos = Main.mouseY;
+            mouseDown = true;
+
+            base.LeftMouseDown(evt);
+        }
+
+        public override void LeftMouseUp(UIMouseEvent evt)
+        {
+            mouseDown = false;
+
+            base.LeftMouseDown(evt);
         }
     }
 }

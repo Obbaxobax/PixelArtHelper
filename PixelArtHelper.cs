@@ -12,6 +12,8 @@ using System.Text;
 
 namespace ClientSideTest
 {
+    public delegate void PosChange();
+
     public class PixelArtHelper : ModSystem
     {
         public static HologramUIState hologramUIState;
@@ -22,7 +24,19 @@ namespace ClientSideTest
         public static Mod m;
 
         private bool active; //Bool for if the hologram is active
-        public Vector2 openPos; //position which the hologram is opened at
+
+        //position which the hologram is opened at
+        public event PosChange posChanged;
+
+        private Vector2 _openPos;
+        public Vector2 openPos { 
+            get { return _openPos; }
+            set {
+                _openPos = value;
+                posChanged?.Invoke();
+            } 
+        }
+        
 
         public ModKeybind toggleImageMenu; //Keybind
 

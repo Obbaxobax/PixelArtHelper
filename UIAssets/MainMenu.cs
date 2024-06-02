@@ -206,6 +206,11 @@ namespace ClientSideTest.UIAssets
                     }
                     return;
                 }
+                catch
+                {
+                    Main.NewText("Something unexpected occured, possibly related to the image type. Please open an issue on the github with your client.log file included.");
+                    return;
+                }
             }
             else
             {
