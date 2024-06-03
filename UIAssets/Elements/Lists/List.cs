@@ -5,6 +5,7 @@ using Terraria.ModLoader;
 using Terraria.UI;
 using Terraria;
 using Microsoft.Xna.Framework;
+using Terraria.GameInput;
 
 namespace ClientSideTest.UIAssets
 {

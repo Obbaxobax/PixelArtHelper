@@ -10,8 +10,8 @@ namespace ClientSideTest.UIAssets
     public class RequiredItemsMenu : UIMenu
     {
         //Dictionaries to store the number of required tiles and paints
-        public requiredItemsElement requiredTiles = new requiredItemsElement(new Dictionary<string, int>());
-        public requiredItemsElement requiredPaints = new requiredItemsElement(new Dictionary<string, int>());
+        public requiredItemsElement requiredTiles = new requiredItemsElement(new Dictionary<string, int[]>());
+        public requiredItemsElement requiredPaints = new requiredItemsElement(new Dictionary<string, int[]>());
         public RequiredList tilesList;
         public RequiredList paintList;
 
@@ -46,8 +46,25 @@ namespace ClientSideTest.UIAssets
 
             Append(holoButt);
 
+            ToggleButton invChckButt = new ToggleButton();
+            invChckButt.Height.Set(36f, 0);
+            invChckButt.Width.Set(36f, 0);
+            invChckButt.Left.Set(267f, 0);
+            invChckButt.boxColor = Color.Purple;
+            invChckButt.texture = "ClientSideTest/Assets/activeButton";
+            invChckButt.hoverText = "Toggle between displaying total of required blocks\n or displaying the net required blocks.";
+
+            invChckButt.OnLeftMouseDown += (evt, args) =>
+            {
+                tilesList.mode = !tilesList.mode;
+                //invChckButt.state = !invChckButt.state;
+            };
+
+            Append(invChckButt);
+
             //List of required tiles
             tilesList = new RequiredList();
+            tilesList.paints = false;
             tilesList.Top.Set(46f, 0);
             tilesList.Left.Set(15f, 0);
             tilesList.Width.Set(345f, 0);
@@ -58,6 +75,7 @@ namespace ClientSideTest.UIAssets
 
             //List of required paints
             paintList = new RequiredList();
+            paintList.paints = true;
             paintList.Top.Set(316f, 0);
             paintList.Left.Set(15f, 0);
             paintList.Width.Set(345f, 0);
@@ -77,9 +95,9 @@ namespace ClientSideTest.UIAssets
 
     public class requiredItemsElement
     {
-        public Dictionary<string, int> requiredListElements = new Dictionary<string, int>();
+        public Dictionary<string, int[]> requiredListElements = new Dictionary<string, int[]>();
 
-        public requiredItemsElement(Dictionary<string, int> dict)
+        public requiredItemsElement(Dictionary<string, int[]> dict)
         {
             requiredListElements = dict;
         }
