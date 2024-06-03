@@ -20,9 +20,11 @@ namespace ClientSideTest.HologramUI
 
         private int hoverTextColor;
 
-        Vector2 basePos;
-        Point pixelWorldPos;
-        float scale;
+        private Vector2 basePos;
+        private Point pixelWorldPos;
+        private float scale;
+
+        private bool correct = false;
 
         public Hologram(Vector2 positionId, Color color, string paintID, string name, int id, bool wall)
         {
@@ -49,11 +51,11 @@ namespace ClientSideTest.HologramUI
                     //Add paint to required paints list
                     if (PixelArtHelper.imageMenu.reqMenu.requiredPaints.requiredListElements.ContainsKey(paintName))
                     {
-                        PixelArtHelper.imageMenu.reqMenu.requiredPaints.requiredListElements[paintName] += 1;
+                        PixelArtHelper.imageMenu.reqMenu.requiredPaints.requiredListElements[paintName][0] += 1;
                     }
                     else
                     {
-                        PixelArtHelper.imageMenu.reqMenu.requiredPaints.requiredListElements[paintName] = 1;
+                        PixelArtHelper.imageMenu.reqMenu.requiredPaints.requiredListElements[paintName] = [1, -1];
                     }
 
                     break;
@@ -63,11 +65,11 @@ namespace ClientSideTest.HologramUI
             //Add the tile of this pixel to required tiles list
             if (PixelArtHelper.imageMenu.reqMenu.requiredTiles.requiredListElements.ContainsKey(name))
             {
-                PixelArtHelper.imageMenu.reqMenu.requiredTiles.requiredListElements[name] += 1;
+                PixelArtHelper.imageMenu.reqMenu.requiredTiles.requiredListElements[name][0] += 1;
             }
             else
             {
-                PixelArtHelper.imageMenu.reqMenu.requiredTiles.requiredListElements[name] = 1;
+                PixelArtHelper.imageMenu.reqMenu.requiredTiles.requiredListElements[name] = [1, id];
             }
 
             hoverTextColor = PixelArtHelper.hoverTextColor;
@@ -79,13 +81,21 @@ namespace ClientSideTest.HologramUI
         public override void Draw(SpriteBatch spriteBatch)
         {
             //Check if the tile in the pixel position is correct. If so, don't render the pixel to make it much easier to see
-            if (wall == false && Main.tile[pixelWorldPos].TileType == id)
+            if (wall == false && Main.tile[pixelWorldPos].TileType == id && Main.tile[pixelWorldPos].HasTile)
             {
+                PixelArtHelper.imageMenu.reqMenu.requiredTiles.requiredListElements[name][0] -= 1;
+                correct = true;
                 return;
             }
             else if (wall == true && Main.tile[pixelWorldPos].WallType + 1 == id && !Main.tile[pixelWorldPos].HasTile)
             {
+                PixelArtHelper.imageMenu.reqMenu.requiredTiles.requiredListElements[name][0] -= 1;
+                correct = true;
                 return;
+            }else if(correct == true)
+            {
+                PixelArtHelper.imageMenu.reqMenu.requiredTiles.requiredListElements[name][0] += 1;
+                correct = false;
             }
 
             //Return if highlight mode is enabled and we are not holding a valid block
