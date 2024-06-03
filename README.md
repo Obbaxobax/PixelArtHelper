@@ -1,4 +1,4 @@
-# PixelArtHelper
+# [PixelArtHelper](https://steamcommunity.com/sharedfiles/filedetails/?id=3156807483)
 A simple Terraria Mod with tools to allow for an easier process when making in-game pixel art.
 ## Reporting bugs
 If you want to report a bug, open an issue and include your client.log file (Or copy the error text from it). 
