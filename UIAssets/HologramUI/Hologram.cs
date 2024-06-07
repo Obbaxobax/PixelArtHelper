@@ -113,9 +113,9 @@ namespace ClientSideTest.HologramUI
 
             //This is necessary to ensure the hologram lines up at all sizes
             scale = Main.Camera.UnscaledSize.X / Main.Camera.ScaledSize.X;
-            scale = scale / Main.UIScale / 1.2f;
-            Width.Set(16 * scale, 0);
-            Height.Set(16 * scale, 0);
+            scale = scale / Main.UIScale;
+            Width.Set(15 * scale, 0);
+            Height.Set(15 * scale, 0);
 
             //Calculate the position of the pixel
             var pos = basePos.ToScreenPosition();

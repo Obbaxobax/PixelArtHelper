@@ -31,8 +31,6 @@ namespace ClientSideTest.UIAssets.Elements.Buttons
 
         public void deleteItem()
         {
-            Main.NewText(key);
-
             //Attempts to delete the image associated with this button
             try
             {
