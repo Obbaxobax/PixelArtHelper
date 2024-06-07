@@ -27,7 +27,7 @@ namespace ClientSideTest.UIAssets.Elements.Lists
                 le.Top.Set(i * 35f + scrollPos, 0);
 
                 //Generate a button used to delete the image
-                DeleteButton butt = new DeleteButton(this, i, le);
+                DeleteButton butt = new DeleteButton(this, i, le, names[i]);
                 butt.Width.Set(30f, 0);
                 butt.Height.Set(30f, 0);
                 butt.Left.Set(le.Width.Pixels, 0);

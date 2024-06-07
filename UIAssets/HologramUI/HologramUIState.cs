@@ -153,21 +153,26 @@ namespace ClientSideTest.HologramUI
                         {
                             pix.wall = true;
 
-                            //Go through the list of proper names and find the one for the chosen tile
+                            pix.name = wall[pix.id - 1].Name;
+
+                            /*//Go through the list of proper names and find the one for the chosen tile
                             foreach (Tile t in wall.ToList())
                             {
                                 if (t.ID == info[1])
                                 {
                                     pix.name = t.Name;
+                                    
                                     break;
                                 }
-                            }
+                            }*/
                         }
                         else
                         {
                             pix.wall = false;
 
-                            //Go through the list of proper names and find the one for the chosen tile
+                            pix.name = tile[pix.id].Name;
+
+                            /*//Go through the list of proper names and find the one for the chosen tile
                             foreach (Tile t in tile.ToList())
                             {
                                 if (t.ID == info[1])
@@ -175,7 +180,7 @@ namespace ClientSideTest.HologramUI
                                     pix.name = t.Name;
                                     break;
                                 }
-                            }
+                            }*/
                         }
 
                         //Add the pixel to the pixel cache list

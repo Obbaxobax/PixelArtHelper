@@ -12,13 +12,13 @@ namespace ClientSideTest.UIAssets.Elements.Buttons
     public class DeleteButton : ListElementButton
     {
         private int i; //Index of button in the list
-        private ListElement le; //The associated element
         private ImageList parent;
+        private string key;
 
-        public DeleteButton(ImageList parent, int i, ListElement le) : base(parent, i, le)
+        public DeleteButton(ImageList parent, int i, ListElement le, string key) : base(parent, i, le)
         {
             this.i = i;
-            this.le = le;
+            this.key = key;
             this.parent = parent;
         }
 
@@ -31,13 +31,15 @@ namespace ClientSideTest.UIAssets.Elements.Buttons
 
         public void deleteItem()
         {
+            Main.NewText(key);
+
             //Attempts to delete the image associated with this button
             try
             {
                 //Finds the file and deletes it
                 foreach (string file in Directory.EnumerateFiles(MainMenu.savePath, "*.png"))
                 {
-                    if (Path.GetFileNameWithoutExtension(file) == MainMenu.images.Keys.ToArray()[i])
+                    if (Path.GetFileNameWithoutExtension(file) == key)
                     {
                         File.Delete(file);
                         break;
@@ -45,10 +47,10 @@ namespace ClientSideTest.UIAssets.Elements.Buttons
                 }
 
                 //Remove name from image list
-                parent.names.Remove(MainMenu.images.Keys.ToArray()[i]);
+                parent.names.Remove(key);
 
                 //Removes the bitmap from the cache
-                MainMenu.images.Remove(MainMenu.images.Keys.ToArray()[i]);
+                MainMenu.images.Remove(key);
             }
             catch
             {
