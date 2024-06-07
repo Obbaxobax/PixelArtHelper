@@ -83,13 +83,21 @@ namespace ClientSideTest.HologramUI
             //Check if the tile in the pixel position is correct. If so, don't render the pixel to make it much easier to see
             if (!wall && Main.tile[pixelWorldPos].TileType == id && Main.tile[pixelWorldPos].HasTile)
             {
-                PixelArtHelper.imageMenu.reqMenu.requiredTiles.requiredListElements[name][0] -= 1;
+                if (!correct)
+                {
+                    PixelArtHelper.imageMenu.reqMenu.requiredTiles.requiredListElements[name][0] -= 1;
+                }
+
                 correct = true;
                 return;
             }
             else if (wall && Main.tile[pixelWorldPos].WallType == id && !Main.tile[pixelWorldPos].HasTile)
             {
-                PixelArtHelper.imageMenu.reqMenu.requiredTiles.requiredListElements[name][0] -= 1;
+                if (!correct)
+                {
+                    PixelArtHelper.imageMenu.reqMenu.requiredTiles.requiredListElements[name][0] -= 1;
+                }
+
                 correct = true;
                 return;
             }
