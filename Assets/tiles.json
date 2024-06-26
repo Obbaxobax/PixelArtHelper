@@ -27,7 +27,7 @@
         ]
     },
     {
-        "Tile": "WALL: 94 : Blue Slab Wall",
+        "Tile": "WALL: 100 : Blue Slab Wall",
         "Color": "9",
         "LAB": [
             1.4370437303423813,
@@ -36,7 +36,7 @@
         ]
     },
     {
-        "Tile": "WALL: 9 : Pink Brick Wall",
+        "Tile": "WALL: 19 : Pink Brick Wall",
         "Color": "9",
         "LAB": [
             1.2143048158106318,
@@ -45,7 +45,7 @@
         ]
     },
     {
-        "Tile": "WALL: 7 : Blue Brick Wall",
+        "Tile": "WALL: 17 : Blue Brick Wall",
         "Color": "9",
         "LAB": [
             1.2679439942202144,
@@ -63,7 +63,7 @@
         ]
     },
     {
-        "Tile": "WALL: 55 : Brown Mossy Wall",
+        "Tile": "WALL: 257 : Brown Mossy Wall",
         "Color": "9",
         "LAB": [
             1.6819552812967267,
@@ -81,7 +81,7 @@
         ]
     },
     {
-        "Tile": "WALL: 87 : Lihzahrd Brick Wall",
+        "Tile": "WALL: 112 : Lihzahrd Brick Wall",
         "Color": "9",
         "LAB": [
             1.746717227346803,
@@ -99,7 +99,7 @@
         ]
     },
     {
-        "Tile": "WALL: 54 : Green Mossy Wall",
+        "Tile": "WALL: 256 : Green Mossy Wall",
         "Color": "9",
         "LAB": [
             2.165663995784705,
@@ -117,7 +117,7 @@
         ]
     },
     {
-        "Tile": "WALL: 180 : Granite Wall",
+        "Tile": "WALL: 273 : Granite Wall",
         "Color": "9",
         "LAB": [
             2.020170921426537,
@@ -135,7 +135,7 @@
         ]
     },
     {
-        "Tile": "WALL: 208 : Ember Wall",
+        "Tile": "WALL: 296 : Ember Wall",
         "Color": "9",
         "LAB": [
             1.1620131847172246,
@@ -144,7 +144,7 @@
         ]
     },
     {
-        "Tile": "WALL: 8 : Green Brick Wall",
+        "Tile": "WALL: 18 : Green Brick Wall",
         "Color": "9",
         "LAB": [
             1.11105925078666,
@@ -189,7 +189,7 @@
         ]
     },
     {
-        "Tile": "WALL: 61 : Old Stone Wall",
+        "Tile": "WALL: 262 : Old Stone Wall",
         "Color": "9",
         "LAB": [
             2.092179735103656,
@@ -252,7 +252,7 @@
         ]
     },
     {
-        "Tile": "WALL: 2 : Dirt Wall",
+        "Tile": "WALL: 16 : Dirt Wall",
         "Color": "9",
         "LAB": [
             5.344159884509118,
@@ -297,7 +297,7 @@
         ]
     },
     {
-        "Tile": "WALL: 13 : Hellstone Brick Wall",
+        "Tile": "WALL: 177 : Hellstone Brick Wall",
         "Color": "9",
         "LAB": [
             3.07375529396338,
@@ -477,7 +477,7 @@
         ]
     },
     {
-        "Tile": "WALL: 3 : Ebonstone Wall",
+        "Tile": "WALL: 246 : Ebonstone Wall",
         "Color": "9",
         "LAB": [
             4.172127549553743,
@@ -549,7 +549,7 @@
         ]
     },
     {
-        "Tile": "WALL: 221 : Crimsandstone Wall",
+        "Tile": "WALL: 309 : Crimsandstone Wall",
         "Color": "9",
         "LAB": [
             2.8076609393302796,
@@ -594,21 +594,12 @@
         ]
     },
     {
-        "Tile": "WALL: 188 : Corrupt Growth Wall",
+        "Tile": "WALL: 276 : Corrupt Growth Wall",
         "Color": "9",
         "LAB": [
             4.62068063276271,
             27.22676942579298,
             -48.04673248412524
-        ]
-    },
-    {
-        "Tile": "WALL: 63 : Grass Wall",
-        "Color": "9",
-        "LAB": [
-            4.393064861614693,
-            26.269162052363765,
-            -47.04328334611458
         ]
     },
     {
@@ -684,7 +675,7 @@
         ]
     },
     {
-        "Tile": "WALL: 194 : Crimson Teeth Wall",
+        "Tile": "WALL: 282 : Crimson Teeth Wall",
         "Color": "9",
         "LAB": [
             8.68542582989621,
@@ -819,7 +810,7 @@
         ]
     },
     {
-        "Tile": "WALL: 9 : Pink Brick Wall",
+        "Tile": "WALL: 19 : Pink Brick Wall",
         "Color": "10",
         "LAB": [
             2.6201765116178173,
@@ -846,7 +837,7 @@
         ]
     },
     {
-        "Tile": "WALL: 7 : Blue Brick Wall",
+        "Tile": "WALL: 17 : Blue Brick Wall",
         "Color": "10",
         "LAB": [
             2.6738156900274,
@@ -873,7 +864,7 @@
         ]
     },
     {
-        "Tile": "WALL: 208 : Ember Wall",
+        "Tile": "WALL: 296 : Ember Wall",
         "Color": "10",
         "LAB": [
             2.470751897781028,
@@ -891,7 +882,7 @@
         ]
     },
     {
-        "Tile": "WALL: 8 : Green Brick Wall",
+        "Tile": "WALL: 18 : Green Brick Wall",
         "Color": "10",
         "LAB": [
             2.419797963850467,
@@ -900,7 +891,7 @@
         ]
     },
     {
-        "Tile": "WALL: 94 : Blue Slab Wall",
+        "Tile": "WALL: 100 : Blue Slab Wall",
         "Color": "10",
         "LAB": [
             3.0494695390083457,
@@ -1323,7 +1314,7 @@
         ]
     },
     {
-        "Tile": "WALL: 195 : Crimson Blister Wall",
+        "Tile": "WALL: 283 : Crimson Blister Wall",
         "Color": "9",
         "LAB": [
             14.22440631780837,
@@ -1620,7 +1611,7 @@
         ]
     },
     {
-        "Tile": "WALL: 187 : Sandstone Wall",
+        "Tile": "WALL: 275 : Sandstone Wall",
         "Color": "9",
         "LAB": [
             14.524355285155409,
@@ -1674,7 +1665,7 @@
         ]
     },
     {
-        "Tile": "WALL: 86 : Hive Wall",
+        "Tile": "WALL: 108 : Hive Wall",
         "Color": "9",
         "LAB": [
             12.865237980289674,
@@ -1701,7 +1692,7 @@
         ]
     },
     {
-        "Tile": "WALL: 216 : Hardened Sand Wall",
+        "Tile": "WALL: 304 : Hardened Sand Wall",
         "Color": "9",
         "LAB": [
             15.86518072526436,
@@ -1782,7 +1773,7 @@
         ]
     },
     {
-        "Tile": "WALL: 3 : Ebonstone Wall",
+        "Tile": "WALL: 246 : Ebonstone Wall",
         "Color": "10",
         "LAB": [
             8.067261708981487,
@@ -1827,7 +1818,7 @@
         ]
     },
     {
-        "Tile": "WALL: 188 : Corrupt Growth Wall",
+        "Tile": "WALL: 276 : Corrupt Growth Wall",
         "Color": "10",
         "LAB": [
             8.854346191144103,
@@ -1863,7 +1854,7 @@
         ]
     },
     {
-        "Tile": "WALL: 13 : Hellstone Brick Wall",
+        "Tile": "WALL: 177 : Hellstone Brick Wall",
         "Color": "10",
         "LAB": [
             6.1302193739927695,
@@ -1878,15 +1869,6 @@
             6.828395442355259,
             30.044864117882902,
             -36.618266877114145
-        ]
-    },
-    {
-        "Tile": "WALL: 63 : Grass Wall",
-        "Color": "10",
-        "LAB": [
-            8.461575514107501,
-            32.68433874908684,
-            -40.163551163040175
         ]
     },
     {
@@ -1917,7 +1899,7 @@
         ]
     },
     {
-        "Tile": "WALL: 221 : Crimsandstone Wall",
+        "Tile": "WALL: 309 : Crimsandstone Wall",
         "Color": "10",
         "LAB": [
             5.5613766206282165,
@@ -1953,7 +1935,7 @@
         ]
     },
     {
-        "Tile": "WALL: 54 : Green Mossy Wall",
+        "Tile": "WALL: 256 : Green Mossy Wall",
         "Color": "10",
         "LAB": [
             4.368320528371996,
@@ -1962,7 +1944,7 @@
         ]
     },
     {
-        "Tile": "WALL: 180 : Granite Wall",
+        "Tile": "WALL: 273 : Granite Wall",
         "Color": "10",
         "LAB": [
             4.0961615254495385,
@@ -1998,7 +1980,7 @@
         ]
     },
     {
-        "Tile": "WALL: 55 : Brown Mossy Wall",
+        "Tile": "WALL: 257 : Brown Mossy Wall",
         "Color": "10",
         "LAB": [
             3.5176324258150196,
@@ -2052,7 +2034,7 @@
         ]
     },
     {
-        "Tile": "WALL: 61 : Old Stone Wall",
+        "Tile": "WALL: 262 : Old Stone Wall",
         "Color": "10",
         "LAB": [
             4.294836267690947,
@@ -2061,7 +2043,7 @@
         ]
     },
     {
-        "Tile": "WALL: 87 : Lihzahrd Brick Wall",
+        "Tile": "WALL: 112 : Lihzahrd Brick Wall",
         "Color": "10",
         "LAB": [
             3.5823943718650995,
@@ -2583,7 +2565,7 @@
         ]
     },
     {
-        "Tile": "WALL: 2 : Dirt Wall",
+        "Tile": "WALL: 16 : Dirt Wall",
         "Color": "10",
         "LAB": [
             10.023738903558328,
@@ -2637,7 +2619,7 @@
         ]
     },
     {
-        "Tile": "WALL: 194 : Crimson Teeth Wall",
+        "Tile": "WALL: 282 : Crimson Teeth Wall",
         "Color": "10",
         "LAB": [
             14.477591146406048,
@@ -2781,7 +2763,7 @@
         ]
     },
     {
-        "Tile": "WALL: 187 : Sandstone Wall",
+        "Tile": "WALL: 275 : Sandstone Wall",
         "Color": "10",
         "LAB": [
             21.378073287635743,
@@ -2862,7 +2844,7 @@
         ]
     },
     {
-        "Tile": "WALL: 216 : Hardened Sand Wall",
+        "Tile": "WALL: 304 : Hardened Sand Wall",
         "Color": "10",
         "LAB": [
             22.888823759735175,
@@ -2988,7 +2970,7 @@
         ]
     },
     {
-        "Tile": "WALL: 86 : Hive Wall",
+        "Tile": "WALL: 108 : Hive Wall",
         "Color": "10",
         "LAB": [
             19.336929779326326,
@@ -3132,7 +3114,7 @@
         ]
     },
     {
-        "Tile": "WALL: 195 : Crimson Blister Wall",
+        "Tile": "WALL: 283 : Crimson Blister Wall",
         "Color": "10",
         "LAB": [
             21.023169910231125,
@@ -3177,7 +3159,7 @@
         ]
     },
     {
-        "Tile": "WALL: 180 : Granite Wall",
+        "Tile": "WALL: 273 : Granite Wall",
         "Color": "0",
         "LAB": [
             9.43475510426697,
@@ -3789,7 +3771,7 @@
         ]
     },
     {
-        "Tile": "WALL: 69 : Corrupt Grass Wall",
+        "Tile": "WALL: 264 : Corrupt Grass Wall",
         "Color": "0",
         "LAB": [
             18.133214491790618,
@@ -3798,7 +3780,7 @@
         ]
     },
     {
-        "Tile": "WALL: 95 : Blue Tiled Wall",
+        "Tile": "WALL: 101 : Blue Tiled Wall",
         "Color": "0",
         "LAB": [
             17.1948631275896,
@@ -3897,7 +3879,7 @@
         ]
     },
     {
-        "Tile": "WALL: 220 : Ebonsandstone Wall",
+        "Tile": "WALL: 308 : Ebonsandstone Wall",
         "Color": "0",
         "LAB": [
             25.180150249511073,
@@ -3915,7 +3897,7 @@
         ]
     },
     {
-        "Tile": "WALL: 222 : Pearlsandstone Wall",
+        "Tile": "WALL: 310 : Pearlsandstone Wall",
         "Color": "0",
         "LAB": [
             24.859128304833376,
@@ -3942,7 +3924,7 @@
         ]
     },
     {
-        "Tile": "WALL: 189 : Corrupt Mass Wall",
+        "Tile": "WALL: 277 : Corrupt Mass Wall",
         "Color": "0",
         "LAB": [
             26.65299513984936,
@@ -3978,7 +3960,7 @@
         ]
     },
     {
-        "Tile": "WALL: 79 : Obsidian Wall",
+        "Tile": "WALL: 267 : Obsidian Wall",
         "Color": "0",
         "LAB": [
             21.88465049903502,
@@ -3987,7 +3969,7 @@
         ]
     },
     {
-        "Tile": "WALL: 3 : Ebonstone Wall",
+        "Tile": "WALL: 246 : Ebonstone Wall",
         "Color": "0",
         "LAB": [
             25.361658129321597,
@@ -4266,7 +4248,7 @@
         ]
     },
     {
-        "Tile": "WALL: 190 : Corrupt Pustule Wall",
+        "Tile": "WALL: 278 : Corrupt Pustule Wall",
         "Color": "0",
         "LAB": [
             28.324491148631616,
@@ -4617,7 +4599,7 @@
         ]
     },
     {
-        "Tile": "WALL: 219 : Hardened Pearlsand Wall",
+        "Tile": "WALL: 307 : Hardened Pearlsand Wall",
         "Color": "0",
         "LAB": [
             35.3411449281966,
@@ -4653,7 +4635,7 @@
         ]
     },
     {
-        "Tile": "WALL: 28 : Pearlstone Wall",
+        "Tile": "WALL: 248 : Pearlstone Wall",
         "Color": "0",
         "LAB": [
             35.93655364180744,
@@ -4680,7 +4662,7 @@
         ]
     },
     {
-        "Tile": "WALL: 213 : Stalactite Stone Wall",
+        "Tile": "WALL: 301 : Stalactite Stone Wall",
         "Color": "30",
         "LAB": [
             39.125446752609065,
@@ -4941,7 +4923,7 @@
         ]
     },
     {
-        "Tile": "WALL: 55 : Brown Mossy Wall",
+        "Tile": "WALL: 257 : Brown Mossy Wall",
         "Color": "30",
         "LAB": [
             43.75318485709883,
@@ -6606,7 +6588,7 @@
         ]
     },
     {
-        "Tile": "WALL: 62 : Spider Wall",
+        "Tile": "WALL: 263 : Spider Wall",
         "Color": "30",
         "LAB": [
             46.647703957805916,
@@ -6624,7 +6606,7 @@
         ]
     },
     {
-        "Tile": "WALL: 61 : Old Stone Wall",
+        "Tile": "WALL: 262 : Old Stone Wall",
         "Color": "30",
         "LAB": [
             45.089554435200064,
@@ -6660,7 +6642,7 @@
         ]
     },
     {
-        "Tile": "WALL: 87 : Lihzahrd Brick Wall",
+        "Tile": "WALL: 112 : Lihzahrd Brick Wall",
         "Color": "30",
         "LAB": [
             49.03381728718,
@@ -6714,7 +6696,7 @@
         ]
     },
     {
-        "Tile": "WALL: 208 : Ember Wall",
+        "Tile": "WALL: 296 : Ember Wall",
         "Color": "30",
         "LAB": [
             45.879100095938625,
@@ -6741,7 +6723,7 @@
         ]
     },
     {
-        "Tile": "WALL: 223 : Desert Fossil Wall",
+        "Tile": "WALL: 311 : Desert Fossil Wall",
         "Color": "30",
         "LAB": [
             48.49459138724207,
@@ -6759,7 +6741,7 @@
         ]
     },
     {
-        "Tile": "WALL: 71 : Ice Wall",
+        "Tile": "WALL: 266 : Ice Wall",
         "Color": "0",
         "LAB": [
             43.19821070748762,
@@ -6822,7 +6804,7 @@
         ]
     },
     {
-        "Tile": "WALL: 221 : Crimsandstone Wall",
+        "Tile": "WALL: 309 : Crimsandstone Wall",
         "Color": "30",
         "LAB": [
             44.95590911447059,
@@ -6849,7 +6831,7 @@
         ]
     },
     {
-        "Tile": "WALL: 218 : Hardened Crimsand Wall",
+        "Tile": "WALL: 306 : Hardened Crimsand Wall",
         "Color": "30",
         "LAB": [
             48.759841495410996,
@@ -6894,7 +6876,7 @@
         ]
     },
     {
-        "Tile": "WALL: 178 : Marble Wall",
+        "Tile": "WALL: 272 : Marble Wall",
         "Color": "0",
         "LAB": [
             49.201339938385416,
@@ -6912,7 +6894,7 @@
         ]
     },
     {
-        "Tile": "WALL: 170 : Cave Dirt Wall",
+        "Tile": "WALL: 270 : Cave Dirt Wall",
         "Color": "30",
         "LAB": [
             44.97889804910754,
@@ -6984,7 +6966,7 @@
         ]
     },
     {
-        "Tile": "WALL: 212 : Worn Stone Wall",
+        "Tile": "WALL: 300 : Worn Stone Wall",
         "Color": "30",
         "LAB": [
             35.70927464325355,
@@ -6993,7 +6975,7 @@
         ]
     },
     {
-        "Tile": "WALL: 196 : Layered Dirt Wall",
+        "Tile": "WALL: 284 : Layered Dirt Wall",
         "Color": "30",
         "LAB": [
             38.845475869821215,
@@ -7002,7 +6984,7 @@
         ]
     },
     {
-        "Tile": "WALL: 197 : Crumbling Dirt Wall",
+        "Tile": "WALL: 285 : Crumbling Dirt Wall",
         "Color": "30",
         "LAB": [
             35.87524332539429,
@@ -7029,7 +7011,7 @@
         ]
     },
     {
-        "Tile": "WALL: 40 : Snow Wall",
+        "Tile": "WALL: 249 : Snow Wall",
         "Color": "0",
         "LAB": [
             41.79592775256597,
@@ -7038,7 +7020,7 @@
         ]
     },
     {
-        "Tile": "WALL: 211 : Smouldering Stone Wall",
+        "Tile": "WALL: 299 : Smouldering Stone Wall",
         "Color": "30",
         "LAB": [
             39.05209702752281,
@@ -7074,7 +7056,7 @@
         ]
     },
     {
-        "Tile": "WALL: 2 : Dirt Wall",
+        "Tile": "WALL: 16 : Dirt Wall",
         "Color": "30",
         "LAB": [
             40.13625497451857,
@@ -7101,7 +7083,7 @@
         ]
     },
     {
-        "Tile": "WALL: 204 : Lichen Stone Wall",
+        "Tile": "WALL: 292 : Lichen Stone Wall",
         "Color": "30",
         "LAB": [
             39.62038812281889,
@@ -7110,7 +7092,7 @@
         ]
     },
     {
-        "Tile": "WALL: 86 : Hive Wall",
+        "Tile": "WALL: 108 : Hive Wall",
         "Color": "30",
         "LAB": [
             36.65019629888749,
@@ -7146,7 +7128,7 @@
         ]
     },
     {
-        "Tile": "WALL: 192 : Crimson Crust Wall",
+        "Tile": "WALL: 280 : Crimson Crust Wall",
         "Color": "30",
         "LAB": [
             37.23108386928263,
@@ -7821,7 +7803,7 @@
         ]
     },
     {
-        "Tile": "WALL: 187 : Sandstone Wall",
+        "Tile": "WALL: 275 : Sandstone Wall",
         "Color": "30",
         "LAB": [
             34.86293360483376,
@@ -8100,7 +8082,7 @@
         ]
     },
     {
-        "Tile": "WALL: 216 : Hardened Sand Wall",
+        "Tile": "WALL: 304 : Hardened Sand Wall",
         "Color": "30",
         "LAB": [
             31.04736543697051,
@@ -8109,7 +8091,7 @@
         ]
     },
     {
-        "Tile": "WALL: 216 : Hardened Sand Wall",
+        "Tile": "WALL: 304 : Hardened Sand Wall",
         "Color": "8",
         "LAB": [
             32.99398148647473,
@@ -8190,7 +8172,7 @@
         ]
     },
     {
-        "Tile": "WALL: 199 : Wavy Dirt Wall",
+        "Tile": "WALL: 287 : Wavy Dirt Wall",
         "Color": "30",
         "LAB": [
             32.912911820328006,
@@ -8325,7 +8307,7 @@
         ]
     },
     {
-        "Tile": "WALL: 70 : Hallowed Grass Wall",
+        "Tile": "WALL: 265 : Hallowed Grass Wall",
         "Color": "0",
         "LAB": [
             27.202081327130173,
@@ -8406,7 +8388,7 @@
         ]
     },
     {
-        "Tile": "WALL: 187 : Sandstone Wall",
+        "Tile": "WALL: 275 : Sandstone Wall",
         "Color": "8",
         "LAB": [
             31.186896295700443,
@@ -8568,7 +8550,7 @@
         ]
     },
     {
-        "Tile": "WALL: 86 : Hive Wall",
+        "Tile": "WALL: 108 : Hive Wall",
         "Color": "8",
         "LAB": [
             28.602895043258464,
@@ -8622,7 +8604,7 @@
         ]
     },
     {
-        "Tile": "WALL: 195 : Crimson Blister Wall",
+        "Tile": "WALL: 283 : Crimson Blister Wall",
         "Color": "8",
         "LAB": [
             30.74826504233033,
@@ -8730,7 +8712,7 @@
         ]
     },
     {
-        "Tile": "WALL: 94 : Blue Slab Wall",
+        "Tile": "WALL: 100 : Blue Slab Wall",
         "Color": "0",
         "LAB": [
             15.495659674667394,
@@ -8775,7 +8757,7 @@
         ]
     },
     {
-        "Tile": "WALL: 194 : Crimson Teeth Wall",
+        "Tile": "WALL: 282 : Crimson Teeth Wall",
         "Color": "8",
         "LAB": [
             22.662565787167914,
@@ -8928,7 +8910,7 @@
         ]
     },
     {
-        "Tile": "WALL: 99 : Green Tiled Wall",
+        "Tile": "WALL: 105 : Green Tiled Wall",
         "Color": "0",
         "LAB": [
             19.33480567070709,
@@ -8991,7 +8973,7 @@
         ]
     },
     {
-        "Tile": "WALL: 57 : Blue Mossy Wall",
+        "Tile": "WALL: 259 : Blue Mossy Wall",
         "Color": "0",
         "LAB": [
             15.551211952699415,
@@ -9045,7 +9027,7 @@
         ]
     },
     {
-        "Tile": "WALL: 2 : Dirt Wall",
+        "Tile": "WALL: 16 : Dirt Wall",
         "Color": "8",
         "LAB": [
             17.100614229897396,
@@ -9081,7 +9063,7 @@
         ]
     },
     {
-        "Tile": "WALL: 7 : Blue Brick Wall",
+        "Tile": "WALL: 17 : Blue Brick Wall",
         "Color": "0",
         "LAB": [
             11.732838049206904,
@@ -9117,7 +9099,7 @@
         ]
     },
     {
-        "Tile": "WALL: 3 : Ebonstone Wall",
+        "Tile": "WALL: 246 : Ebonstone Wall",
         "Color": "8",
         "LAB": [
             14.687100436035362,
@@ -9153,7 +9135,7 @@
         ]
     },
     {
-        "Tile": "WALL: 188 : Corrupt Growth Wall",
+        "Tile": "WALL: 276 : Corrupt Growth Wall",
         "Color": "8",
         "LAB": [
             15.657900835578552,
@@ -9168,15 +9150,6 @@
             13.150164382633246,
             0.5114582936669165,
             -26.49330852139706
-        ]
-    },
-    {
-        "Tile": "WALL: 63 : Grass Wall",
-        "Color": "8",
-        "LAB": [
-            15.173426375601423,
-            1.370599925482635,
-            -29.38799691286541
         ]
     },
     {
@@ -9207,7 +9180,7 @@
         ]
     },
     {
-        "Tile": "WALL: 221 : Crimsandstone Wall",
+        "Tile": "WALL: 309 : Crimsandstone Wall",
         "Color": "8",
         "LAB": [
             11.227185240188607,
@@ -9225,7 +9198,7 @@
         ]
     },
     {
-        "Tile": "WALL: 13 : Hellstone Brick Wall",
+        "Tile": "WALL: 177 : Hellstone Brick Wall",
         "Color": "8",
         "LAB": [
             12.159602741854748,
@@ -9279,7 +9252,7 @@
         ]
     },
     {
-        "Tile": "WALL: 180 : Granite Wall",
+        "Tile": "WALL: 273 : Granite Wall",
         "Color": "8",
         "LAB": [
             8.689360796818978,
@@ -9288,7 +9261,7 @@
         ]
     },
     {
-        "Tile": "WALL: 87 : Lihzahrd Brick Wall",
+        "Tile": "WALL: 112 : Lihzahrd Brick Wall",
         "Color": "8",
         "LAB": [
             7.661531668451428,
@@ -9306,7 +9279,7 @@
         ]
     },
     {
-        "Tile": "WALL: 61 : Old Stone Wall",
+        "Tile": "WALL: 262 : Old Stone Wall",
         "Color": "8",
         "LAB": [
             9.134977937276798,
@@ -9333,7 +9306,7 @@
         ]
     },
     {
-        "Tile": "WALL: 7 : Blue Brick Wall",
+        "Tile": "WALL: 17 : Blue Brick Wall",
         "Color": "8",
         "LAB": [
             5.797863775338733,
@@ -9351,7 +9324,7 @@
         ]
     },
     {
-        "Tile": "WALL: 9 : Pink Brick Wall",
+        "Tile": "WALL: 19 : Pink Brick Wall",
         "Color": "8",
         "LAB": [
             5.7442245969291506,
@@ -9360,7 +9333,7 @@
         ]
     },
     {
-        "Tile": "WALL: 94 : Blue Slab Wall",
+        "Tile": "WALL: 100 : Blue Slab Wall",
         "Color": "8",
         "LAB": [
             6.632510420542918,
@@ -9369,7 +9342,7 @@
         ]
     },
     {
-        "Tile": "WALL: 54 : Green Mossy Wall",
+        "Tile": "WALL: 256 : Green Mossy Wall",
         "Color": "8",
         "LAB": [
             9.201798144891299,
@@ -9378,7 +9351,7 @@
         ]
     },
     {
-        "Tile": "WALL: 55 : Brown Mossy Wall",
+        "Tile": "WALL: 257 : Brown Mossy Wall",
         "Color": "8",
         "LAB": [
             7.596769722401344,
@@ -9459,7 +9432,7 @@
         ]
     },
     {
-        "Tile": "WALL: 8 : Green Brick Wall",
+        "Tile": "WALL: 18 : Green Brick Wall",
         "Color": "8",
         "LAB": [
             5.328002661984279,
@@ -9468,7 +9441,7 @@
         ]
     },
     {
-        "Tile": "WALL: 208 : Ember Wall",
+        "Tile": "WALL: 296 : Ember Wall",
         "Color": "8",
         "LAB": [
             5.378956595914843,
@@ -9603,7 +9576,7 @@
         ]
     },
     {
-        "Tile": "WALL: 55 : Brown Mossy Wall",
+        "Tile": "WALL: 257 : Brown Mossy Wall",
         "Color": "6",
         "LAB": [
             16.78282698302118,
@@ -9612,7 +9585,7 @@
         ]
     },
     {
-        "Tile": "WALL: 208 : Ember Wall",
+        "Tile": "WALL: 296 : Ember Wall",
         "Color": "6",
         "LAB": [
             12.988475617266772,
@@ -9621,7 +9594,7 @@
         ]
     },
     {
-        "Tile": "WALL: 208 : Ember Wall",
+        "Tile": "WALL: 296 : Ember Wall",
         "Color": "7",
         "LAB": [
             13.530337691970434,
@@ -9639,7 +9612,7 @@
         ]
     },
     {
-        "Tile": "WALL: 94 : Blue Slab Wall",
+        "Tile": "WALL: 100 : Blue Slab Wall",
         "Color": "7",
         "LAB": [
             15.697235716521316,
@@ -9657,7 +9630,7 @@
         ]
     },
     {
-        "Tile": "WALL: 7 : Blue Brick Wall",
+        "Tile": "WALL: 17 : Blue Brick Wall",
         "Color": "7",
         "LAB": [
             14.401715115134774,
@@ -9666,7 +9639,7 @@
         ]
     },
     {
-        "Tile": "WALL: 8 : Green Brick Wall",
+        "Tile": "WALL: 18 : Green Brick Wall",
         "Color": "6",
         "LAB": [
             12.569454756824967,
@@ -9675,7 +9648,7 @@
         ]
     },
     {
-        "Tile": "WALL: 8 : Green Brick Wall",
+        "Tile": "WALL: 18 : Green Brick Wall",
         "Color": "7",
         "LAB": [
             13.092238188828915,
@@ -9684,7 +9657,7 @@
         ]
     },
     {
-        "Tile": "WALL: 7 : Blue Brick Wall",
+        "Tile": "WALL: 17 : Blue Brick Wall",
         "Color": "6",
         "LAB": [
             13.839955796846922,
@@ -9702,7 +9675,7 @@
         ]
     },
     {
-        "Tile": "WALL: 9 : Pink Brick Wall",
+        "Tile": "WALL: 19 : Pink Brick Wall",
         "Color": "6",
         "LAB": [
             13.423881020977948,
@@ -9711,7 +9684,7 @@
         ]
     },
     {
-        "Tile": "WALL: 9 : Pink Brick Wall",
+        "Tile": "WALL: 19 : Pink Brick Wall",
         "Color": "7",
         "LAB": [
             13.966818252016004,
@@ -9720,7 +9693,7 @@
         ]
     },
     {
-        "Tile": "WALL: 94 : Blue Slab Wall",
+        "Tile": "WALL: 100 : Blue Slab Wall",
         "Color": "6",
         "LAB": [
             15.114628257680224,
@@ -9738,7 +9711,7 @@
         ]
     },
     {
-        "Tile": "WALL: 13 : Hellstone Brick Wall",
+        "Tile": "WALL: 177 : Hellstone Brick Wall",
         "Color": "6",
         "LAB": [
             24.051177331194168,
@@ -9747,7 +9720,7 @@
         ]
     },
     {
-        "Tile": "WALL: 221 : Crimsandstone Wall",
+        "Tile": "WALL: 309 : Crimsandstone Wall",
         "Color": "6",
         "LAB": [
             22.856417402764322,
@@ -9765,7 +9738,7 @@
         ]
     },
     {
-        "Tile": "WALL: 98 : Green Slab Wall",
+        "Tile": "WALL: 104 : Green Slab Wall",
         "Color": "0",
         "LAB": [
             17.582430883762356,
@@ -9774,7 +9747,7 @@
         ]
     },
     {
-        "Tile": "WALL: 221 : Crimsandstone Wall",
+        "Tile": "WALL: 309 : Crimsandstone Wall",
         "Color": "7",
         "LAB": [
             23.62594338976436,
@@ -9810,7 +9783,7 @@
         ]
     },
     {
-        "Tile": "WALL: 55 : Brown Mossy Wall",
+        "Tile": "WALL: 257 : Brown Mossy Wall",
         "Color": "7",
         "LAB": [
             17.404338534565113,
@@ -9855,7 +9828,7 @@
         ]
     },
     {
-        "Tile": "WALL: 54 : Green Mossy Wall",
+        "Tile": "WALL: 256 : Green Mossy Wall",
         "Color": "7",
         "LAB": [
             20.34085048518569,
@@ -9864,7 +9837,7 @@
         ]
     },
     {
-        "Tile": "WALL: 54 : Green Mossy Wall",
+        "Tile": "WALL: 256 : Green Mossy Wall",
         "Color": "6",
         "LAB": [
             19.644832904807366,
@@ -9945,7 +9918,7 @@
         ]
     },
     {
-        "Tile": "WALL: 61 : Old Stone Wall",
+        "Tile": "WALL: 262 : Old Stone Wall",
         "Color": "7",
         "LAB": [
             19.925078446635283,
@@ -9981,7 +9954,7 @@
         ]
     },
     {
-        "Tile": "WALL: 61 : Old Stone Wall",
+        "Tile": "WALL: 262 : Old Stone Wall",
         "Color": "6",
         "LAB": [
             19.24646917740347,
@@ -10017,7 +9990,7 @@
         ]
     },
     {
-        "Tile": "WALL: 87 : Lihzahrd Brick Wall",
+        "Tile": "WALL: 112 : Lihzahrd Brick Wall",
         "Color": "6",
         "LAB": [
             17.188226771320117,
@@ -10026,7 +9999,7 @@
         ]
     },
     {
-        "Tile": "WALL: 180 : Granite Wall",
+        "Tile": "WALL: 273 : Granite Wall",
         "Color": "6",
         "LAB": [
             18.830789089140886,
@@ -10035,7 +10008,7 @@
         ]
     },
     {
-        "Tile": "WALL: 87 : Lihzahrd Brick Wall",
+        "Tile": "WALL: 112 : Lihzahrd Brick Wall",
         "Color": "7",
         "LAB": [
             17.827683813889614,
@@ -10044,7 +10017,7 @@
         ]
     },
     {
-        "Tile": "WALL: 180 : Granite Wall",
+        "Tile": "WALL: 273 : Granite Wall",
         "Color": "7",
         "LAB": [
             19.508099914735453,
@@ -10053,7 +10026,7 @@
         ]
     },
     {
-        "Tile": "WALL: 206 : Ivy Stone Wall",
+        "Tile": "WALL: 294 : Ivy Stone Wall",
         "Color": "0",
         "LAB": [
             18.757030661041014,
@@ -10080,7 +10053,7 @@
         ]
     },
     {
-        "Tile": "WALL: 13 : Hellstone Brick Wall",
+        "Tile": "WALL: 177 : Hellstone Brick Wall",
         "Color": "7",
         "LAB": [
             24.840196655600792,
@@ -10107,24 +10080,6 @@
         ]
     },
     {
-        "Tile": "WALL: 63 : Grass Wall",
-        "Color": "6",
-        "LAB": [
-            29.091904449132542,
-            -30.734529996283648,
-            17.743957995015126
-        ]
-    },
-    {
-        "Tile": "WALL: 63 : Grass Wall",
-        "Color": "7",
-        "LAB": [
-            30.00311781675174,
-            -21.849612660628182,
-            -6.456075199736199
-        ]
-    },
-    {
         "Tile": "TILE: 164 : Hallowed Ice",
         "Color": "30",
         "LAB": [
@@ -10134,7 +10089,7 @@
         ]
     },
     {
-        "Tile": "WALL: 3 : Ebonstone Wall",
+        "Tile": "WALL: 246 : Ebonstone Wall",
         "Color": "6",
         "LAB": [
             28.324773421721865,
@@ -10143,7 +10098,7 @@
         ]
     },
     {
-        "Tile": "WALL: 3 : Ebonstone Wall",
+        "Tile": "WALL: 246 : Ebonstone Wall",
         "Color": "7",
         "LAB": [
             29.21861474696241,
@@ -10251,7 +10206,7 @@
         ]
     },
     {
-        "Tile": "WALL: 54 : Green Mossy Wall",
+        "Tile": "WALL: 256 : Green Mossy Wall",
         "Color": "0",
         "LAB": [
             21.946087722148285,
@@ -10260,7 +10215,7 @@
         ]
     },
     {
-        "Tile": "WALL: 188 : Corrupt Growth Wall",
+        "Tile": "WALL: 276 : Corrupt Growth Wall",
         "Color": "7",
         "LAB": [
             30.784290276458137,
@@ -10431,7 +10386,7 @@
         ]
     },
     {
-        "Tile": "WALL: 188 : Corrupt Growth Wall",
+        "Tile": "WALL: 276 : Corrupt Growth Wall",
         "Color": "6",
         "LAB": [
             29.85579235149752,
@@ -10440,7 +10395,7 @@
         ]
     },
     {
-        "Tile": "WALL: 2 : Dirt Wall",
+        "Tile": "WALL: 16 : Dirt Wall",
         "Color": "6",
         "LAB": [
             32.12878383307627,
@@ -10485,7 +10440,7 @@
         ]
     },
     {
-        "Tile": "WALL: 2 : Dirt Wall",
+        "Tile": "WALL: 16 : Dirt Wall",
         "Color": "7",
         "LAB": [
             33.108636446114595,
@@ -10521,7 +10476,7 @@
         ]
     },
     {
-        "Tile": "WALL: 201 : Hallowed Cavern Wall",
+        "Tile": "WALL: 289 : Hallowed Cavern Wall",
         "Color": "30",
         "LAB": [
             27.5423560803304,
@@ -10599,15 +10554,6 @@
             36.16577870249782,
             -24.776626300197723,
             -7.320942713006384
-        ]
-    },
-    {
-        "Tile": "WALL: 63 : Grass Wall",
-        "Color": "0",
-        "LAB": [
-            29.95809908178184,
-            -23.88915728747701,
-            13.666041574499843
         ]
     },
     {
@@ -10692,7 +10638,7 @@
         ]
     },
     {
-        "Tile": "WALL: 202 : Hallowed Shard Wall",
+        "Tile": "WALL: 290 : Hallowed Shard Wall",
         "Color": "30",
         "LAB": [
             30.09115372529284,
@@ -10746,7 +10692,7 @@
         ]
     },
     {
-        "Tile": "WALL: 194 : Crimson Teeth Wall",
+        "Tile": "WALL: 282 : Crimson Teeth Wall",
         "Color": "6",
         "LAB": [
             40.617488983421715,
@@ -10944,7 +10890,7 @@
         ]
     },
     {
-        "Tile": "WALL: 209 : Cinder Wall",
+        "Tile": "WALL: 297 : Cinder Wall",
         "Color": "30",
         "LAB": [
             40.05914563365724,
@@ -10971,7 +10917,7 @@
         ]
     },
     {
-        "Tile": "WALL: 97 : Pink Tiled Wall",
+        "Tile": "WALL: 103 : Pink Tiled Wall",
         "Color": "30",
         "LAB": [
             41.78255086029038,
@@ -10980,7 +10926,7 @@
         ]
     },
     {
-        "Tile": "WALL: 215 : Fractured Stone Wall",
+        "Tile": "WALL: 303 : Fractured Stone Wall",
         "Color": "30",
         "LAB": [
             41.826783324006655,
@@ -10989,7 +10935,7 @@
         ]
     },
     {
-        "Tile": "WALL: 214 : Mottled Stone Wall",
+        "Tile": "WALL: 302 : Mottled Stone Wall",
         "Color": "30",
         "LAB": [
             41.652409260775244,
@@ -10998,7 +10944,7 @@
         ]
     },
     {
-        "Tile": "WALL: 81 : Crimson Grass Wall",
+        "Tile": "WALL: 268 : Crimson Grass Wall",
         "Color": "30",
         "LAB": [
             41.187184389882674,
@@ -11079,7 +11025,7 @@
         ]
     },
     {
-        "Tile": "WALL: 86 : Hive Wall",
+        "Tile": "WALL: 108 : Hive Wall",
         "Color": "6",
         "LAB": [
             50.180543504112265,
@@ -11088,7 +11034,7 @@
         ]
     },
     {
-        "Tile": "WALL: 195 : Crimson Blister Wall",
+        "Tile": "WALL: 283 : Crimson Blister Wall",
         "Color": "30",
         "LAB": [
             40.10881244337947,
@@ -11115,7 +11061,7 @@
         ]
     },
     {
-        "Tile": "WALL: 193 : Crimson Scab Wall",
+        "Tile": "WALL: 281 : Crimson Scab Wall",
         "Color": "30",
         "LAB": [
             40.14354279768113,
@@ -11241,7 +11187,7 @@
         ]
     },
     {
-        "Tile": "WALL: 194 : Crimson Teeth Wall",
+        "Tile": "WALL: 282 : Crimson Teeth Wall",
         "Color": "7",
         "LAB": [
             41.78166918072504,
@@ -11511,7 +11457,7 @@
         ]
     },
     {
-        "Tile": "WALL: 9 : Pink Brick Wall",
+        "Tile": "WALL: 19 : Pink Brick Wall",
         "Color": "30",
         "LAB": [
             47.022157373976334,
@@ -11520,7 +11466,7 @@
         ]
     },
     {
-        "Tile": "WALL: 15 : Mud Wall",
+        "Tile": "WALL: 247 : Mud Wall",
         "Color": "30",
         "LAB": [
             44.35334584362879,
@@ -11538,7 +11484,7 @@
         ]
     },
     {
-        "Tile": "WALL: 56 : Red Mossy Wall",
+        "Tile": "WALL: 258 : Red Mossy Wall",
         "Color": "30",
         "LAB": [
             46.39991709537262,
@@ -11574,7 +11520,7 @@
         ]
     },
     {
-        "Tile": "WALL: 13 : Hellstone Brick Wall",
+        "Tile": "WALL: 177 : Hellstone Brick Wall",
         "Color": "30",
         "LAB": [
             44.773764096813,
@@ -11601,7 +11547,7 @@
         ]
     },
     {
-        "Tile": "WALL: 210 : Magma Wall",
+        "Tile": "WALL: 298 : Magma Wall",
         "Color": "30",
         "LAB": [
             48.402093562414066,
@@ -11637,7 +11583,7 @@
         ]
     },
     {
-        "Tile": "WALL: 83 : Crimstone Wall",
+        "Tile": "WALL: 269 : Crimstone Wall",
         "Color": "30",
         "LAB": [
             44.58111616884107,
@@ -11673,7 +11619,7 @@
         ]
     },
     {
-        "Tile": "WALL: 216 : Hardened Sand Wall",
+        "Tile": "WALL: 304 : Hardened Sand Wall",
         "Color": "7",
         "LAB": [
             58.58746483608796,
@@ -11781,7 +11727,7 @@
         ]
     },
     {
-        "Tile": "WALL: 187 : Sandstone Wall",
+        "Tile": "WALL: 275 : Sandstone Wall",
         "Color": "6",
         "LAB": [
             53.985252086334484,
@@ -11835,7 +11781,7 @@
         ]
     },
     {
-        "Tile": "WALL: 187 : Sandstone Wall",
+        "Tile": "WALL: 275 : Sandstone Wall",
         "Color": "7",
         "LAB": [
             55.448967953621946,
@@ -11853,7 +11799,7 @@
         ]
     },
     {
-        "Tile": "WALL: 216 : Hardened Sand Wall",
+        "Tile": "WALL: 304 : Hardened Sand Wall",
         "Color": "6",
         "LAB": [
             57.049293261599956,
@@ -11880,7 +11826,7 @@
         ]
     },
     {
-        "Tile": "WALL: 194 : Crimson Teeth Wall",
+        "Tile": "WALL: 282 : Crimson Teeth Wall",
         "Color": "30",
         "LAB": [
             43.89338714073023,
@@ -12042,7 +11988,7 @@
         ]
     },
     {
-        "Tile": "WALL: 195 : Crimson Blister Wall",
+        "Tile": "WALL: 283 : Crimson Blister Wall",
         "Color": "7",
         "LAB": [
             54.74687141610316,
@@ -12060,7 +12006,7 @@
         ]
     },
     {
-        "Tile": "WALL: 86 : Hive Wall",
+        "Tile": "WALL: 108 : Hive Wall",
         "Color": "7",
         "LAB": [
             51.56543894738276,
@@ -12123,7 +12069,7 @@
         ]
     },
     {
-        "Tile": "WALL: 195 : Crimson Blister Wall",
+        "Tile": "WALL: 283 : Crimson Blister Wall",
         "Color": "6",
         "LAB": [
             53.29850247923197,
@@ -15462,7 +15408,7 @@
         ]
     },
     {
-        "Tile": "WALL: 216 : Hardened Sand Wall",
+        "Tile": "WALL: 304 : Hardened Sand Wall",
         "Color": "4",
         "LAB": [
             58.23238868417259,
@@ -16047,7 +15993,7 @@
         ]
     },
     {
-        "Tile": "WALL: 187 : Sandstone Wall",
+        "Tile": "WALL: 275 : Sandstone Wall",
         "Color": "5",
         "LAB": [
             53.541432358751536,
@@ -16056,7 +16002,7 @@
         ]
     },
     {
-        "Tile": "WALL: 187 : Sandstone Wall",
+        "Tile": "WALL: 275 : Sandstone Wall",
         "Color": "4",
         "LAB": [
             55.14340765680966,
@@ -16119,7 +16065,7 @@
         ]
     },
     {
-        "Tile": "WALL: 216 : Hardened Sand Wall",
+        "Tile": "WALL: 304 : Hardened Sand Wall",
         "Color": "5",
         "LAB": [
             56.596138044659185,
@@ -16263,7 +16209,7 @@
         ]
     },
     {
-        "Tile": "WALL: 195 : Crimson Blister Wall",
+        "Tile": "WALL: 283 : Crimson Blister Wall",
         "Color": "5",
         "LAB": [
             52.85808030662855,
@@ -16299,7 +16245,7 @@
         ]
     },
     {
-        "Tile": "WALL: 195 : Crimson Blister Wall",
+        "Tile": "WALL: 283 : Crimson Blister Wall",
         "Color": "4",
         "LAB": [
             54.447735871018466,
@@ -16371,7 +16317,7 @@
         ]
     },
     {
-        "Tile": "WALL: 86 : Hive Wall",
+        "Tile": "WALL: 108 : Hive Wall",
         "Color": "4",
         "LAB": [
             51.273865307461534,
@@ -16407,7 +16353,7 @@
         ]
     },
     {
-        "Tile": "WALL: 58 : Purple Mossy Wall",
+        "Tile": "WALL: 260 : Purple Mossy Wall",
         "Color": "30",
         "LAB": [
             45.61330587381347,
@@ -16434,7 +16380,7 @@
         ]
     },
     {
-        "Tile": "WALL: 217 : Hardened Ebonsand Wall",
+        "Tile": "WALL: 305 : Hardened Ebonsand Wall",
         "Color": "30",
         "LAB": [
             43.284817126715566,
@@ -16659,7 +16605,7 @@
         ]
     },
     {
-        "Tile": "WALL: 194 : Crimson Teeth Wall",
+        "Tile": "WALL: 282 : Crimson Teeth Wall",
         "Color": "4",
         "LAB": [
             41.603909857171,
@@ -16740,7 +16686,7 @@
         ]
     },
     {
-        "Tile": "WALL: 200 : Hallowed Prism Wall",
+        "Tile": "WALL: 288 : Hallowed Prism Wall",
         "Color": "30",
         "LAB": [
             39.130965406596495,
@@ -16749,7 +16695,7 @@
         ]
     },
     {
-        "Tile": "WALL: 188 : Corrupt Growth Wall",
+        "Tile": "WALL: 276 : Corrupt Growth Wall",
         "Color": "30",
         "LAB": [
             39.63716242988893,
@@ -16767,7 +16713,7 @@
         ]
     },
     {
-        "Tile": "WALL: 96 : Pink Slab Wall",
+        "Tile": "WALL: 102 : Pink Slab Wall",
         "Color": "30",
         "LAB": [
             41.935504984409995,
@@ -16794,7 +16740,7 @@
         ]
     },
     {
-        "Tile": "WALL: 207 : Jungle Vine Wall",
+        "Tile": "WALL: 295 : Jungle Vine Wall",
         "Color": "0",
         "LAB": [
             38.70082747919393,
@@ -16812,7 +16758,7 @@
         ]
     },
     {
-        "Tile": "WALL: 203 : Hallowed Crystalline Wall",
+        "Tile": "WALL: 291 : Hallowed Crystalline Wall",
         "Color": "30",
         "LAB": [
             37.50610170028645,
@@ -16893,7 +16839,7 @@
         ]
     },
     {
-        "Tile": "WALL: 86 : Hive Wall",
+        "Tile": "WALL: 108 : Hive Wall",
         "Color": "5",
         "LAB": [
             49.76158532336909,
@@ -16929,7 +16875,7 @@
         ]
     },
     {
-        "Tile": "WALL: 191 : Corrupt Tendril Wall",
+        "Tile": "WALL: 279 : Corrupt Tendril Wall",
         "Color": "30",
         "LAB": [
             41.37877486774411,
@@ -17010,15 +16956,6 @@
         ]
     },
     {
-        "Tile": "WALL: 64 : Jungle Wall",
-        "Color": "0",
-        "LAB": [
-            30.929533223491482,
-            -18.003759988316187,
-            25.491644295415306
-        ]
-    },
-    {
         "Tile": "TILE: 167 : Lead",
         "Color": "5",
         "LAB": [
@@ -17037,7 +16974,7 @@
         ]
     },
     {
-        "Tile": "WALL: 194 : Crimson Teeth Wall",
+        "Tile": "WALL: 282 : Crimson Teeth Wall",
         "Color": "5",
         "LAB": [
             40.23902141617223,
@@ -17100,7 +17037,7 @@
         ]
     },
     {
-        "Tile": "WALL: 2 : Dirt Wall",
+        "Tile": "WALL: 16 : Dirt Wall",
         "Color": "4",
         "LAB": [
             32.99151964009473,
@@ -17190,15 +17127,6 @@
         ]
     },
     {
-        "Tile": "WALL: 63 : Grass Wall",
-        "Color": "4",
-        "LAB": [
-            29.917041632000235,
-            -25.211799286224856,
-            36.393663125487144
-        ]
-    },
-    {
         "Tile": "WALL: 231 : Iron Brick Wall",
         "Color": "5",
         "LAB": [
@@ -17235,7 +17163,7 @@
         ]
     },
     {
-        "Tile": "WALL: 188 : Corrupt Growth Wall",
+        "Tile": "WALL: 276 : Corrupt Growth Wall",
         "Color": "4",
         "LAB": [
             30.690341146319952,
@@ -17388,7 +17316,7 @@
         ]
     },
     {
-        "Tile": "WALL: 205 : Leafy Jungle Wall",
+        "Tile": "WALL: 293 : Leafy Jungle Wall",
         "Color": "0",
         "LAB": [
             31.189062176309868,
@@ -17439,15 +17367,6 @@
             31.04647755158154,
             -35.93001794282827,
             36.70173752013447
-        ]
-    },
-    {
-        "Tile": "WALL: 63 : Grass Wall",
-        "Color": "5",
-        "LAB": [
-            28.7749323408267,
-            -34.19520878329271,
-            34.92966742203124
         ]
     },
     {
@@ -17586,7 +17505,7 @@
         ]
     },
     {
-        "Tile": "WALL: 13 : Hellstone Brick Wall",
+        "Tile": "WALL: 177 : Hellstone Brick Wall",
         "Color": "4",
         "LAB": [
             24.83422440676796,
@@ -17676,7 +17595,7 @@
         ]
     },
     {
-        "Tile": "WALL: 2 : Dirt Wall",
+        "Tile": "WALL: 16 : Dirt Wall",
         "Color": "5",
         "LAB": [
             31.797540222900835,
@@ -17694,7 +17613,7 @@
         ]
     },
     {
-        "Tile": "WALL: 3 : Ebonstone Wall",
+        "Tile": "WALL: 246 : Ebonstone Wall",
         "Color": "4",
         "LAB": [
             29.14049258755459,
@@ -17712,7 +17631,7 @@
         ]
     },
     {
-        "Tile": "WALL: 188 : Corrupt Growth Wall",
+        "Tile": "WALL: 276 : Corrupt Growth Wall",
         "Color": "5",
         "LAB": [
             29.535249156073824,
@@ -17748,7 +17667,7 @@
         ]
     },
     {
-        "Tile": "WALL: 3 : Ebonstone Wall",
+        "Tile": "WALL: 246 : Ebonstone Wall",
         "Color": "5",
         "LAB": [
             28.01137383570736,
@@ -17784,7 +17703,7 @@
         ]
     },
     {
-        "Tile": "WALL: 221 : Crimsandstone Wall",
+        "Tile": "WALL: 309 : Crimsandstone Wall",
         "Color": "4",
         "LAB": [
             23.60614473865307,
@@ -17811,7 +17730,7 @@
         ]
     },
     {
-        "Tile": "WALL: 54 : Green Mossy Wall",
+        "Tile": "WALL: 256 : Green Mossy Wall",
         "Color": "5",
         "LAB": [
             19.370627011931987,
@@ -17820,7 +17739,7 @@
         ]
     },
     {
-        "Tile": "WALL: 87 : Lihzahrd Brick Wall",
+        "Tile": "WALL: 112 : Lihzahrd Brick Wall",
         "Color": "4",
         "LAB": [
             17.872403668949715,
@@ -17865,7 +17784,7 @@
         ]
     },
     {
-        "Tile": "WALL: 55 : Brown Mossy Wall",
+        "Tile": "WALL: 257 : Brown Mossy Wall",
         "Color": "4",
         "LAB": [
             17.48350215090261,
@@ -17892,7 +17811,7 @@
         ]
     },
     {
-        "Tile": "WALL: 54 : Green Mossy Wall",
+        "Tile": "WALL: 256 : Green Mossy Wall",
         "Color": "4",
         "LAB": [
             20.35697756650994,
@@ -17910,7 +17829,7 @@
         ]
     },
     {
-        "Tile": "WALL: 180 : Granite Wall",
+        "Tile": "WALL: 273 : Granite Wall",
         "Color": "4",
         "LAB": [
             19.533582612729006,
@@ -17919,7 +17838,7 @@
         ]
     },
     {
-        "Tile": "WALL: 180 : Granite Wall",
+        "Tile": "WALL: 273 : Granite Wall",
         "Color": "5",
         "LAB": [
             18.56010911187964,
@@ -17928,7 +17847,7 @@
         ]
     },
     {
-        "Tile": "WALL: 61 : Old Stone Wall",
+        "Tile": "WALL: 262 : Old Stone Wall",
         "Color": "5",
         "LAB": [
             18.965955203176385,
@@ -17937,7 +17856,7 @@
         ]
     },
     {
-        "Tile": "WALL: 94 : Blue Slab Wall",
+        "Tile": "WALL: 100 : Blue Slab Wall",
         "Color": "4",
         "LAB": [
             15.797464955203196,
@@ -17946,7 +17865,7 @@
         ]
     },
     {
-        "Tile": "WALL: 61 : Old Stone Wall",
+        "Tile": "WALL: 262 : Old Stone Wall",
         "Color": "4",
         "LAB": [
             19.97431697583898,
@@ -18000,7 +17919,7 @@
         ]
     },
     {
-        "Tile": "WALL: 8 : Green Brick Wall",
+        "Tile": "WALL: 18 : Green Brick Wall",
         "Color": "0",
         "LAB": [
             14.52358630675667,
@@ -18027,7 +17946,7 @@
         ]
     },
     {
-        "Tile": "WALL: 221 : Crimsandstone Wall",
+        "Tile": "WALL: 309 : Crimsandstone Wall",
         "Color": "5",
         "LAB": [
             22.56801491772036,
@@ -18036,7 +17955,7 @@
         ]
     },
     {
-        "Tile": "WALL: 13 : Hellstone Brick Wall",
+        "Tile": "WALL: 177 : Hellstone Brick Wall",
         "Color": "5",
         "LAB": [
             23.74985020199442,
@@ -18063,7 +17982,7 @@
         ]
     },
     {
-        "Tile": "WALL: 208 : Ember Wall",
+        "Tile": "WALL: 296 : Ember Wall",
         "Color": "4",
         "LAB": [
             13.626936890100193,
@@ -18081,7 +18000,7 @@
         ]
     },
     {
-        "Tile": "WALL: 208 : Ember Wall",
+        "Tile": "WALL: 296 : Ember Wall",
         "Color": "5",
         "LAB": [
             12.741940436008086,
@@ -18090,7 +18009,7 @@
         ]
     },
     {
-        "Tile": "WALL: 7 : Blue Brick Wall",
+        "Tile": "WALL: 17 : Blue Brick Wall",
         "Color": "4",
         "LAB": [
             14.487429951468922,
@@ -18099,7 +18018,7 @@
         ]
     },
     {
-        "Tile": "WALL: 94 : Blue Slab Wall",
+        "Tile": "WALL: 100 : Blue Slab Wall",
         "Color": "5",
         "LAB": [
             14.850986888581488,
@@ -18117,7 +18036,7 @@
         ]
     },
     {
-        "Tile": "WALL: 8 : Green Brick Wall",
+        "Tile": "WALL: 18 : Green Brick Wall",
         "Color": "4",
         "LAB": [
             13.226154732794601,
@@ -18126,7 +18045,7 @@
         ]
     },
     {
-        "Tile": "WALL: 9 : Pink Brick Wall",
+        "Tile": "WALL: 19 : Pink Brick Wall",
         "Color": "4",
         "LAB": [
             14.08919288394166,
@@ -18144,7 +18063,7 @@
         ]
     },
     {
-        "Tile": "WALL: 7 : Blue Brick Wall",
+        "Tile": "WALL: 17 : Blue Brick Wall",
         "Color": "5",
         "LAB": [
             13.59005393390018,
@@ -18153,7 +18072,7 @@
         ]
     },
     {
-        "Tile": "WALL: 55 : Brown Mossy Wall",
+        "Tile": "WALL: 257 : Brown Mossy Wall",
         "Color": "5",
         "LAB": [
             16.512513689465244,
@@ -18162,7 +18081,7 @@
         ]
     },
     {
-        "Tile": "WALL: 9 : Pink Brick Wall",
+        "Tile": "WALL: 19 : Pink Brick Wall",
         "Color": "5",
         "LAB": [
             13.166767892746464,
@@ -18180,7 +18099,7 @@
         ]
     },
     {
-        "Tile": "WALL: 87 : Lihzahrd Brick Wall",
+        "Tile": "WALL: 112 : Lihzahrd Brick Wall",
         "Color": "5",
         "LAB": [
             16.924556549561572,
@@ -18198,7 +18117,7 @@
         ]
     },
     {
-        "Tile": "WALL: 8 : Green Brick Wall",
+        "Tile": "WALL: 18 : Green Brick Wall",
         "Color": "5",
         "LAB": [
             12.315537258513707,
@@ -18378,7 +18297,7 @@
         ]
     },
     {
-        "Tile": "WALL: 55 : Brown Mossy Wall",
+        "Tile": "WALL: 257 : Brown Mossy Wall",
         "Color": "0",
         "LAB": [
             19.676412361934574,
@@ -18414,7 +18333,7 @@
         ]
     },
     {
-        "Tile": "WALL: 94 : Blue Slab Wall",
+        "Tile": "WALL: 100 : Blue Slab Wall",
         "Color": "3",
         "LAB": [
             17.75968891174484,
@@ -18423,7 +18342,7 @@
         ]
     },
     {
-        "Tile": "WALL: 7 : Blue Brick Wall",
+        "Tile": "WALL: 17 : Blue Brick Wall",
         "Color": "3",
         "LAB": [
             16.379872297049637,
@@ -18432,7 +18351,7 @@
         ]
     },
     {
-        "Tile": "WALL: 55 : Brown Mossy Wall",
+        "Tile": "WALL: 257 : Brown Mossy Wall",
         "Color": "3",
         "LAB": [
             19.577868282114437,
@@ -18450,7 +18369,7 @@
         ]
     },
     {
-        "Tile": "WALL: 8 : Green Brick Wall",
+        "Tile": "WALL: 18 : Green Brick Wall",
         "Color": "3",
         "LAB": [
             14.985191257208939,
@@ -18459,7 +18378,7 @@
         ]
     },
     {
-        "Tile": "WALL: 208 : Ember Wall",
+        "Tile": "WALL: 296 : Ember Wall",
         "Color": "3",
         "LAB": [
             15.451796707309398,
@@ -18468,7 +18387,7 @@
         ]
     },
     {
-        "Tile": "WALL: 87 : Lihzahrd Brick Wall",
+        "Tile": "WALL: 112 : Lihzahrd Brick Wall",
         "Color": "3",
         "LAB": [
             20.028759491053563,
@@ -18486,7 +18405,7 @@
         ]
     },
     {
-        "Tile": "WALL: 9 : Pink Brick Wall",
+        "Tile": "WALL: 19 : Pink Brick Wall",
         "Color": "3",
         "LAB": [
             15.916677874075685,
@@ -18495,7 +18414,7 @@
         ]
     },
     {
-        "Tile": "WALL: 221 : Crimsandstone Wall",
+        "Tile": "WALL: 309 : Crimsandstone Wall",
         "Color": "3",
         "LAB": [
             26.20429609814795,
@@ -18540,7 +18459,7 @@
         ]
     },
     {
-        "Tile": "WALL: 13 : Hellstone Brick Wall",
+        "Tile": "WALL: 177 : Hellstone Brick Wall",
         "Color": "3",
         "LAB": [
             27.49755753208875,
@@ -18594,7 +18513,7 @@
         ]
     },
     {
-        "Tile": "WALL: 61 : Old Stone Wall",
+        "Tile": "WALL: 262 : Old Stone Wall",
         "Color": "3",
         "LAB": [
             22.262625906406328,
@@ -18621,7 +18540,7 @@
         ]
     },
     {
-        "Tile": "WALL: 54 : Green Mossy Wall",
+        "Tile": "WALL: 256 : Green Mossy Wall",
         "Color": "3",
         "LAB": [
             22.70545110432564,
@@ -18639,7 +18558,7 @@
         ]
     },
     {
-        "Tile": "WALL: 180 : Granite Wall",
+        "Tile": "WALL: 273 : Granite Wall",
         "Color": "3",
         "LAB": [
             21.818515711886214,
@@ -18729,7 +18648,7 @@
         ]
     },
     {
-        "Tile": "WALL: 213 : Stalactite Stone Wall",
+        "Tile": "WALL: 301 : Stalactite Stone Wall",
         "Color": "0",
         "LAB": [
             30.057363814465774,
@@ -18765,7 +18684,7 @@
         ]
     },
     {
-        "Tile": "WALL: 188 : Corrupt Growth Wall",
+        "Tile": "WALL: 276 : Corrupt Growth Wall",
         "Color": "3",
         "LAB": [
             33.82841721010909,
@@ -18834,15 +18753,6 @@
             34.6569596086267,
             -7.025930757467963,
             41.64139200113606
-        ]
-    },
-    {
-        "Tile": "WALL: 63 : Grass Wall",
-        "Color": "3",
-        "LAB": [
-            32.99641597624867,
-            -6.795619568818245,
-            40.276380187062074
         ]
     },
     {
@@ -18918,7 +18828,7 @@
         ]
     },
     {
-        "Tile": "WALL: 3 : Ebonstone Wall",
+        "Tile": "WALL: 246 : Ebonstone Wall",
         "Color": "3",
         "LAB": [
             32.16086741853667,
@@ -18945,7 +18855,7 @@
         ]
     },
     {
-        "Tile": "WALL: 220 : Ebonsandstone Wall",
+        "Tile": "WALL: 308 : Ebonsandstone Wall",
         "Color": "30",
         "LAB": [
             41.5384743753894,
@@ -18963,7 +18873,7 @@
         ]
     },
     {
-        "Tile": "WALL: 190 : Corrupt Pustule Wall",
+        "Tile": "WALL: 278 : Corrupt Pustule Wall",
         "Color": "30",
         "LAB": [
             39.99602214716023,
@@ -18972,7 +18882,7 @@
         ]
     },
     {
-        "Tile": "WALL: 219 : Hardened Pearlsand Wall",
+        "Tile": "WALL: 307 : Hardened Pearlsand Wall",
         "Color": "30",
         "LAB": [
             36.971000299903395,
@@ -18981,7 +18891,7 @@
         ]
     },
     {
-        "Tile": "WALL: 189 : Corrupt Mass Wall",
+        "Tile": "WALL: 277 : Corrupt Mass Wall",
         "Color": "30",
         "LAB": [
             40.76954455975859,
@@ -19026,7 +18936,7 @@
         ]
     },
     {
-        "Tile": "WALL: 222 : Pearlsandstone Wall",
+        "Tile": "WALL: 310 : Pearlsandstone Wall",
         "Color": "30",
         "LAB": [
             41.872560265677066,
@@ -19044,7 +18954,7 @@
         ]
     },
     {
-        "Tile": "WALL: 212 : Worn Stone Wall",
+        "Tile": "WALL: 300 : Worn Stone Wall",
         "Color": "0",
         "LAB": [
             36.911043192048716,
@@ -19089,7 +18999,7 @@
         ]
     },
     {
-        "Tile": "WALL: 3 : Ebonstone Wall",
+        "Tile": "WALL: 246 : Ebonstone Wall",
         "Color": "30",
         "LAB": [
             41.2274704386121,
@@ -19098,7 +19008,7 @@
         ]
     },
     {
-        "Tile": "WALL: 28 : Pearlstone Wall",
+        "Tile": "WALL: 248 : Pearlstone Wall",
         "Color": "30",
         "LAB": [
             36.143022016955136,
@@ -19170,7 +19080,7 @@
         ]
     },
     {
-        "Tile": "WALL: 2 : Dirt Wall",
+        "Tile": "WALL: 16 : Dirt Wall",
         "Color": "3",
         "LAB": [
             36.30400228360204,
@@ -19323,7 +19233,7 @@
         ]
     },
     {
-        "Tile": "WALL: 180 : Granite Wall",
+        "Tile": "WALL: 273 : Granite Wall",
         "Color": "30",
         "LAB": [
             48.39475147253418,
@@ -19341,7 +19251,7 @@
         ]
     },
     {
-        "Tile": "WALL: 95 : Blue Tiled Wall",
+        "Tile": "WALL: 101 : Blue Tiled Wall",
         "Color": "30",
         "LAB": [
             44.925649716008394,
@@ -19359,7 +19269,7 @@
         ]
     },
     {
-        "Tile": "WALL: 69 : Corrupt Grass Wall",
+        "Tile": "WALL: 264 : Corrupt Grass Wall",
         "Color": "30",
         "LAB": [
             44.522144072670066,
@@ -19440,7 +19350,7 @@
         ]
     },
     {
-        "Tile": "WALL: 79 : Obsidian Wall",
+        "Tile": "WALL: 267 : Obsidian Wall",
         "Color": "30",
         "LAB": [
             43.292028750688566,
@@ -19503,7 +19413,7 @@
         ]
     },
     {
-        "Tile": "WALL: 194 : Crimson Teeth Wall",
+        "Tile": "WALL: 282 : Crimson Teeth Wall",
         "Color": "3",
         "LAB": [
             45.54136574521187,
@@ -19890,7 +19800,7 @@
         ]
     },
     {
-        "Tile": "WALL: 195 : Crimson Blister Wall",
+        "Tile": "WALL: 283 : Crimson Blister Wall",
         "Color": "3",
         "LAB": [
             59.35017854071013,
@@ -19908,7 +19818,7 @@
         ]
     },
     {
-        "Tile": "WALL: 187 : Sandstone Wall",
+        "Tile": "WALL: 275 : Sandstone Wall",
         "Color": "3",
         "LAB": [
             60.09795859650514,
@@ -19926,7 +19836,7 @@
         ]
     },
     {
-        "Tile": "WALL: 86 : Hive Wall",
+        "Tile": "WALL: 108 : Hive Wall",
         "Color": "3",
         "LAB": [
             55.96173888627858,
@@ -20286,7 +20196,7 @@
         ]
     },
     {
-        "Tile": "WALL: 216 : Hardened Sand Wall",
+        "Tile": "WALL: 304 : Hardened Sand Wall",
         "Color": "3",
         "LAB": [
             63.44066896248533,
@@ -23337,7 +23247,7 @@
         ]
     },
     {
-        "Tile": "WALL: 216 : Hardened Sand Wall",
+        "Tile": "WALL: 304 : Hardened Sand Wall",
         "Color": "0",
         "LAB": [
             48.32772824760423,
@@ -23364,7 +23274,7 @@
         ]
     },
     {
-        "Tile": "WALL: 187 : Sandstone Wall",
+        "Tile": "WALL: 275 : Sandstone Wall",
         "Color": "28",
         "LAB": [
             48.27839716969845,
@@ -23373,7 +23283,7 @@
         ]
     },
     {
-        "Tile": "WALL: 86 : Hive Wall",
+        "Tile": "WALL: 108 : Hive Wall",
         "Color": "28",
         "LAB": [
             44.77343132467419,
@@ -23382,7 +23292,7 @@
         ]
     },
     {
-        "Tile": "WALL: 99 : Green Tiled Wall",
+        "Tile": "WALL: 105 : Green Tiled Wall",
         "Color": "30",
         "LAB": [
             44.03909838169757,
@@ -23391,7 +23301,7 @@
         ]
     },
     {
-        "Tile": "WALL: 195 : Crimson Blister Wall",
+        "Tile": "WALL: 283 : Crimson Blister Wall",
         "Color": "28",
         "LAB": [
             47.50723569008532,
@@ -23400,7 +23310,7 @@
         ]
     },
     {
-        "Tile": "WALL: 57 : Blue Mossy Wall",
+        "Tile": "WALL: 259 : Blue Mossy Wall",
         "Color": "30",
         "LAB": [
             45.58949360112125,
@@ -23427,7 +23337,7 @@
         ]
     },
     {
-        "Tile": "WALL: 7 : Blue Brick Wall",
+        "Tile": "WALL: 17 : Blue Brick Wall",
         "Color": "30",
         "LAB": [
             47.278962410867315,
@@ -23454,7 +23364,7 @@
         ]
     },
     {
-        "Tile": "WALL: 94 : Blue Slab Wall",
+        "Tile": "WALL: 100 : Blue Slab Wall",
         "Color": "30",
         "LAB": [
             45.54263177980937,
@@ -23463,7 +23373,7 @@
         ]
     },
     {
-        "Tile": "WALL: 216 : Hardened Sand Wall",
+        "Tile": "WALL: 304 : Hardened Sand Wall",
         "Color": "28",
         "LAB": [
             50.961248495129965,
@@ -23472,7 +23382,7 @@
         ]
     },
     {
-        "Tile": "WALL: 199 : Wavy Dirt Wall",
+        "Tile": "WALL: 287 : Wavy Dirt Wall",
         "Color": "0",
         "LAB": [
             43.039594199349004,
@@ -23985,7 +23895,7 @@
         ]
     },
     {
-        "Tile": "WALL: 194 : Crimson Teeth Wall",
+        "Tile": "WALL: 282 : Crimson Teeth Wall",
         "Color": "28",
         "LAB": [
             36.13895982405826,
@@ -24075,7 +23985,7 @@
         ]
     },
     {
-        "Tile": "WALL: 216 : Hardened Sand Wall",
+        "Tile": "WALL: 304 : Hardened Sand Wall",
         "Color": "2",
         "LAB": [
             42.86666401873344,
@@ -24084,7 +23994,7 @@
         ]
     },
     {
-        "Tile": "WALL: 195 : Crimson Blister Wall",
+        "Tile": "WALL: 283 : Crimson Blister Wall",
         "Color": "2",
         "LAB": [
             40.02794100756548,
@@ -24120,7 +24030,7 @@
         ]
     },
     {
-        "Tile": "WALL: 197 : Crumbling Dirt Wall",
+        "Tile": "WALL: 285 : Crumbling Dirt Wall",
         "Color": "0",
         "LAB": [
             37.20278815574151,
@@ -24183,7 +24093,7 @@
         ]
     },
     {
-        "Tile": "WALL: 86 : Hive Wall",
+        "Tile": "WALL: 108 : Hive Wall",
         "Color": "0",
         "LAB": [
             38.80914979801611,
@@ -24507,7 +24417,7 @@
         ]
     },
     {
-        "Tile": "WALL: 187 : Sandstone Wall",
+        "Tile": "WALL: 275 : Sandstone Wall",
         "Color": "2",
         "LAB": [
             40.56635543898061,
@@ -24669,7 +24579,7 @@
         ]
     },
     {
-        "Tile": "WALL: 192 : Crimson Crust Wall",
+        "Tile": "WALL: 280 : Crimson Crust Wall",
         "Color": "0",
         "LAB": [
             38.61554976128929,
@@ -24696,7 +24606,7 @@
         ]
     },
     {
-        "Tile": "WALL: 70 : Hallowed Grass Wall",
+        "Tile": "WALL: 265 : Hallowed Grass Wall",
         "Color": "30",
         "LAB": [
             40.984843731714534,
@@ -24759,7 +24669,7 @@
         ]
     },
     {
-        "Tile": "WALL: 187 : Sandstone Wall",
+        "Tile": "WALL: 275 : Sandstone Wall",
         "Color": "0",
         "LAB": [
             42.2130258249345,
@@ -24912,7 +24822,7 @@
         ]
     },
     {
-        "Tile": "WALL: 194 : Crimson Teeth Wall",
+        "Tile": "WALL: 282 : Crimson Teeth Wall",
         "Color": "2",
         "LAB": [
             30.097107302498856,
@@ -25029,7 +24939,7 @@
         ]
     },
     {
-        "Tile": "WALL: 196 : Layered Dirt Wall",
+        "Tile": "WALL: 284 : Layered Dirt Wall",
         "Color": "0",
         "LAB": [
             31.541447009514023,
@@ -25038,7 +24948,7 @@
         ]
     },
     {
-        "Tile": "WALL: 211 : Smouldering Stone Wall",
+        "Tile": "WALL: 299 : Smouldering Stone Wall",
         "Color": "0",
         "LAB": [
             30.544793182440095,
@@ -25065,7 +24975,7 @@
         ]
     },
     {
-        "Tile": "WALL: 71 : Ice Wall",
+        "Tile": "WALL: 266 : Ice Wall",
         "Color": "30",
         "LAB": [
             32.895474035374335,
@@ -25146,7 +25056,7 @@
         ]
     },
     {
-        "Tile": "WALL: 2 : Dirt Wall",
+        "Tile": "WALL: 16 : Dirt Wall",
         "Color": "28",
         "LAB": [
             28.545795824777073,
@@ -25164,7 +25074,7 @@
         ]
     },
     {
-        "Tile": "WALL: 2 : Dirt Wall",
+        "Tile": "WALL: 16 : Dirt Wall",
         "Color": "0",
         "LAB": [
             28.59602340055011,
@@ -25173,7 +25083,7 @@
         ]
     },
     {
-        "Tile": "WALL: 86 : Hive Wall",
+        "Tile": "WALL: 108 : Hive Wall",
         "Color": "2",
         "LAB": [
             37.47838897655537,
@@ -25182,7 +25092,7 @@
         ]
     },
     {
-        "Tile": "WALL: 204 : Lichen Stone Wall",
+        "Tile": "WALL: 292 : Lichen Stone Wall",
         "Color": "0",
         "LAB": [
             28.95696162132723,
@@ -25407,7 +25317,7 @@
         ]
     },
     {
-        "Tile": "WALL: 178 : Marble Wall",
+        "Tile": "WALL: 272 : Marble Wall",
         "Color": "30",
         "LAB": [
             29.367008556874218,
@@ -25551,7 +25461,7 @@
         ]
     },
     {
-        "Tile": "WALL: 3 : Ebonstone Wall",
+        "Tile": "WALL: 246 : Ebonstone Wall",
         "Color": "28",
         "LAB": [
             25.128364053629383,
@@ -25722,7 +25632,7 @@
         ]
     },
     {
-        "Tile": "WALL: 2 : Dirt Wall",
+        "Tile": "WALL: 16 : Dirt Wall",
         "Color": "2",
         "LAB": [
             23.348181244469416,
@@ -25731,7 +25641,7 @@
         ]
     },
     {
-        "Tile": "WALL: 188 : Corrupt Growth Wall",
+        "Tile": "WALL: 276 : Corrupt Growth Wall",
         "Color": "28",
         "LAB": [
             26.56040537711575,
@@ -25776,7 +25686,7 @@
         ]
     },
     {
-        "Tile": "WALL: 13 : Hellstone Brick Wall",
+        "Tile": "WALL: 177 : Hellstone Brick Wall",
         "Color": "28",
         "LAB": [
             21.188387677733402,
@@ -25920,15 +25830,6 @@
         ]
     },
     {
-        "Tile": "WALL: 63 : Grass Wall",
-        "Color": "28",
-        "LAB": [
-            25.70323143930385,
-            9.866885752127462,
-            14.687901576700746
-        ]
-    },
-    {
         "Tile": "WALL: 42 : Rich Mahogany Wall",
         "Color": "28",
         "LAB": [
@@ -26001,7 +25902,7 @@
         ]
     },
     {
-        "Tile": "WALL: 208 : Ember Wall",
+        "Tile": "WALL: 296 : Ember Wall",
         "Color": "0",
         "LAB": [
             14.954779828250558,
@@ -26028,7 +25929,7 @@
         ]
     },
     {
-        "Tile": "WALL: 221 : Crimsandstone Wall",
+        "Tile": "WALL: 309 : Crimsandstone Wall",
         "Color": "2",
         "LAB": [
             16.119728138634166,
@@ -26037,7 +25938,7 @@
         ]
     },
     {
-        "Tile": "WALL: 180 : Granite Wall",
+        "Tile": "WALL: 273 : Granite Wall",
         "Color": "28",
         "LAB": [
             16.550959882170247,
@@ -26046,7 +25947,7 @@
         ]
     },
     {
-        "Tile": "WALL: 221 : Crimsandstone Wall",
+        "Tile": "WALL: 309 : Crimsandstone Wall",
         "Color": "28",
         "LAB": [
             20.161078248442664,
@@ -26064,7 +25965,7 @@
         ]
     },
     {
-        "Tile": "WALL: 54 : Green Mossy Wall",
+        "Tile": "WALL: 256 : Green Mossy Wall",
         "Color": "28",
         "LAB": [
             17.463692516724386,
@@ -26091,7 +25992,7 @@
         ]
     },
     {
-        "Tile": "WALL: 55 : Brown Mossy Wall",
+        "Tile": "WALL: 257 : Brown Mossy Wall",
         "Color": "28",
         "LAB": [
             14.87429358216329,
@@ -26100,7 +26001,7 @@
         ]
     },
     {
-        "Tile": "WALL: 13 : Hellstone Brick Wall",
+        "Tile": "WALL: 177 : Hellstone Brick Wall",
         "Color": "2",
         "LAB": [
             17.17455447042677,
@@ -26109,16 +26010,7 @@
         ]
     },
     {
-        "Tile": "WALL: 63 : Grass Wall",
-        "Color": "2",
-        "LAB": [
-            20.977630382389698,
-            17.63705742375518,
-            30.341024172548252
-        ]
-    },
-    {
-        "Tile": "WALL: 61 : Old Stone Wall",
+        "Tile": "WALL: 262 : Old Stone Wall",
         "Color": "0",
         "LAB": [
             17.306488237203162,
@@ -26127,7 +26019,7 @@
         ]
     },
     {
-        "Tile": "WALL: 170 : Cave Dirt Wall",
+        "Tile": "WALL: 270 : Cave Dirt Wall",
         "Color": "0",
         "LAB": [
             17.81037106904094,
@@ -26154,7 +26046,7 @@
         ]
     },
     {
-        "Tile": "WALL: 188 : Corrupt Growth Wall",
+        "Tile": "WALL: 276 : Corrupt Growth Wall",
         "Color": "2",
         "LAB": [
             21.57366593365746,
@@ -26190,7 +26082,7 @@
         ]
     },
     {
-        "Tile": "WALL: 61 : Old Stone Wall",
+        "Tile": "WALL: 262 : Old Stone Wall",
         "Color": "28",
         "LAB": [
             16.99895972331668,
@@ -26271,7 +26163,7 @@
         ]
     },
     {
-        "Tile": "WALL: 87 : Lihzahrd Brick Wall",
+        "Tile": "WALL: 112 : Lihzahrd Brick Wall",
         "Color": "28",
         "LAB": [
             15.017244739494078,
@@ -26388,7 +26280,7 @@
         ]
     },
     {
-        "Tile": "WALL: 3 : Ebonstone Wall",
+        "Tile": "WALL: 246 : Ebonstone Wall",
         "Color": "2",
         "LAB": [
             20.37924299117413,
@@ -26406,7 +26298,7 @@
         ]
     },
     {
-        "Tile": "WALL: 221 : Crimsandstone Wall",
+        "Tile": "WALL: 309 : Crimsandstone Wall",
         "Color": "0",
         "LAB": [
             18.104892397282825,
@@ -26433,7 +26325,7 @@
         ]
     },
     {
-        "Tile": "WALL: 180 : Granite Wall",
+        "Tile": "WALL: 273 : Granite Wall",
         "Color": "2",
         "LAB": [
             12.992392726889022,
@@ -26442,7 +26334,7 @@
         ]
     },
     {
-        "Tile": "WALL: 8 : Green Brick Wall",
+        "Tile": "WALL: 18 : Green Brick Wall",
         "Color": "28",
         "LAB": [
             11.110738781689019,
@@ -26460,7 +26352,7 @@
         ]
     },
     {
-        "Tile": "WALL: 94 : Blue Slab Wall",
+        "Tile": "WALL: 100 : Blue Slab Wall",
         "Color": "2",
         "LAB": [
             10.25142179585633,
@@ -26469,7 +26361,7 @@
         ]
     },
     {
-        "Tile": "WALL: 7 : Blue Brick Wall",
+        "Tile": "WALL: 17 : Blue Brick Wall",
         "Color": "28",
         "LAB": [
             12.210578234499774,
@@ -26478,7 +26370,7 @@
         ]
     },
     {
-        "Tile": "WALL: 9 : Pink Brick Wall",
+        "Tile": "WALL: 19 : Pink Brick Wall",
         "Color": "28",
         "LAB": [
             11.744441165361213,
@@ -26487,7 +26379,7 @@
         ]
     },
     {
-        "Tile": "WALL: 208 : Ember Wall",
+        "Tile": "WALL: 296 : Ember Wall",
         "Color": "28",
         "LAB": [
             11.256497078469767,
@@ -26523,7 +26415,7 @@
         ]
     },
     {
-        "Tile": "WALL: 55 : Brown Mossy Wall",
+        "Tile": "WALL: 257 : Brown Mossy Wall",
         "Color": "2",
         "LAB": [
             11.539657024641276,
@@ -26568,7 +26460,7 @@
         ]
     },
     {
-        "Tile": "WALL: 61 : Old Stone Wall",
+        "Tile": "WALL: 262 : Old Stone Wall",
         "Color": "2",
         "LAB": [
             13.44602525438708,
@@ -26586,7 +26478,7 @@
         ]
     },
     {
-        "Tile": "WALL: 223 : Desert Fossil Wall",
+        "Tile": "WALL: 311 : Desert Fossil Wall",
         "Color": "0",
         "LAB": [
             10.390559467882813,
@@ -26595,7 +26487,7 @@
         ]
     },
     {
-        "Tile": "WALL: 87 : Lihzahrd Brick Wall",
+        "Tile": "WALL: 112 : Lihzahrd Brick Wall",
         "Color": "2",
         "LAB": [
             11.718985417130515,
@@ -26604,7 +26496,7 @@
         ]
     },
     {
-        "Tile": "WALL: 54 : Green Mossy Wall",
+        "Tile": "WALL: 256 : Green Mossy Wall",
         "Color": "2",
         "LAB": [
             13.62409429792897,
@@ -26631,7 +26523,7 @@
         ]
     },
     {
-        "Tile": "WALL: 94 : Blue Slab Wall",
+        "Tile": "WALL: 100 : Blue Slab Wall",
         "Color": "28",
         "LAB": [
             13.31974576486082,
@@ -26640,7 +26532,7 @@
         ]
     },
     {
-        "Tile": "WALL: 62 : Spider Wall",
+        "Tile": "WALL: 263 : Spider Wall",
         "Color": "0",
         "LAB": [
             13.256293904964473,
@@ -26658,7 +26550,7 @@
         ]
     },
     {
-        "Tile": "WALL: 56 : Red Mossy Wall",
+        "Tile": "WALL: 258 : Red Mossy Wall",
         "Color": "0",
         "LAB": [
             13.916180594872529,
@@ -26685,7 +26577,7 @@
         ]
     },
     {
-        "Tile": "WALL: 9 : Pink Brick Wall",
+        "Tile": "WALL: 19 : Pink Brick Wall",
         "Color": "2",
         "LAB": [
             8.94829811878786,
@@ -26694,7 +26586,7 @@
         ]
     },
     {
-        "Tile": "WALL: 7 : Blue Brick Wall",
+        "Tile": "WALL: 17 : Blue Brick Wall",
         "Color": "2",
         "LAB": [
             9.129151625270609,
@@ -26730,7 +26622,7 @@
         ]
     },
     {
-        "Tile": "WALL: 208 : Ember Wall",
+        "Tile": "WALL: 296 : Ember Wall",
         "Color": "2",
         "LAB": [
             8.472035792716127,
@@ -26757,7 +26649,7 @@
         ]
     },
     {
-        "Tile": "WALL: 87 : Lihzahrd Brick Wall",
+        "Tile": "WALL: 112 : Lihzahrd Brick Wall",
         "Color": "0",
         "LAB": [
             9.53611485379248,
@@ -26766,7 +26658,7 @@
         ]
     },
     {
-        "Tile": "WALL: 8 : Green Brick Wall",
+        "Tile": "WALL: 18 : Green Brick Wall",
         "Color": "2",
         "LAB": [
             8.29084836328013,
@@ -26784,7 +26676,7 @@
         ]
     },
     {
-        "Tile": "WALL: 218 : Hardened Crimsand Wall",
+        "Tile": "WALL: 306 : Hardened Crimsand Wall",
         "Color": "0",
         "LAB": [
             10.902638237166308,
@@ -27045,7 +26937,7 @@
         ]
     },
     {
-        "Tile": "WALL: 221 : Crimsandstone Wall",
+        "Tile": "WALL: 309 : Crimsandstone Wall",
         "Color": "1",
         "LAB": [
             10.11233318100507,
@@ -27063,7 +26955,7 @@
         ]
     },
     {
-        "Tile": "WALL: 180 : Granite Wall",
+        "Tile": "WALL: 273 : Granite Wall",
         "Color": "12",
         "LAB": [
             7.979384927384075,
@@ -27072,7 +26964,7 @@
         ]
     },
     {
-        "Tile": "WALL: 54 : Green Mossy Wall",
+        "Tile": "WALL: 256 : Green Mossy Wall",
         "Color": "1",
         "LAB": [
             7.9476301407600545,
@@ -27081,7 +26973,7 @@
         ]
     },
     {
-        "Tile": "WALL: 55 : Brown Mossy Wall",
+        "Tile": "WALL: 257 : Brown Mossy Wall",
         "Color": "1",
         "LAB": [
             6.172498834105067,
@@ -27090,7 +26982,7 @@
         ]
     },
     {
-        "Tile": "WALL: 55 : Brown Mossy Wall",
+        "Tile": "WALL: 257 : Brown Mossy Wall",
         "Color": "25",
         "LAB": [
             3.966743110127812,
@@ -27099,7 +26991,7 @@
         ]
     },
     {
-        "Tile": "WALL: 55 : Brown Mossy Wall",
+        "Tile": "WALL: 257 : Brown Mossy Wall",
         "Color": "12",
         "LAB": [
             6.672705792576835,
@@ -27108,7 +27000,7 @@
         ]
     },
     {
-        "Tile": "WALL: 180 : Granite Wall",
+        "Tile": "WALL: 273 : Granite Wall",
         "Color": "1",
         "LAB": [
             7.413694523188944,
@@ -27117,7 +27009,7 @@
         ]
     },
     {
-        "Tile": "WALL: 54 : Green Mossy Wall",
+        "Tile": "WALL: 256 : Green Mossy Wall",
         "Color": "12",
         "LAB": [
             8.535824758764399,
@@ -27135,7 +27027,7 @@
         ]
     },
     {
-        "Tile": "WALL: 208 : Ember Wall",
+        "Tile": "WALL: 296 : Ember Wall",
         "Color": "12",
         "LAB": [
             4.621017543375288,
@@ -27153,7 +27045,7 @@
         ]
     },
     {
-        "Tile": "WALL: 61 : Old Stone Wall",
+        "Tile": "WALL: 262 : Old Stone Wall",
         "Color": "1",
         "LAB": [
             7.677955008238605,
@@ -27207,7 +27099,7 @@
         ]
     },
     {
-        "Tile": "WALL: 7 : Blue Brick Wall",
+        "Tile": "WALL: 17 : Blue Brick Wall",
         "Color": "1",
         "LAB": [
             4.6531456056316465,
@@ -27216,7 +27108,7 @@
         ]
     },
     {
-        "Tile": "WALL: 208 : Ember Wall",
+        "Tile": "WALL: 296 : Ember Wall",
         "Color": "1",
         "LAB": [
             4.264396983463218,
@@ -27234,7 +27126,7 @@
         ]
     },
     {
-        "Tile": "WALL: 87 : Lihzahrd Brick Wall",
+        "Tile": "WALL: 112 : Lihzahrd Brick Wall",
         "Color": "1",
         "LAB": [
             6.4101645086527945,
@@ -27252,7 +27144,7 @@
         ]
     },
     {
-        "Tile": "WALL: 7 : Blue Brick Wall",
+        "Tile": "WALL: 17 : Blue Brick Wall",
         "Color": "12",
         "LAB": [
             5.03623410627635,
@@ -27261,7 +27153,7 @@
         ]
     },
     {
-        "Tile": "WALL: 7 : Blue Brick Wall",
+        "Tile": "WALL: 17 : Blue Brick Wall",
         "Color": "25",
         "LAB": [
             3.3209501509440145,
@@ -27279,7 +27171,7 @@
         ]
     },
     {
-        "Tile": "WALL: 8 : Green Brick Wall",
+        "Tile": "WALL: 18 : Green Brick Wall",
         "Color": "1",
         "LAB": [
             4.077404438966436,
@@ -27297,7 +27189,7 @@
         ]
     },
     {
-        "Tile": "WALL: 87 : Lihzahrd Brick Wall",
+        "Tile": "WALL: 112 : Lihzahrd Brick Wall",
         "Color": "12",
         "LAB": [
             6.910371467124566,
@@ -27306,7 +27198,7 @@
         ]
     },
     {
-        "Tile": "WALL: 61 : Old Stone Wall",
+        "Tile": "WALL: 262 : Old Stone Wall",
         "Color": "12",
         "LAB": [
             8.275036298137184,
@@ -27315,7 +27207,7 @@
         ]
     },
     {
-        "Tile": "WALL: 8 : Green Brick Wall",
+        "Tile": "WALL: 18 : Green Brick Wall",
         "Color": "25",
         "LAB": [
             3.0228903333247032,
@@ -27324,7 +27216,7 @@
         ]
     },
     {
-        "Tile": "WALL: 8 : Green Brick Wall",
+        "Tile": "WALL: 18 : Green Brick Wall",
         "Color": "12",
         "LAB": [
             4.434024998878506,
@@ -27342,7 +27234,7 @@
         ]
     },
     {
-        "Tile": "WALL: 94 : Blue Slab Wall",
+        "Tile": "WALL: 100 : Blue Slab Wall",
         "Color": "1",
         "LAB": [
             5.273713783435312,
@@ -27360,7 +27252,7 @@
         ]
     },
     {
-        "Tile": "WALL: 9 : Pink Brick Wall",
+        "Tile": "WALL: 19 : Pink Brick Wall",
         "Color": "12",
         "LAB": [
             4.839387156849579,
@@ -27369,7 +27261,7 @@
         ]
     },
     {
-        "Tile": "WALL: 94 : Blue Slab Wall",
+        "Tile": "WALL: 100 : Blue Slab Wall",
         "Color": "12",
         "LAB": [
             5.713086584868666,
@@ -27378,7 +27270,7 @@
         ]
     },
     {
-        "Tile": "WALL: 94 : Blue Slab Wall",
+        "Tile": "WALL: 100 : Blue Slab Wall",
         "Color": "25",
         "LAB": [
             3.635484282231179,
@@ -27405,7 +27297,7 @@
         ]
     },
     {
-        "Tile": "WALL: 9 : Pink Brick Wall",
+        "Tile": "WALL: 19 : Pink Brick Wall",
         "Color": "1",
         "LAB": [
             4.456298656204883,
@@ -27549,7 +27441,7 @@
         ]
     },
     {
-        "Tile": "WALL: 13 : Hellstone Brick Wall",
+        "Tile": "WALL: 177 : Hellstone Brick Wall",
         "Color": "12",
         "LAB": [
             11.559179443957994,
@@ -27684,7 +27576,7 @@
         ]
     },
     {
-        "Tile": "WALL: 188 : Corrupt Growth Wall",
+        "Tile": "WALL: 276 : Corrupt Growth Wall",
         "Color": "12",
         "LAB": [
             15.518185556690316,
@@ -27756,7 +27648,7 @@
         ]
     },
     {
-        "Tile": "WALL: 188 : Corrupt Growth Wall",
+        "Tile": "WALL: 276 : Corrupt Growth Wall",
         "Color": "1",
         "LAB": [
             14.829473593082703,
@@ -27783,7 +27675,7 @@
         ]
     },
     {
-        "Tile": "WALL: 2 : Dirt Wall",
+        "Tile": "WALL: 16 : Dirt Wall",
         "Color": "1",
         "LAB": [
             16.361149470501445,
@@ -27873,7 +27765,7 @@
         ]
     },
     {
-        "Tile": "WALL: 221 : Crimsandstone Wall",
+        "Tile": "WALL: 309 : Crimsandstone Wall",
         "Color": "12",
         "LAB": [
             10.731417673218022,
@@ -27882,7 +27774,7 @@
         ]
     },
     {
-        "Tile": "WALL: 3 : Ebonstone Wall",
+        "Tile": "WALL: 246 : Ebonstone Wall",
         "Color": "12",
         "LAB": [
             14.4709873582953,
@@ -27918,25 +27810,7 @@
         ]
     },
     {
-        "Tile": "WALL: 63 : Grass Wall",
-        "Color": "12",
-        "LAB": [
-            14.995686054766317,
-            36.375027219164636,
-            0.15206828715428333
-        ]
-    },
-    {
-        "Tile": "WALL: 63 : Grass Wall",
-        "Color": "1",
-        "LAB": [
-            14.314703879235402,
-            34.85201200412541,
-            22.57139670847807
-        ]
-    },
-    {
-        "Tile": "WALL: 3 : Ebonstone Wall",
+        "Tile": "WALL: 246 : Ebonstone Wall",
         "Color": "1",
         "LAB": [
             13.797739391138151,
@@ -27963,7 +27837,7 @@
         ]
     },
     {
-        "Tile": "WALL: 2 : Dirt Wall",
+        "Tile": "WALL: 16 : Dirt Wall",
         "Color": "12",
         "LAB": [
             17.073015995713327,
@@ -27972,7 +27846,7 @@
         ]
     },
     {
-        "Tile": "WALL: 13 : Hellstone Brick Wall",
+        "Tile": "WALL: 177 : Hellstone Brick Wall",
         "Color": "1",
         "LAB": [
             10.912490429799671,
@@ -28062,7 +27936,7 @@
         ]
     },
     {
-        "Tile": "WALL: 13 : Hellstone Brick Wall",
+        "Tile": "WALL: 177 : Hellstone Brick Wall",
         "Color": "25",
         "LAB": [
             5.882302684173499,
@@ -28134,7 +28008,7 @@
         ]
     },
     {
-        "Tile": "WALL: 195 : Crimson Blister Wall",
+        "Tile": "WALL: 283 : Crimson Blister Wall",
         "Color": "1",
         "LAB": [
             30.620110965186427,
@@ -28242,7 +28116,7 @@
         ]
     },
     {
-        "Tile": "WALL: 86 : Hive Wall",
+        "Tile": "WALL: 108 : Hive Wall",
         "Color": "1",
         "LAB": [
             28.523640382796366,
@@ -28260,7 +28134,7 @@
         ]
     },
     {
-        "Tile": "WALL: 187 : Sandstone Wall",
+        "Tile": "WALL: 275 : Sandstone Wall",
         "Color": "1",
         "LAB": [
             31.082771968171052,
@@ -28503,7 +28377,7 @@
         ]
     },
     {
-        "Tile": "WALL: 9 : Pink Brick Wall",
+        "Tile": "WALL: 19 : Pink Brick Wall",
         "Color": "0",
         "LAB": [
             12.174036847709427,
@@ -28512,7 +28386,7 @@
         ]
     },
     {
-        "Tile": "WALL: 210 : Magma Wall",
+        "Tile": "WALL: 298 : Magma Wall",
         "Color": "0",
         "LAB": [
             22.577942416716972,
@@ -28782,7 +28656,7 @@
         ]
     },
     {
-        "Tile": "WALL: 194 : Crimson Teeth Wall",
+        "Tile": "WALL: 282 : Crimson Teeth Wall",
         "Color": "1",
         "LAB": [
             22.07642338154254,
@@ -28800,7 +28674,7 @@
         ]
     },
     {
-        "Tile": "WALL: 194 : Crimson Teeth Wall",
+        "Tile": "WALL: 282 : Crimson Teeth Wall",
         "Color": "12",
         "LAB": [
             22.890121606072135,
@@ -29088,7 +28962,7 @@
         ]
     },
     {
-        "Tile": "WALL: 187 : Sandstone Wall",
+        "Tile": "WALL: 275 : Sandstone Wall",
         "Color": "12",
         "LAB": [
             32.03767713339486,
@@ -29250,7 +29124,7 @@
         ]
     },
     {
-        "Tile": "WALL: 216 : Hardened Sand Wall",
+        "Tile": "WALL: 304 : Hardened Sand Wall",
         "Color": "1",
         "LAB": [
             33.15094925991138,
@@ -29358,7 +29232,7 @@
         ]
     },
     {
-        "Tile": "WALL: 216 : Hardened Sand Wall",
+        "Tile": "WALL: 304 : Hardened Sand Wall",
         "Color": "12",
         "LAB": [
             34.12622920877089,
@@ -29493,7 +29367,7 @@
         ]
     },
     {
-        "Tile": "WALL: 86 : Hive Wall",
+        "Tile": "WALL: 108 : Hive Wall",
         "Color": "12",
         "LAB": [
             29.425075828171103,
@@ -29682,7 +29556,7 @@
         ]
     },
     {
-        "Tile": "WALL: 195 : Crimson Blister Wall",
+        "Tile": "WALL: 283 : Crimson Blister Wall",
         "Color": "12",
         "LAB": [
             31.56767802613816,
@@ -29808,7 +29682,7 @@
         ]
     },
     {
-        "Tile": "WALL: 15 : Mud Wall",
+        "Tile": "WALL: 247 : Mud Wall",
         "Color": "0",
         "LAB": [
             18.605270815419672,
@@ -29826,7 +29700,7 @@
         ]
     },
     {
-        "Tile": "WALL: 83 : Crimstone Wall",
+        "Tile": "WALL: 269 : Crimstone Wall",
         "Color": "0",
         "LAB": [
             18.34592013493348,
@@ -29952,7 +29826,7 @@
         ]
     },
     {
-        "Tile": "WALL: 13 : Hellstone Brick Wall",
+        "Tile": "WALL: 177 : Hellstone Brick Wall",
         "Color": "0",
         "LAB": [
             18.744904012394073,
@@ -30879,7 +30753,7 @@
         ]
     },
     {
-        "Tile": "WALL: 194 : Crimson Teeth Wall",
+        "Tile": "WALL: 282 : Crimson Teeth Wall",
         "Color": "0",
         "LAB": [
             25.80018538197173,
@@ -30906,7 +30780,7 @@
         ]
     },
     {
-        "Tile": "WALL: 214 : Mottled Stone Wall",
+        "Tile": "WALL: 302 : Mottled Stone Wall",
         "Color": "0",
         "LAB": [
             24.77651772156696,
@@ -30924,7 +30798,7 @@
         ]
     },
     {
-        "Tile": "WALL: 81 : Crimson Grass Wall",
+        "Tile": "WALL: 268 : Crimson Grass Wall",
         "Color": "0",
         "LAB": [
             28.03200294723372,
@@ -30942,7 +30816,7 @@
         ]
     },
     {
-        "Tile": "WALL: 97 : Pink Tiled Wall",
+        "Tile": "WALL: 103 : Pink Tiled Wall",
         "Color": "0",
         "LAB": [
             24.772534784087163,
@@ -30951,7 +30825,7 @@
         ]
     },
     {
-        "Tile": "WALL: 215 : Fractured Stone Wall",
+        "Tile": "WALL: 303 : Fractured Stone Wall",
         "Color": "0",
         "LAB": [
             25.583362608625144,
@@ -31212,7 +31086,7 @@
         ]
     },
     {
-        "Tile": "WALL: 193 : Crimson Scab Wall",
+        "Tile": "WALL: 281 : Crimson Scab Wall",
         "Color": "0",
         "LAB": [
             35.954971652899445,
@@ -31347,7 +31221,7 @@
         ]
     },
     {
-        "Tile": "WALL: 195 : Crimson Blister Wall",
+        "Tile": "WALL: 283 : Crimson Blister Wall",
         "Color": "0",
         "LAB": [
             35.67831995745004,
@@ -31401,7 +31275,7 @@
         ]
     },
     {
-        "Tile": "WALL: 40 : Snow Wall",
+        "Tile": "WALL: 249 : Snow Wall",
         "Color": "30",
         "LAB": [
             33.222291331277226,
@@ -31518,7 +31392,7 @@
         ]
     },
     {
-        "Tile": "WALL: 209 : Cinder Wall",
+        "Tile": "WALL: 297 : Cinder Wall",
         "Color": "0",
         "LAB": [
             28.233786654520202,
@@ -31722,15 +31596,6 @@
             43.388401005940665,
             54.68878251530085,
             33.00247911944002
-        ]
-    },
-    {
-        "Tile": "WALL: 63 : Grass Wall",
-        "Color": "30",
-        "LAB": [
-            40.01442930687796,
-            12.795821224131087,
-            -5.089071449868854
         ]
     },
     {
@@ -32166,7 +32031,7 @@
         ]
     },
     {
-        "Tile": "WALL: 98 : Green Slab Wall",
+        "Tile": "WALL: 104 : Green Slab Wall",
         "Color": "30",
         "LAB": [
             44.781168764604146,
@@ -32229,7 +32094,7 @@
         ]
     },
     {
-        "Tile": "WALL: 206 : Ivy Stone Wall",
+        "Tile": "WALL: 294 : Ivy Stone Wall",
         "Color": "30",
         "LAB": [
             45.546590090131005,
@@ -32247,7 +32112,7 @@
         ]
     },
     {
-        "Tile": "WALL: 54 : Green Mossy Wall",
+        "Tile": "WALL: 256 : Green Mossy Wall",
         "Color": "30",
         "LAB": [
             42.79545149875552,
@@ -32355,7 +32220,7 @@
         ]
     },
     {
-        "Tile": "WALL: 202 : Hallowed Shard Wall",
+        "Tile": "WALL: 290 : Hallowed Shard Wall",
         "Color": "0",
         "LAB": [
             57.17078492050622,
@@ -32373,7 +32238,7 @@
         ]
     },
     {
-        "Tile": "WALL: 201 : Hallowed Cavern Wall",
+        "Tile": "WALL: 289 : Hallowed Cavern Wall",
         "Color": "0",
         "LAB": [
             52.19512219793539,
@@ -33822,7 +33687,7 @@
         ]
     },
     {
-        "Tile": "WALL: 8 : Green Brick Wall",
+        "Tile": "WALL: 18 : Green Brick Wall",
         "Color": "30",
         "LAB": [
             46.1442295933716,
@@ -33867,7 +33732,7 @@
         ]
     },
     {
-        "Tile": "WALL: 207 : Jungle Vine Wall",
+        "Tile": "WALL: 295 : Jungle Vine Wall",
         "Color": "30",
         "LAB": [
             35.03146034899139,
@@ -33876,21 +33741,12 @@
         ]
     },
     {
-        "Tile": "WALL: 205 : Leafy Jungle Wall",
+        "Tile": "WALL: 293 : Leafy Jungle Wall",
         "Color": "30",
         "LAB": [
             38.54385566173934,
             5.305025866612912,
             -4.393519129083423
-        ]
-    },
-    {
-        "Tile": "WALL: 64 : Jungle Wall",
-        "Color": "30",
-        "LAB": [
-            39.08789602393453,
-            9.82872670921417,
-            -12.14412174230456
         ]
     },
     {
@@ -33912,7 +33768,7 @@
         ]
     },
     {
-        "Tile": "WALL: 203 : Hallowed Crystalline Wall",
+        "Tile": "WALL: 291 : Hallowed Crystalline Wall",
         "Color": "0",
         "LAB": [
             36.363535131982346,
@@ -33948,7 +33804,7 @@
         ]
     },
     {
-        "Tile": "WALL: 188 : Corrupt Growth Wall",
+        "Tile": "WALL: 276 : Corrupt Growth Wall",
         "Color": "0",
         "LAB": [
             29.227503093725154,
@@ -34128,7 +33984,7 @@
         ]
     },
     {
-        "Tile": "WALL: 200 : Hallowed Prism Wall",
+        "Tile": "WALL: 288 : Hallowed Prism Wall",
         "Color": "0",
         "LAB": [
             37.11215465362487,
@@ -34461,7 +34317,7 @@
         ]
     },
     {
-        "Tile": "WALL: 96 : Pink Slab Wall",
+        "Tile": "WALL: 102 : Pink Slab Wall",
         "Color": "0",
         "LAB": [
             24.252315189212553,
@@ -34470,7 +34326,7 @@
         ]
     },
     {
-        "Tile": "WALL: 217 : Hardened Ebonsand Wall",
+        "Tile": "WALL: 305 : Hardened Ebonsand Wall",
         "Color": "0",
         "LAB": [
             21.503876764859932,
@@ -34542,7 +34398,7 @@
         ]
     },
     {
-        "Tile": "WALL: 191 : Corrupt Tendril Wall",
+        "Tile": "WALL: 279 : Corrupt Tendril Wall",
         "Color": "0",
         "LAB": [
             25.855370025924948,
@@ -35028,7 +34884,7 @@
         ]
     },
     {
-        "Tile": "WALL: 58 : Purple Mossy Wall",
+        "Tile": "WALL: 260 : Purple Mossy Wall",
         "Color": "0",
         "LAB": [
             15.853895321371922,
@@ -35208,7 +35064,7 @@
         ]
     },
     {
-        "Tile": "WALL: 195 : Crimson Blister Wall",
+        "Tile": "WALL: 283 : Crimson Blister Wall",
         "Color": "11",
         "LAB": [
             34.519413462001665,
@@ -35226,7 +35082,7 @@
         ]
     },
     {
-        "Tile": "WALL: 86 : Hive Wall",
+        "Tile": "WALL: 108 : Hive Wall",
         "Color": "11",
         "LAB": [
             32.247594241284304,
@@ -35235,7 +35091,7 @@
         ]
     },
     {
-        "Tile": "WALL: 187 : Sandstone Wall",
+        "Tile": "WALL: 275 : Sandstone Wall",
         "Color": "11",
         "LAB": [
             35.020771395704976,
@@ -35271,7 +35127,7 @@
         ]
     },
     {
-        "Tile": "WALL: 216 : Hardened Sand Wall",
+        "Tile": "WALL: 304 : Hardened Sand Wall",
         "Color": "11",
         "LAB": [
             37.26193087711794,
@@ -35325,7 +35181,7 @@
         ]
     },
     {
-        "Tile": "WALL: 194 : Crimson Teeth Wall",
+        "Tile": "WALL: 282 : Crimson Teeth Wall",
         "Color": "11",
         "LAB": [
             25.261132505729613,
@@ -35334,7 +35190,7 @@
         ]
     },
     {
-        "Tile": "WALL: 2 : Dirt Wall",
+        "Tile": "WALL: 16 : Dirt Wall",
         "Color": "11",
         "LAB": [
             19.067833524178766,
@@ -35532,7 +35388,7 @@
         ]
     },
     {
-        "Tile": "WALL: 188 : Corrupt Growth Wall",
+        "Tile": "WALL: 276 : Corrupt Growth Wall",
         "Color": "11",
         "LAB": [
             17.40804839413319,
@@ -35658,7 +35514,7 @@
         ]
     },
     {
-        "Tile": "WALL: 61 : Old Stone Wall",
+        "Tile": "WALL: 262 : Old Stone Wall",
         "Color": "11",
         "LAB": [
             9.653627579173882,
@@ -35694,7 +35550,7 @@
         ]
     },
     {
-        "Tile": "WALL: 54 : Green Mossy Wall",
+        "Tile": "WALL: 256 : Green Mossy Wall",
         "Color": "11",
         "LAB": [
             9.95052494157352,
@@ -35730,7 +35586,7 @@
         ]
     },
     {
-        "Tile": "WALL: 180 : Granite Wall",
+        "Tile": "WALL: 273 : Granite Wall",
         "Color": "11",
         "LAB": [
             9.355868675689266,
@@ -35793,7 +35649,7 @@
         ]
     },
     {
-        "Tile": "WALL: 13 : Hellstone Brick Wall",
+        "Tile": "WALL: 177 : Hellstone Brick Wall",
         "Color": "11",
         "LAB": [
             13.163449060224167,
@@ -35829,7 +35685,7 @@
         ]
     },
     {
-        "Tile": "WALL: 221 : Crimsandstone Wall",
+        "Tile": "WALL: 309 : Crimsandstone Wall",
         "Color": "11",
         "LAB": [
             12.296366720659208,
@@ -35856,15 +35712,6 @@
         ]
     },
     {
-        "Tile": "WALL: 63 : Grass Wall",
-        "Color": "11",
-        "LAB": [
-            16.850223380996944,
-            40.34643145638117,
-            -26.096413300587262
-        ]
-    },
-    {
         "Tile": "TILE: 241 : Painting4 X3",
         "Color": "11",
         "LAB": [
@@ -35874,7 +35721,7 @@
         ]
     },
     {
-        "Tile": "WALL: 3 : Ebonstone Wall",
+        "Tile": "WALL: 246 : Ebonstone Wall",
         "Color": "11",
         "LAB": [
             16.290020022861228,
@@ -35901,7 +35748,7 @@
         ]
     },
     {
-        "Tile": "WALL: 55 : Brown Mossy Wall",
+        "Tile": "WALL: 257 : Brown Mossy Wall",
         "Color": "11",
         "LAB": [
             7.8544541154017935,
@@ -35910,7 +35757,7 @@
         ]
     },
     {
-        "Tile": "WALL: 9 : Pink Brick Wall",
+        "Tile": "WALL: 19 : Pink Brick Wall",
         "Color": "11",
         "LAB": [
             5.6706034720155145,
@@ -35919,7 +35766,7 @@
         ]
     },
     {
-        "Tile": "WALL: 8 : Green Brick Wall",
+        "Tile": "WALL: 18 : Green Brick Wall",
         "Color": "11",
         "LAB": [
             5.1884636897530925,
@@ -35937,7 +35784,7 @@
         ]
     },
     {
-        "Tile": "WALL: 208 : Ember Wall",
+        "Tile": "WALL: 296 : Ember Wall",
         "Color": "11",
         "LAB": [
             5.426410168180439,
@@ -35946,7 +35793,7 @@
         ]
     },
     {
-        "Tile": "WALL: 87 : Lihzahrd Brick Wall",
+        "Tile": "WALL: 112 : Lihzahrd Brick Wall",
         "Color": "11",
         "LAB": [
             8.155905566543034,
@@ -35955,7 +35802,7 @@
         ]
     },
     {
-        "Tile": "WALL: 94 : Blue Slab Wall",
+        "Tile": "WALL: 100 : Blue Slab Wall",
         "Color": "11",
         "LAB": [
             6.710757513777697,
@@ -35982,7 +35829,7 @@
         ]
     },
     {
-        "Tile": "WALL: 7 : Blue Brick Wall",
+        "Tile": "WALL: 17 : Blue Brick Wall",
         "Color": "11",
         "LAB": [
             5.9210895998518644,

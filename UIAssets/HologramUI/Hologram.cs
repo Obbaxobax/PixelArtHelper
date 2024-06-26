@@ -126,9 +126,17 @@ namespace ClientSideTest.HologramUI
             Recalculate();
 
             Rectangle rect = GetDimensions().ToRectangle();
+            Rectangle inner = rect;
+            inner.Inflate(-1, -1);
 
             //Draw the pixel
-            spriteBatch.Draw(ModContent.Request<Texture2D>("ClientSideTest/Assets/Blank").Value, rect, color);
+            spriteBatch.Draw(ModContent.Request<Texture2D>("ClientSideTest/Assets/Blank").Value, inner, color);
+
+            spriteBatch.Draw(ModContent.Request<Texture2D>("ClientSideTest/Assets/Blank").Value, new Rectangle(rect.X, rect.Y, rect.Width, 1), Color.White);
+            spriteBatch.Draw(ModContent.Request<Texture2D>("ClientSideTest/Assets/Blank").Value, new Rectangle(rect.X, rect.Y, 1, rect.Height), Color.White);
+            spriteBatch.Draw(ModContent.Request<Texture2D>("ClientSideTest/Assets/Blank").Value, new Rectangle(rect.X, rect.Y + rect.Height - 1, rect.Width, 1), Color.White);
+            spriteBatch.Draw(ModContent.Request<Texture2D>("ClientSideTest/Assets/Blank").Value, new Rectangle(rect.X + rect.Width - 1, rect.Y, 1, rect.Height), Color.White);
+
             //spriteBatch.Draw(ModContent.Request<Texture2D>("ClientSideTest/Assets/Blank").Value, pos, null, color, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
 
             //check is mouse is over a pixel and give it hovername
