@@ -109,7 +109,7 @@ namespace ClientSideTest.HologramUI
             }
 
             //Return if highlight mode is enabled and we are not holding a valid block
-            if (hologramMode == true && !(wall == false && Main.player[Main.myPlayer].HeldItem.createTile + 1 == id || wall == true && Main.player[Main.myPlayer].HeldItem.createWall + 1 == id)) return;
+            if (hologramMode == true && !((wall == false && Main.player[Main.myPlayer].HeldItem.createTile == id) || (wall == true && Main.player[Main.myPlayer].HeldItem.createWall == id))) return;
 
             //This is necessary to ensure the hologram lines up at all sizes
             scale = Main.Camera.UnscaledSize.X / Main.Camera.ScaledSize.X;
