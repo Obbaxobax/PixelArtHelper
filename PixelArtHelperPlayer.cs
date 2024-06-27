@@ -10,6 +10,7 @@ namespace ClientSideTest
     public class PixelArtHelperPlayer : ModPlayer
     {
 
+        public static event PlaceTiles placeTiles;
 
         public override void PostUpdate()
         {
@@ -37,6 +38,8 @@ namespace ClientSideTest
 
                 //Show the hologram and change the menu to the required blocks page
                 ModContent.GetInstance<PixelArtHelper>().ShowUi();
+
+                placeTiles?.Invoke();
 
                 PixelArtHelper.hologramUIState.imageReady = false;
                 PixelArtHelper.hologramUIState.processing = false;
