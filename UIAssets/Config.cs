@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClientSideTest.HologramUI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -17,9 +18,13 @@ namespace ClientSideTest.UIAssets
         [DefaultValue(textColor.Amber)]
         public textColor HoverTextColor;
 
+        [DefaultValue(true)]
+        public bool PixelOutline;
+
         public override void OnChanged()
         {
             PixelArtHelper.hoverTextColor = Main.LocalPlayer.name.ToLower() == "calamitas" ? -12 : (int)HoverTextColor;
+            Hologram.pixelOutline = PixelOutline;
 
             base.OnChanged();
         }

@@ -5,8 +5,12 @@ using Terraria.ModLoader;
 
 namespace ClientSideTest
 {
+    public delegate void PlaceTiles();
+
     public class PixelArtHelperPlayer : ModPlayer
     {
+
+
         public override void PostUpdate()
         {
             base.PostUpdate();

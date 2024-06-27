@@ -8,6 +8,11 @@ Configs: {
 			Label: Hover Text Color
 			Tooltip: The color of text displayed when hovering over elements in the menu.
 		}
+
+		PixelOutline: {
+			Label: Pixel Outline
+			Tooltip: ""
+		}
 	}
 
 	textColor: {

@@ -35,8 +35,7 @@ namespace ClientSideTest
                 _openPos = value;
                 posChanged?.Invoke();
             } 
-        }
-        
+        }        
 
         public ModKeybind toggleImageMenu; //Keybind
 

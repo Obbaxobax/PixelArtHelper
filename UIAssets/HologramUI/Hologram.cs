@@ -10,6 +10,7 @@ namespace ClientSideTest.HologramUI
     public class Hologram : UIElement
     {
         public static bool hologramMode; //Used to determine the mode (normal versus highlight)
+        public static bool pixelOutline;
 
         private Vector2 positionId;
         private Color color;
@@ -130,12 +131,20 @@ namespace ClientSideTest.HologramUI
             inner.Inflate(-1, -1);
 
             //Draw the pixel
-            spriteBatch.Draw(ModContent.Request<Texture2D>("ClientSideTest/Assets/Blank").Value, inner, color);
+            if (pixelOutline)
+            {
+                spriteBatch.Draw(ModContent.Request<Texture2D>("ClientSideTest/Assets/Blank").Value, inner, color);
 
-            spriteBatch.Draw(ModContent.Request<Texture2D>("ClientSideTest/Assets/Blank").Value, new Rectangle(rect.X, rect.Y, rect.Width, 1), Color.White);
-            spriteBatch.Draw(ModContent.Request<Texture2D>("ClientSideTest/Assets/Blank").Value, new Rectangle(rect.X, rect.Y, 1, rect.Height), Color.White);
-            spriteBatch.Draw(ModContent.Request<Texture2D>("ClientSideTest/Assets/Blank").Value, new Rectangle(rect.X, rect.Y + rect.Height - 1, rect.Width, 1), Color.White);
-            spriteBatch.Draw(ModContent.Request<Texture2D>("ClientSideTest/Assets/Blank").Value, new Rectangle(rect.X + rect.Width - 1, rect.Y, 1, rect.Height), Color.White);
+                spriteBatch.Draw(ModContent.Request<Texture2D>("ClientSideTest/Assets/Blank").Value, new Rectangle(rect.X, rect.Y, rect.Width, 1), Color.White);
+                spriteBatch.Draw(ModContent.Request<Texture2D>("ClientSideTest/Assets/Blank").Value, new Rectangle(rect.X, rect.Y, 1, rect.Height), Color.White);
+                spriteBatch.Draw(ModContent.Request<Texture2D>("ClientSideTest/Assets/Blank").Value, new Rectangle(rect.X, rect.Y + rect.Height - 1, rect.Width, 1), Color.White);
+                spriteBatch.Draw(ModContent.Request<Texture2D>("ClientSideTest/Assets/Blank").Value, new Rectangle(rect.X + rect.Width - 1, rect.Y, 1, rect.Height), Color.White);
+            }
+            else
+            {
+                spriteBatch.Draw(ModContent.Request<Texture2D>("ClientSideTest/Assets/Blank").Value, rect, color);
+            }
+
 
             //spriteBatch.Draw(ModContent.Request<Texture2D>("ClientSideTest/Assets/Blank").Value, pos, null, color, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
 
@@ -157,7 +166,8 @@ namespace ClientSideTest.HologramUI
             float offset = (16 - (16 * scale)) / 2;
 
             // Get the position of each pixel in world space.
-            basePos = ModContent.GetInstance<PixelArtHelper>().openPos + new Vector2(16 * positionId.X + offset, 16 * positionId.Y + offset); 
+            basePos = ModContent.GetInstance<PixelArtHelper>().openPos + new Vector2(16 * positionId.X + offset, 16 * positionId.Y + offset);
         }
+
     }
 }
