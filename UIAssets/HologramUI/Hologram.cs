@@ -76,6 +76,7 @@ namespace ClientSideTest.HologramUI
             hoverTextColor = PixelArtHelper.hoverTextColor;
 
             ModContent.GetInstance<PixelArtHelper>().posChanged += UpdatePosition;
+            PixelArtHelperPlayer.placeTiles += PlacedownTiles;
             UpdatePosition();
         }
 
@@ -169,5 +170,17 @@ namespace ClientSideTest.HologramUI
             basePos = ModContent.GetInstance<PixelArtHelper>().openPos + new Vector2(16 * positionId.X + offset, 16 * positionId.Y + offset);
         }
 
+        public void PlacedownTiles()
+        {
+            if (!wall)
+            {
+                WorldGen.PlaceTile(pixelWorldPos.X, pixelWorldPos.Y, id, mute: true, forced: true);
+            }
+            else
+            {
+                WorldGen.KillTile(pixelWorldPos.X, pixelWorldPos.Y, noItem: true);
+                WorldGen.PlaceWall(pixelWorldPos.X, pixelWorldPos.Y, id, mute: true);
+            }
+        }
     }
 }
