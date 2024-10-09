@@ -29,6 +29,8 @@ namespace ClientSideTest.HologramUI
         public bool imageReady = false; //Is the hologram ready to display
         public bool usePaints = false; //Should we use paints
 
+        public static bool cancel = false;
+
         public override void OnInitialize()
         {
             hologramUIState = PixelArtHelper.hologramUIState;
@@ -55,6 +57,8 @@ namespace ClientSideTest.HologramUI
 
         public void createPixels(Bitmap bm)
         {
+            cancel = false;
+
             try
             {
                 processing = true;
@@ -85,6 +89,15 @@ namespace ClientSideTest.HologramUI
                 {
                     for (int x = 0; x < bm.Width; x++)
                     {
+                        if (cancel)
+                        {
+                            Main.NewText("Processing cancelled");
+                            pixelCache.Clear();
+                            cancel = false;
+                            processing = false;
+                            return;
+                        }
+
                         Pixel pix = new Pixel();
 
                         //If the pixel's alpha is beyond a given threshold create a dummy pixel
@@ -154,33 +167,12 @@ namespace ClientSideTest.HologramUI
                             pix.wall = true;
 
                             pix.name = wall[pix.id - 1].Name;
-
-                            /*//Go through the list of proper names and find the one for the chosen tile
-                            foreach (Tile t in wall.ToList())
-                            {
-                                if (t.ID == info[1])
-                                {
-                                    pix.name = t.Name;
-                                    
-                                    break;
-                                }
-                            }*/
                         }
                         else
                         {
                             pix.wall = false;
 
                             pix.name = tile[pix.id].Name;
-
-                            /*//Go through the list of proper names and find the one for the chosen tile
-                            foreach (Tile t in tile.ToList())
-                            {
-                                if (t.ID == info[1])
-                                {
-                                    pix.name = t.Name;
-                                    break;
-                                }
-                            }*/
                         }
 
                         //Add the pixel to the pixel cache list
@@ -193,6 +185,7 @@ namespace ClientSideTest.HologramUI
 
                 hologramUIState.Update();
 
+                PixelArtHelper.imageMenu.state = "required";
                 return;
             }
             catch

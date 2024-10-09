@@ -1,7 +1,7 @@
 [h1][b] Obbax’s Pixel Art Helper [/b][/h1]
 This is a simple mod which provides a UI to help the user create pixel art. Simply pick an image, load it using the ingame UI, and activate it to display an outline of each block which needs to be placed.
 
+Includes optional integration with HERO's Mod.
+
 For more info on usage, read the readme here: [url=https://github.com/Obbaxobax/PixelArtHelper]https://github.com/Obbaxobax/PixelArtHelper[/url]
 [b]If you have an issue, please direct it to the github above.[/b]
-
-[u]There has been a major update, so any returning users may want to visit the github again.[/u]

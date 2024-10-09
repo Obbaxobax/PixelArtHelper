@@ -9,10 +9,13 @@ using ClientSideTest.UIAssets;
 using ClientSideTest.UIAssets.States;
 using System.Text.Json;
 using System.Text;
+using Microsoft.Xna.Framework.Graphics;
+using System;
 
 namespace ClientSideTest
 {
     public delegate void PosChange();
+    public delegate void PlaceTiles();
 
     public class PixelArtHelper : ModSystem
     {
@@ -40,6 +43,8 @@ namespace ClientSideTest
         public ModKeybind toggleImageMenu; //Keybind
 
         public static int hoverTextColor = -12; //For accessibility
+
+        public static event PlaceTiles placeTiles; //For hero's mod
 
         public override void Load()
         {
@@ -142,6 +147,25 @@ namespace ClientSideTest
             {
                 _imageMenu.SetState(imageMenu);
             }
+        }
+
+        public override void PostSetupContent()
+        {
+            if (ModLoader.TryGetMod("HEROsMod", out Mod heros))
+            {
+                heros.Call("AddPermission", "AutoPlacePixelArt", "Auto Place Pixel Art");
+                heros.Call("AddSimpleButton", "AutoPlacePixelArt", ModContent.Request<Texture2D>("ClientSideTest/Assets/Icon", ReLogic.Content.AssetRequestMode.ImmediateLoad), (Action)PixelArtHelper.InvokeBlockPlacement, null, (Func<string>)Tooltip);
+            }
+        }
+
+        private string Tooltip()
+        {
+            return "Auto Place Active Pixel Art";
+        }
+
+        public static void InvokeBlockPlacement()
+        {
+            placeTiles?.Invoke();
         }
 
         public override void OnWorldLoad()

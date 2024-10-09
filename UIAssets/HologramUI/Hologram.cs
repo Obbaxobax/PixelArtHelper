@@ -76,7 +76,7 @@ namespace ClientSideTest.HologramUI
             hoverTextColor = PixelArtHelper.hoverTextColor;
 
             ModContent.GetInstance<PixelArtHelper>().posChanged += UpdatePosition;
-            PixelArtHelperPlayer.placeTiles += PlacedownTiles;
+            PixelArtHelper.placeTiles += PlacedownTiles;
             UpdatePosition();
         }
 
@@ -121,6 +121,9 @@ namespace ClientSideTest.HologramUI
 
             //Calculate the position of the pixel
             var pos = basePos.ToScreenPosition();
+
+            //Epic culling (I forgot to add this in the 1.0 update and the performance difference is pretty major)
+            if (pos.X < 0 || pos.X > Main.ScreenSize.X || pos.Y < 0 || pos.Y > Main.ScreenSize.Y) return;
 
             Left.Set(pos.X, 0);
             Top.Set(pos.Y, 0);
@@ -179,6 +182,7 @@ namespace ClientSideTest.HologramUI
             else
             {
                 WorldGen.KillTile(pixelWorldPos.X, pixelWorldPos.Y, noItem: true);
+                WorldGen.KillWall(pixelWorldPos.X, pixelWorldPos.Y);
                 WorldGen.PlaceWall(pixelWorldPos.X, pixelWorldPos.Y, id, mute: true);
             }
         }

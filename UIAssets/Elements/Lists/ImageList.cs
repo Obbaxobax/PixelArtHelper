@@ -70,7 +70,6 @@ namespace ClientSideTest.UIAssets.Elements.Lists
             if (!PixelArtHelper.hologramUIState.processing) {
                 //Generate the pixels for the hologram when clicked
                 await Task.Run(() => PixelArtHelper.hologramUIState.createPixels(MainMenu.images[text]));
-                PixelArtHelper.imageMenu.state = "required";
             }
             else
             {
