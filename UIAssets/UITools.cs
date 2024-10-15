@@ -41,6 +41,46 @@ namespace ClientSideTest.UIAssets
             spriteBatch.Draw(tex, new Rectangle(target.X, target.Y + target.Height, 6, 6), sourceCorner, color, (float)Math.PI * 1.5f, Vector2.Zero, 0, 0);
         }
 
+        public static void DrawProgressBar(SpriteBatch spriteBatch, Texture2D tex, Rectangle target, Color color, float percentage)
+        {
+            //Generate rectangles to cut the box texture up into pieces
+            var sourceCorner = new Rectangle(0, 0, 6, 6);
+            var sourceEdge = new Rectangle(6, 0, 4, 6);
+            var sourceCenter = new Rectangle(6, 6, 4, 4);
+
+            //Create a rectangle for the inner portion of the box
+            Rectangle inner = target;
+            inner.Inflate(-6, -6);
+            inner.Width = (int)(inner.Width * percentage);
+
+            //Draw center of the box
+            spriteBatch.Draw(tex, inner, sourceCenter, color);
+
+            //Draw the top of the box
+            spriteBatch.Draw(tex, new Rectangle(target.X + 6, target.Y, target.Width - 12, 6), sourceEdge, color, 0, Vector2.Zero, 0, 0);
+
+            //Draw the right of the box
+            spriteBatch.Draw(tex, new Rectangle(target.X, target.Y - 6 + target.Height, target.Height - 12, 6), sourceEdge, color, -(float)Math.PI * 0.5f, Vector2.Zero, 0, 0);
+
+            //Draw the bottom of the box
+            spriteBatch.Draw(tex, new Rectangle(target.X - 6 + target.Width, target.Y + target.Height, target.Width - 12, 6), sourceEdge, color, (float)Math.PI, Vector2.Zero, 0, 0);
+
+            //Draw the left of the box
+            spriteBatch.Draw(tex, new Rectangle(target.X + target.Width, target.Y + 6, target.Height - 12, 6), sourceEdge, color, (float)Math.PI * 0.5f, Vector2.Zero, 0, 0);
+
+            //Draw the corners of the box
+            spriteBatch.Draw(tex, new Rectangle(target.X, target.Y, 6, 6), sourceCorner, color, 0, Vector2.Zero, 0, 0);
+            spriteBatch.Draw(tex, new Rectangle(target.X + target.Width, target.Y, 6, 6), sourceCorner, color, (float)Math.PI * 0.5f, Vector2.Zero, 0, 0);
+            spriteBatch.Draw(tex, new Rectangle(target.X + target.Width, target.Y + target.Height, 6, 6), sourceCorner, color, (float)Math.PI, Vector2.Zero, 0, 0);
+            spriteBatch.Draw(tex, new Rectangle(target.X, target.Y + target.Height, 6, 6), sourceCorner, color, (float)Math.PI * 1.5f, Vector2.Zero, 0, 0);
+
+            Vector2 pos = target.Location.ToVector2();
+            pos.X += target.Width / 2;
+            pos.Y += target.Height / 2;
+            string percentageString = (percentage * 100).ToString("0.00") + "%";
+            Utils.DrawBorderStringBig(spriteBatch, percentageString, pos, Color.LightPink, scale: 0.5f, anchorx: 0.5f, anchory: 0.4f);
+        }
+
         public static void DrawBoxWithTitleBar(SpriteBatch spriteBatch, Texture2D tex, Rectangle target, Color color, string title)
         {
             //Generate squares to cut the texture up

@@ -48,7 +48,7 @@ namespace ClientSideTest.UIAssets
             Rectangle rect = GetDimensions().ToRectangle();
 
             //Draw box epicly
-            UITools.DrawBoxWith(spriteBatch, (Texture2D)ModContent.Request<Texture2D>("ClientSideTest/Assets/Box"), rect, Color.BlueViolet);
+            UITools.DrawBoxWith(spriteBatch, ModContent.Request<Texture2D>("ClientSideTest/Assets/Box").Value, rect, Color.BlueViolet);
 
             //Cancel typing if escape is clicked
             if (Main.keyState.IsKeyDown(Keys.Escape))

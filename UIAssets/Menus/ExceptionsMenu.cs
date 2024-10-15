@@ -7,7 +7,7 @@ using System.Text.Json;
 using Terraria.GameContent.UI.Elements;
 using Terraria.ModLoader;
 
-namespace ClientSideTest.UIAssets
+namespace ClientSideTest.UIAssets.Menus
 {
     //Menu for setting tile exceptions
     public class ExceptionsMenu : UIMenu

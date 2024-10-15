@@ -4,6 +4,9 @@ using Terraria;
 using Terraria.ModLoader;
 using Terraria.UI;
 using Terraria.ID;
+using System.Reflection;
+using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 
 namespace ClientSideTest.HologramUI
 {
@@ -17,6 +20,7 @@ namespace ClientSideTest.HologramUI
         private string name;
         private bool wall;
         private string paintName;
+        private byte paintID;
         private int id;
 
         private int hoverTextColor;
@@ -37,6 +41,8 @@ namespace ClientSideTest.HologramUI
             this.name = name;
             this.id = id;
             this.wall = wall;
+
+            if (!byte.TryParse(paintID, out this.paintID)) this.paintID = 0;
 
             //convert paintids class to list
             var fields = typeof(PaintID).GetFields();
@@ -82,8 +88,19 @@ namespace ClientSideTest.HologramUI
 
         public override void Draw(SpriteBatch spriteBatch)
         {
+            //Calculate the position of the pixel
+            var pos = basePos.ToScreenPosition();
+
+            //Epic culling (I forgot to add this in the 1.0 update and the performance difference is pretty major)
+            if (pos.X < 0 || pos.X > Main.ScreenSize.X || pos.Y < 0 || pos.Y > Main.ScreenSize.Y) return;
+
+            //Return if highlight mode is enabled and we are not holding a valid block
+            if (hologramMode == true && !((wall == false && Main.player[Main.myPlayer].HeldItem.createTile == id) || (wall == true && Main.player[Main.myPlayer].HeldItem.createWall == id))) return;
+
             //Check if the tile in the pixel position is correct. If so, don't render the pixel to make it much easier to see
-            if (!wall && Main.tile[pixelWorldPos].TileType == id && Main.tile[pixelWorldPos].HasTile)
+            Tile tile = Main.tile[pixelWorldPos];
+
+            if (!wall && tile.TileType == id && tile.HasTile && tile.TileColor == paintID)
             {
                 if (!correct)
                 {
@@ -93,7 +110,7 @@ namespace ClientSideTest.HologramUI
                 correct = true;
                 return;
             }
-            else if (wall && Main.tile[pixelWorldPos].WallType == id && !Main.tile[pixelWorldPos].HasTile)
+            else if (wall && Main.tile[pixelWorldPos].WallType == id && !Main.tile[pixelWorldPos].HasTile && tile.WallColor == paintID)
             {
                 if (!correct)
                 {
@@ -110,20 +127,11 @@ namespace ClientSideTest.HologramUI
                 correct = false;
             }
 
-            //Return if highlight mode is enabled and we are not holding a valid block
-            if (hologramMode == true && !((wall == false && Main.player[Main.myPlayer].HeldItem.createTile == id) || (wall == true && Main.player[Main.myPlayer].HeldItem.createWall == id))) return;
-
             //This is necessary to ensure the hologram lines up at all sizes
             scale = Main.Camera.UnscaledSize.X / Main.Camera.ScaledSize.X;
             scale = scale / Main.UIScale;
             Width.Set(15 * scale, 0);
             Height.Set(15 * scale, 0);
-
-            //Calculate the position of the pixel
-            var pos = basePos.ToScreenPosition();
-
-            //Epic culling (I forgot to add this in the 1.0 update and the performance difference is pretty major)
-            if (pos.X < 0 || pos.X > Main.ScreenSize.X || pos.Y < 0 || pos.Y > Main.ScreenSize.Y) return;
 
             Left.Set(pos.X, 0);
             Top.Set(pos.Y, 0);
@@ -149,13 +157,44 @@ namespace ClientSideTest.HologramUI
                 spriteBatch.Draw(ModContent.Request<Texture2D>("ClientSideTest/Assets/Blank").Value, rect, color);
             }
 
-
-            //spriteBatch.Draw(ModContent.Request<Texture2D>("ClientSideTest/Assets/Blank").Value, pos, null, color, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
-
             //check is mouse is over a pixel and give it hovername
             if (IsMouseHovering)
             {
                 Main.instance.MouseText($"{name}\n{paintName}", rare:hoverTextColor);
+
+                if (ModContent.GetInstance<PixelArtHelper>().tryAutoSelectHoverBlock.JustPressed)
+                {
+                    Player player = Main.LocalPlayer;
+
+                    if (!wall)
+                    {
+                        FieldInfo tileIDToItemID = typeof(TileLoader).GetField("tileTypeAndTileStyleToItemType", BindingFlags.NonPublic | BindingFlags.Static);
+                        Dictionary<(int, int), int> dict = (Dictionary<(int, int), int>)tileIDToItemID.GetValue(null);
+                        int itemID = dict[(id, 0)];
+
+                        if (!player.HasItem(itemID)) return;
+
+                        int ind = player.FindItem(itemID);
+                        Item oldItem = player.inventory[player.selectedItem];
+
+                        player.inventory[player.selectedItem] = player.inventory[ind];
+                        player.inventory[ind] = oldItem;
+                    }
+                    else
+                    {
+                        FieldInfo wallIDToItemID = typeof(WallLoader).GetField("wallTypeToItemType", BindingFlags.NonPublic | BindingFlags.Static);
+                        Dictionary<int, int> dict = (Dictionary<int, int>)wallIDToItemID.GetValue(null);
+                        int itemID = dict[id];
+
+                        if (!player.HasItem(itemID)) return;
+
+                        int ind = player.FindItem(itemID);
+                        Item oldItem = player.inventory[player.selectedItem];
+
+                        player.inventory[player.selectedItem] = player.inventory[ind];
+                        player.inventory[ind] = oldItem;
+                    }
+                }
             }
         }
 
@@ -177,13 +216,19 @@ namespace ClientSideTest.HologramUI
         {
             if (!wall)
             {
-                WorldGen.PlaceTile(pixelWorldPos.X, pixelWorldPos.Y, id, mute: true, forced: true);
+                WorldGen.KillTile(pixelWorldPos.X, pixelWorldPos.Y, noItem: true);
+                WorldGen.PlaceTile(pixelWorldPos.X, pixelWorldPos.Y, id, mute: true);
+                Tile tile = Main.tile[pixelWorldPos];
+                tile.TileColor = paintID;
+                
             }
             else
             {
                 WorldGen.KillTile(pixelWorldPos.X, pixelWorldPos.Y, noItem: true);
                 WorldGen.KillWall(pixelWorldPos.X, pixelWorldPos.Y);
                 WorldGen.PlaceWall(pixelWorldPos.X, pixelWorldPos.Y, id, mute: true);
+                Tile tile = Main.tile[pixelWorldPos];
+                tile.WallColor = paintID;
             }
         }
     }

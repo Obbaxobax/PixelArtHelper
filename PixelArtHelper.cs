@@ -11,6 +11,7 @@ using System.Text.Json;
 using System.Text;
 using Microsoft.Xna.Framework.Graphics;
 using System;
+using ClientSideTest.UIAssets.Menus;
 
 namespace ClientSideTest
 {
@@ -40,7 +41,9 @@ namespace ClientSideTest
             } 
         }        
 
-        public ModKeybind toggleImageMenu; //Keybind
+        //Keybinds
+        public ModKeybind toggleImageMenu;
+        public ModKeybind tryAutoSelectHoverBlock;
 
         public static int hoverTextColor = -12; //For accessibility
 
@@ -51,8 +54,9 @@ namespace ClientSideTest
             //Assign variable for mod
             m = Mod;
 
-            //Create keybind
+            //Create keybinds
             toggleImageMenu = KeybindLoader.RegisterKeybind(m, "TogglePixelArtHelperMenu", Microsoft.Xna.Framework.Input.Keys.P);
+            tryAutoSelectHoverBlock = KeybindLoader.RegisterKeybind(m, "TryAutoSelectHoveredPixel", Microsoft.Xna.Framework.Input.Keys.I);
 
             //Create the save data directory if it doesn't exist
             if (!Main.dedServ)

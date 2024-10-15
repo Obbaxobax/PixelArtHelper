@@ -1,4 +1,7 @@
-Keybinds.TogglePixelArtHelperMenu.DisplayName: Toggle PixelArtHelper Menu
+Keybinds: {
+	TogglePixelArtHelperMenu.DisplayName: Toggle PixelArtHelper Menu
+	TryAutoSelectHoveredPixel.DisplayName: Try Auto Select Hovered Pixel
+}
 
 Configs: {
 	ClientConfig: {

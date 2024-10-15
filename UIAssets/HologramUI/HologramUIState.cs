@@ -7,10 +7,10 @@ using System.Text.Json;
 using System.Drawing;
 using Color = Microsoft.Xna.Framework.Color;
 using System.Linq;
-using ClientSideTest.UIAssets;
 using ClientSideTest.DataClasses;
 using Terraria;
 using Tile = ClientSideTest.DataClasses.Tile;
+using ClientSideTest.UIAssets.Menus;
 
 namespace ClientSideTest.HologramUI
 {
@@ -27,7 +27,6 @@ namespace ClientSideTest.HologramUI
         public Vector2 currentDimensions = new Vector2(0, 0);
 
         public bool imageReady = false; //Is the hologram ready to display
-        public bool usePaints = false; //Should we use paints
 
         public static bool cancel = false;
 
@@ -55,7 +54,7 @@ namespace ClientSideTest.HologramUI
             Main.NewText("Click to place the hologram!", Color.CornflowerBlue);
         }
 
-        public void createPixels(Bitmap bm)
+        public void createPixels(Bitmap bm, bool usePaints)
         {
             cancel = false;
 
@@ -91,12 +90,16 @@ namespace ClientSideTest.HologramUI
                     {
                         if (cancel)
                         {
-                            Main.NewText("Processing cancelled");
+                            Main.NewText("Processing cancelled", Color.Orange);
                             pixelCache.Clear();
                             cancel = false;
                             processing = false;
                             return;
                         }
+
+                        float max = bm.Height * bm.Width;
+                        float current = y * bm.Width + x;
+                        ProcessingMenu.percentage = current / max;
 
                         Pixel pix = new Pixel();
 
@@ -186,6 +189,8 @@ namespace ClientSideTest.HologramUI
                 hologramUIState.Update();
 
                 PixelArtHelper.imageMenu.state = "required";
+
+                processing = false;
                 return;
             }
             catch

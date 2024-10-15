@@ -5,6 +5,7 @@ using Terraria;
 using Microsoft.Xna.Framework;
 using ClientSideTest.UIAssets.Elements.Lists;
 using System;
+using ClientSideTest.UIAssets.Menus;
 
 namespace ClientSideTest.UIAssets.Elements.Buttons
 {

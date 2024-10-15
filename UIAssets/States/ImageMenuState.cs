@@ -5,6 +5,7 @@ using Terraria;
 using ClientSideTest.UIAssets.HologramUI;
 using Terraria.ModLoader;
 using Terraria.GameInput;
+using ClientSideTest.UIAssets.Menus;
 
 namespace ClientSideTest.UIAssets.States
 {
@@ -18,6 +19,7 @@ namespace ClientSideTest.UIAssets.States
         public MainMenu mainMenu;
         public ExceptionsMenu exMenu;
         public RequiredItemsMenu reqMenu;
+        public ProcessingMenu procMenu;
 
         //Variables to store the current state of the UI and update it upon change
         private string _state;
@@ -52,6 +54,11 @@ namespace ClientSideTest.UIAssets.States
             reqMenu.Width.Set(375f, 0);
             reqMenu.Activate();
 
+            procMenu = new ProcessingMenu();
+            procMenu.Height.Set(500f, 0);
+            procMenu.Width.Set(375f, 0);
+            procMenu.Activate();
+
             //Set the starting menu to main
             state = "main";
         }
@@ -75,6 +82,10 @@ namespace ClientSideTest.UIAssets.States
                     reqMenu.UpdateChildren();
                     Append(new HologramOutline()); //Append the hologram outline to help show where the hologram will be placed
                     Append(reqMenu);
+                    break;
+                case "proc":
+                    RemoveAllChildren();
+                    Append(procMenu);
                     break;
             }
         }

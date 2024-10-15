@@ -15,11 +15,6 @@ namespace ClientSideTest.UIAssets
 
         private int hoverTextColor;
 
-        public override void OnInitialize()
-        {
-            base.OnInitialize();
-        }
-
         public override void Draw(SpriteBatch spriteBatch)
         {
             //Recalculate the ensure the dimensions are updated

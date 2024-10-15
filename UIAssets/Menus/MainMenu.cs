@@ -13,7 +13,7 @@ using ClientSideTest.UIAssets.Elements.Buttons;
 using Terraria.Utilities.FileBrowser;
 using ClientSideTest.HologramUI;
 
-namespace ClientSideTest.UIAssets
+namespace ClientSideTest.UIAssets.Menus
 {
     public class MainMenu : UIMenu
     {
@@ -66,20 +66,12 @@ namespace ClientSideTest.UIAssets
             sizeX.hoverText = "Defaults to the width of the image (Not required)";
 
             saveName = new TextField();
-            saveName.Width.Set(300f, 0);
+            saveName.Width.Set(355f, 0);
             saveName.Height.Set(50f, 0);
             saveName.Left.Set(10f, 0);
             saveName.Top.Set(97f, 0);
             saveName.placeholderText = "Name to save as...";
             saveName.hoverText = "Name which this image will be saved to list as. (Required)";
-
-            PaintToggleButton ptb = new PaintToggleButton();
-            ptb.Width.Set(50f, 0);
-            ptb.Height.Set(50f, 0);
-            ptb.Left.Set(315f, 0);
-            ptb.Top.Set(97f, 0);
-            ptb.hoverText = "Use paints?";
-            ptb.texture = "ClientSideTest/Assets/deleteButton";
 
             TextButton exButt = new TextButton();
             exButt.Width.Set(355f, 0);
@@ -114,7 +106,9 @@ namespace ClientSideTest.UIAssets
             };
 
             butt.OnRightMouseDown += (evt, args) =>
-            { openImageFile(); };
+            { 
+                openImageFile(); 
+            };
 
             TextButton cancelButt = new TextButton();
             cancelButt.Width.Set(355f, 0);
@@ -142,13 +136,12 @@ namespace ClientSideTest.UIAssets
             il.Height.Set(165f, 0);
             il.Left.Set(15f, 0);
             il.Top.Set(267f, 0);
-            il.names = images.Keys.ToList<string>();
+            il.names = images.Keys.ToList();
             il.elementPerRow = 2;
 
             Append(sizeX);
             Append(sizeY);
             Append(saveName);
-            Append(ptb);
             Append(exButt);
             Append(butt);
             Append(cancelButt);

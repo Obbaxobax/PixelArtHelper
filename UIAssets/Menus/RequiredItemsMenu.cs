@@ -1,11 +1,12 @@
-﻿using ClientSideTest.UIAssets.Elements.Buttons;
+﻿using ClientSideTest.HologramUI;
+using ClientSideTest.UIAssets.Elements.Buttons;
 using ClientSideTest.UIAssets.Elements.Lists;
 using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.ModLoader;
 
-namespace ClientSideTest.UIAssets
+namespace ClientSideTest.UIAssets.Menus
 {
     public class RequiredItemsMenu : UIMenu
     {
@@ -29,6 +30,7 @@ namespace ClientSideTest.UIAssets
             //Is this better than LeftClick?
             backButt.OnLeftMouseDown += (evt, args) =>
             {
+                PixelArtHelper.hologramUIState.imageReady = false;
                 PixelArtHelper.imageMenu.state = "main";
                 ModContent.GetInstance<PixelArtHelper>().HideUi();
             };
