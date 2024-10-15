@@ -5,6 +5,4 @@
     <AssemblyName>PixelArtHelper</AssemblyName>
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
-  <ItemGroup>
-  </ItemGroup>
 </Project>
