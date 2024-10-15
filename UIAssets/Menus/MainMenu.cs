@@ -110,19 +110,6 @@ namespace ClientSideTest.UIAssets.Menus
                 openImageFile(); 
             };
 
-            TextButton cancelButt = new TextButton();
-            cancelButt.Width.Set(355f, 0);
-            cancelButt.Height.Set(50f, 0);
-            cancelButt.Left.Set(10f, 0);
-            cancelButt.Top.Set(440f, 0);
-            cancelButt.displayText = "Cancel";
-            cancelButt.hoverText = "Cancel image processing";
-
-            cancelButt.OnLeftMouseDown += (evt, args) =>
-            {
-                HologramUIState.cancel = true;
-            };
-
             locationField = new TextField();
             locationField.Width.Set(300f, 0);
             locationField.Height.Set(50f, 0);
@@ -133,7 +120,7 @@ namespace ClientSideTest.UIAssets.Menus
 
             il = new ImageList();
             il.Width.Set(345f, 0);
-            il.Height.Set(165f, 0);
+            il.Height.Set(217f, 0);
             il.Left.Set(15f, 0);
             il.Top.Set(267f, 0);
             il.names = images.Keys.ToList();
@@ -144,7 +131,6 @@ namespace ClientSideTest.UIAssets.Menus
             Append(saveName);
             Append(exButt);
             Append(butt);
-            Append(cancelButt);
             Append(locationField);
             Append(il);
             base.OnInitialize();

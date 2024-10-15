@@ -15,7 +15,7 @@ namespace ClientSideTest.HologramUI
         public static bool hologramMode; //Used to determine the mode (normal versus highlight)
         public static bool pixelOutline;
 
-        private Vector2 positionId;
+        private Vector2 basePositionId;
         private Color color;
         private string name;
         private bool wall;
@@ -26,17 +26,18 @@ namespace ClientSideTest.HologramUI
         private int hoverTextColor;
 
         private Vector2 basePos;
+        private Vector2 pos;
         private Point pixelWorldPos;
         private float scale;
 
         private bool correct = false;
 
-        public Hologram(Vector2 positionId, Color color, string paintID, string name, int id, bool wall)
+        public Hologram(Vector2 basePositionId, Color color, string paintID, string name, int id, bool wall)
         {
             Width.Set(16f, 0);
             Height.Set(16f, 0);
 
-            this.positionId = positionId;
+            this.basePositionId = basePositionId;
             this.color = color;
             this.name = name;
             this.id = id;
@@ -88,8 +89,8 @@ namespace ClientSideTest.HologramUI
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            //Calculate the position of the pixel
-            var pos = basePos.ToScreenPosition();
+            //Necessary to do this here so the screen position updates.
+            pos = basePos.ToScreenPosition();
 
             //Epic culling (I forgot to add this in the 1.0 update and the performance difference is pretty major)
             if (pos.X < 0 || pos.X > Main.ScreenSize.X || pos.Y < 0 || pos.Y > Main.ScreenSize.Y) return;
@@ -198,21 +199,26 @@ namespace ClientSideTest.HologramUI
             }
         }
 
-        public void UpdatePosition()
+        public override void Update(GameTime gameTime)
         {
-            //Convert the index of the pixel to its position in the world
-            pixelWorldPos = ModContent.GetInstance<PixelArtHelper>().openPos.ToTileCoordinates() + positionId.ToPoint();
+            return;
+        }
+
+        private void UpdatePosition()
+        {
+            //Convert the index of the pixel to its basePosition in the world
+            pixelWorldPos = ModContent.GetInstance<PixelArtHelper>().openPos.ToTileCoordinates() + basePositionId.ToPoint();
             
 
             scale = Main.Camera.UnscaledSize.X / Main.Camera.ScaledSize.X;
             scale = scale / Main.UIScale / 1.2f;
             float offset = (16 - (16 * scale)) / 2;
 
-            // Get the position of each pixel in world space.
-            basePos = ModContent.GetInstance<PixelArtHelper>().openPos + new Vector2(16 * positionId.X + offset, 16 * positionId.Y + offset);
+            // Get the basePosition of each pixel in world space.
+            basePos = ModContent.GetInstance<PixelArtHelper>().openPos + new Vector2(16 * basePositionId.X + offset, 16 * basePositionId.Y + offset);
         }
 
-        public void PlacedownTiles()
+        private void PlacedownTiles()
         {
             if (!wall)
             {
