@@ -12,6 +12,7 @@ using System.Text;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using ClientSideTest.UIAssets.Menus;
+using Terraria.ID;
 
 namespace ClientSideTest
 {
@@ -48,6 +49,8 @@ namespace ClientSideTest
         public static int hoverTextColor = -12; //For accessibility
 
         public static event PlaceTiles placeTiles; //For hero's mod
+
+        public static Dictionary<byte, string> paintIDToName = new Dictionary<byte, string>(); //Used to convert id to name
 
         public override void Load()
         {
@@ -114,6 +117,18 @@ namespace ClientSideTest
             imageMenu.Activate();
             _imageMenu = new UserInterface();
             _imageMenu.SetState(null);
+
+            ///Create a dictionary for converting ID's to paint names
+            //convert paintids class to list
+            var fields = typeof(PaintID).GetFields();
+
+            //iterate through list, comparing to our tile
+            foreach (var paint in fields)
+            {
+                if (paintIDToName.ContainsKey((byte)paint.GetValue(null))) continue;
+
+                paintIDToName.Add((byte)paint.GetValue(null), paint.Name.Replace("/([A-Z])/g", " $1").Trim());
+            }
         }
 
         public override void UpdateUI(GameTime gameTime)

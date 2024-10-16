@@ -17,7 +17,7 @@ namespace ClientSideTest.HologramUI
 {
     public class HologramUIState : UIState
     {
-        public static List<Pixel> pixels = new List<Pixel>(); //The list of the pixels for the hologram
+        public static Dictionary<string, List<Pixel>> pixels = new Dictionary<string, List<Pixel>>(); //The dictionary which stores pixels based on type
         public bool processing = false;
         private static HologramUIState hologramUIState; //This
 
@@ -43,10 +43,10 @@ namespace ClientSideTest.HologramUI
             //Iterate through the list of pixels
             for (int i = 0; i < pixels.Count; i++)
             {
-                if (pixels[i].id == -1) continue; //Skips pixel if it is transparent
+                if (pixels.Keys.ElementAt(i) == "") continue; //Skips pixel if it is transparent
 
                 //Create a hologram for each pixel and add it to the UI.
-                Hologram hg = new Hologram(pixels[i].position, pixels[i].color, pixels[i].paintId, pixels[i].name, pixels[i].id, pixels[i].wall);
+                Hologram hg = new Hologram(pixels.Values.ElementAt(i));
 
                 Append(hg);
             }
@@ -69,7 +69,7 @@ namespace ClientSideTest.HologramUI
                 PixelArtHelper.imageMenu.reqMenu.requiredPaints.requiredListElements.Clear();
 
                 //Store the pixels in a temp cache to avoid deleting existing pixels in the case this process fails
-                List<Pixel> pixelCache = new List<Pixel>();
+                Dictionary<string, List<Pixel>> pixelCache = new Dictionary<string, List<Pixel>>();
 
                 //Get the tiles from json (includes name, id, tile-type, lab color)
                 byte[] tileColors = GetFileBytes("ClientSideTest/Assets/tiles.json");
@@ -104,15 +104,9 @@ namespace ClientSideTest.HologramUI
 
                         Pixel pix = new Pixel();
 
-                        //If the pixel's alpha is beyond a given threshold create a dummy pixel
+                        //If the pixel's alpha is beyond a given threshold skip it
                         if (bm.GetPixel(x, y).A < 50)
                         {
-                            pix.position = new Vector2(x, y);
-                            pix.color = Color.Transparent;
-                            pix.id = -1;
-                            pix.paintId = "0";
-                            pix.name = "";
-                            pix.wall = false;
                             continue;
                         }
 
@@ -180,7 +174,18 @@ namespace ClientSideTest.HologramUI
                         }
 
                         //Add the pixel to the pixel cache list
-                        pixelCache.Add(pix);
+                        
+                        if (pixelCache.ContainsKey(pix.name))
+                        {
+                            //Main.NewText(pix.name);
+                            pixelCache[pix.name].Add(pix);
+                        }
+                        else
+                        {
+                            List<Pixel> list = [pix];
+                            pixelCache.Add(pix.name, list);
+                        }
+                        
                     }
                 }
 
