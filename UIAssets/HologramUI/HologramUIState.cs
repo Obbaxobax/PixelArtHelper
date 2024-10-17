@@ -17,7 +17,8 @@ namespace ClientSideTest.HologramUI
 {
     public class HologramUIState : UIState
     {
-        public static Dictionary<string, List<Pixel>> pixels = new Dictionary<string, List<Pixel>>(); //The dictionary which stores pixels based on type
+        public static Dictionary<string, List<Pixel>> pixelsByName = new Dictionary<string, List<Pixel>>(); //The dictionary which stores pixels based on type
+        public static List<Pixel> pixels = new List<Pixel>(); //List of each individual pixel
         public bool processing = false;
         private static HologramUIState hologramUIState; //This
 
@@ -41,12 +42,12 @@ namespace ClientSideTest.HologramUI
             RemoveAllChildren();
 
             //Iterate through the list of pixels
-            for (int i = 0; i < pixels.Count; i++)
+            for (int i = 0; i < pixelsByName.Count; i++)
             {
-                if (pixels.Keys.ElementAt(i) == "") continue; //Skips pixel if it is transparent
+                if (pixelsByName.Keys.ElementAt(i) == "") continue; //Skips pixel if it is transparent
 
                 //Create a hologram for each pixel and add it to the UI.
-                Hologram hg = new Hologram(pixels.Values.ElementAt(i));
+                Hologram hg = new Hologram(pixelsByName.Values.ElementAt(i));
 
                 Append(hg);
             }
@@ -69,7 +70,8 @@ namespace ClientSideTest.HologramUI
                 PixelArtHelper.imageMenu.reqMenu.requiredPaints.requiredListElements.Clear();
 
                 //Store the pixels in a temp cache to avoid deleting existing pixels in the case this process fails
-                Dictionary<string, List<Pixel>> pixelCache = new Dictionary<string, List<Pixel>>();
+                Dictionary<string, List<Pixel>> pixelByNameCache = new Dictionary<string, List<Pixel>>();
+                List<Pixel> pixelsCache = new List<Pixel>();
 
                 //Get the tiles from json (includes name, id, tile-type, lab color)
                 byte[] tileColors = GetFileBytes("ClientSideTest/Assets/tiles.json");
@@ -92,7 +94,7 @@ namespace ClientSideTest.HologramUI
                         if (cancel)
                         {
                             Main.NewText("Processing cancelled", Color.Orange);
-                            pixelCache.Clear();
+                            pixelByNameCache.Clear();
                             cancel = false;
                             processing = false;
                             return;
@@ -173,24 +175,26 @@ namespace ClientSideTest.HologramUI
                             pix.name = tile[pix.id].Name;
                         }
 
+                        pixelsCache.Add(pix);
+
                         //Add the pixel to the pixel cache list
-                        
-                        if (pixelCache.ContainsKey(pix.name))
+                        if (pixelByNameCache.ContainsKey(pix.name))
                         {
                             //Main.NewText(pix.name);
-                            pixelCache[pix.name].Add(pix);
+                            pixelByNameCache[pix.name].Add(pix);
                         }
                         else
                         {
                             List<Pixel> list = [pix];
-                            pixelCache.Add(pix.name, list);
+                            pixelByNameCache.Add(pix.name, list);
                         }
                         
                     }
                 }
 
                 //Upon completion, replace the old pixels with the new ones
-                pixels = pixelCache;
+                pixelsByName = pixelByNameCache;
+                pixels = pixelsCache;
 
                 hologramUIState.Update();
 

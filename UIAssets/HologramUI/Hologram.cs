@@ -10,6 +10,8 @@ using System.Runtime.CompilerServices;
 using ClientSideTest.DataClasses;
 using Tile = Terraria.Tile;
 using Microsoft.Xna.Framework.Input;
+using System.Threading.Tasks;
+using System.Threading;
 
 namespace ClientSideTest.HologramUI
 {
@@ -23,6 +25,9 @@ namespace ClientSideTest.HologramUI
         private List<Point> pixelWorldPos = new List<Point>();
         private List<string> paintNames = new List<string>();
         private List<bool> correct = new List<bool>();
+
+        public Task task;
+        private CancellationTokenSource cancel = new CancellationTokenSource();
 
         private string name;
 
@@ -40,7 +45,6 @@ namespace ClientSideTest.HologramUI
             hoverTextColor = PixelArtHelper.hoverTextColor;
 
             ModContent.GetInstance<PixelArtHelper>().posChanged += UpdatePosition;
-            //PixelArtHelper.placeTiles += PlacedownTiles;
             UpdatePosition();
 
 
@@ -87,12 +91,6 @@ namespace ClientSideTest.HologramUI
                 //Necessary to do this here so the screen position updates.
                 var pos = positions[i].ToScreenPosition();
 
-                //Epic culling (I forgot to add this in the 1.0 update and the performance difference is pretty major)
-                if (pos.X < 0 || pos.X > Main.ScreenSize.X || pos.Y < 0 || pos.Y > Main.ScreenSize.Y) continue;
-
-                //Return if highlight mode is enabled and we are not holding a valid block
-                if (hologramMode == true && !((pixels[i].wall == false && Main.player[Main.myPlayer].HeldItem.createTile == pixels[i].id) || (pixels[i].wall == true && Main.player[Main.myPlayer].HeldItem.createWall == pixels[i].id))) continue;
-
                 //Check if the tile in the pixel position is correct. If so, don't render the pixel to make it much easier to see
                 Tile tile = Main.tile[pixelWorldPos[i]];
 
@@ -122,6 +120,12 @@ namespace ClientSideTest.HologramUI
                     PixelArtHelper.imageMenu.reqMenu.requiredTiles.requiredListElements[pixels[i].name][0] += 1;
                     correct[i] = false;
                 }
+
+                //Epic culling
+                if (pos.X < 0 || pos.X > Main.ScreenSize.X || pos.Y < 0 || pos.Y > Main.ScreenSize.Y) continue;
+
+                //Return if highlight mode is enabled and we are not holding a valid block
+                if (hologramMode == true && !((pixels[i].wall == false && Main.player[Main.myPlayer].HeldItem.createTile == pixels[i].id) || (pixels[i].wall == true && Main.player[Main.myPlayer].HeldItem.createWall == pixels[i].id))) continue;
 
                 //This is necessary to ensure the hologram lines up at all sizes
                 scale = Main.Camera.UnscaledSize.X / Main.Camera.ScaledSize.X;
@@ -232,25 +236,5 @@ namespace ClientSideTest.HologramUI
                 positions.Add(ModContent.GetInstance<PixelArtHelper>().openPos + new Vector2(16 * pixels[i].position.X + offset, 16 * pixels[i].position.Y + offset));
             }
         }
-
-        /*private void PlacedownTiles()
-        {
-            if (!wall)
-            {
-                WorldGen.KillTile(pixelWorldPos.X, pixelWorldPos.Y, noItem: true);
-                WorldGen.PlaceTile(pixelWorldPos.X, pixelWorldPos.Y, pixels[i].id, mute: true);
-                Tile tile = Main.tile[pixelWorldPos];
-                tile.TileColor = paintID;
-                
-            }
-            else
-            {
-                WorldGen.KillTile(pixelWorldPos.X, pixelWorldPos.Y, noItem: true);
-                WorldGen.KillWall(pixelWorldPos.X, pixelWorldPos.Y);
-                WorldGen.PlaceWall(pixelWorldPos.X, pixelWorldPos.Y, pixels[i].id, mute: true);
-                Tile tile = Main.tile[pixelWorldPos];
-                tile.WallColor = paintID;
-            }
-        }*/
     }
 }

@@ -101,8 +101,6 @@ namespace ClientSideTest.UIAssets
             //First draw the box, then the text.
             UITools.DrawBoxWith(spriteBatch, (Texture2D)ModContent.Request<Texture2D>("ClientSideTest/Assets/Box"), rect, Color.BlueViolet);
             Utils.DrawBorderString(spriteBatch, text, pos, Color.LightPink, 1f);
-
-            base.Draw(spriteBatch);
         }
     }
 

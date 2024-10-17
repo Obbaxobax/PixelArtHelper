@@ -15,12 +15,16 @@ namespace ClientSideTest.UIAssets.Menus
         //Classes for the exceptions
         public static Exceptions exTiles = new Exceptions(new Dictionary<string, bool>());
         public static Exceptions exWalls = new Exceptions(new Dictionary<string, bool>());
+        public static Exceptions tilesPreset1 = new Exceptions(new Dictionary<string, bool>());
+        public static Exceptions wallsPreset1 = new Exceptions(new Dictionary<string, bool>());
 
         private ExceptionsList exTilesList;
         private ExceptionsList exWallsList;
 
         private List<Tile> elementsTiles;
         private List<Tile> elementsWalls;
+
+        private int activePreset = 0;
 
         public override void OnInitialize()
         {
@@ -66,18 +70,18 @@ namespace ClientSideTest.UIAssets.Menus
                 {
                     case 0:
                         sort = elementsTiles.OrderBy(e => e.Name).ToList();
-                        exTilesList.ChangeSort(sort);
+                        exTilesList.RefreshList(sort);
                         exTilesList.currentSort += 1;
                         chngTilesSort.hoverText = "Sort: Alphabetical";
                         break;
                     case 1:
                         sort = elementsTiles.OrderByDescending(e => exTiles.exceptionsDict[e.Name]).ToList();
-                        exTilesList.ChangeSort(sort);
+                        exTilesList.RefreshList(sort);
                         exTilesList.currentSort += 1;
                         chngTilesSort.hoverText = "Sort: By Enabled";
                         break;
                     case 2:
-                        exTilesList.ChangeSort(elementsTiles);
+                        exTilesList.RefreshList(elementsTiles);
                         exTilesList.currentSort = 0;
                         chngTilesSort.hoverText = "Sort: Default";
                         break;
@@ -128,18 +132,18 @@ namespace ClientSideTest.UIAssets.Menus
                 {
                     case 0:
                         sort = elementsWalls.OrderBy(e => e.Name).ToList();
-                        exWallsList.ChangeSort(sort);
+                        exWallsList.RefreshList(sort);
                         exWallsList.currentSort += 1;
                         chngWallsSort.hoverText = "Sort: Alphabetical";
                         break;
                     case 1:
                         sort = elementsWalls.OrderByDescending(e => exWalls.exceptionsDict[e.Name]).ToList();
-                        exWallsList.ChangeSort(sort);
+                        exWallsList.RefreshList(sort);
                         exWallsList.currentSort += 1;
                         chngWallsSort.hoverText = "Sort: By Enabled";
                         break;
                     case 2:
-                        exWallsList.ChangeSort(elementsWalls);
+                        exWallsList.RefreshList(elementsWalls);
                         exWallsList.currentSort = 0;
                         chngWallsSort.hoverText = "Sort: Default";
                         break;
@@ -164,6 +168,43 @@ namespace ClientSideTest.UIAssets.Menus
             exWallsList.elementPerRow = 2;
 
             Append(exWallsList);
+
+            Button presetButton = new Button();
+            presetButton.Left.Set(303f, 0);
+            presetButton.Width.Set(36f, 0);
+            presetButton.Height.Set(36f, 0);
+            presetButton.hoverText = "Preset: Custom";
+            presetButton.useTexture = false;
+
+            presetButton.OnLeftMouseDown += (evt, args) =>
+            {
+                switch (activePreset)
+                {
+                    case 0:
+                        exWallsList.exList = wallsPreset1;
+                        exTilesList.exList = tilesPreset1;
+
+                        exWallsList.RefreshList(exWallsList.elements);
+                        exTilesList.RefreshList(exTilesList.elements);
+
+                        presetButton.hoverText = "Preset: Gemspark";
+                        activePreset = 1;
+                        break;
+                    case 1:
+                        exWallsList.exList = exWalls;
+                        exTilesList.exList = exTiles;
+
+                        exWallsList.RefreshList(exWallsList.elements);
+                        exTilesList.RefreshList(exTilesList.elements);
+
+                        presetButton.hoverText = "Preset: Custom";
+                        activePreset = 0;
+                        break;
+                }
+                
+            };
+
+            Append(presetButton);
 
             base.OnInitialize();
         }
