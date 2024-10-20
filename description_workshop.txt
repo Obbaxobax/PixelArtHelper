@@ -3,5 +3,7 @@ This is a simple mod which provides a UI to help the user create pixel art. Simp
 
 Includes optional integration with HERO's Mod.
 
+[b]There is only so much I can test alone, so with each update, expect bugs.[/b]
+
 For more info on usage, read the readme here: [url=https://github.com/Obbaxobax/PixelArtHelper]https://github.com/Obbaxobax/PixelArtHelper[/url]
 [b]If you have an issue, please direct it to the github above.[/b]

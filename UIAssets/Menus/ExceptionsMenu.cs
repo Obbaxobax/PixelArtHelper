@@ -174,7 +174,7 @@ namespace ClientSideTest.UIAssets.Menus
             presetButton.Width.Set(36f, 0);
             presetButton.Height.Set(36f, 0);
             presetButton.hoverText = "Preset: Custom";
-            presetButton.useTexture = false;
+            presetButton.texture = "ClientSideTest/Assets/presetButton";
 
             presetButton.OnLeftMouseDown += (evt, args) =>
             {

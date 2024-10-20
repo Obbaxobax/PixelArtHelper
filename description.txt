@@ -2,4 +2,6 @@ Obbax's Pixel Art Helper is a mod which provides the user with an easier means o
 
 Includes optional integration with HERO's Mod.
 
+There is only so much I can test alone, so with each update, expect bugs.
+
 Go to the github for breakdown on how to use it => https://github.com/Obbaxobax/PixelArtHelper
