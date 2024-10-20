@@ -11,7 +11,6 @@ using System.Linq;
 using ClientSideTest.UIAssets.Elements.Lists;
 using ClientSideTest.UIAssets.Elements.Buttons;
 using Terraria.Utilities.FileBrowser;
-using ClientSideTest.HologramUI;
 
 namespace ClientSideTest.UIAssets.Menus
 {

@@ -12,6 +12,7 @@ namespace ClientSideTest.UIAssets
         public string hoverText = ""; //Text to display on button hover
         public string texture = "ClientSideTest/Assets/addButton"; //Texture to display within the button
         public Color boxColor = Color.BlueViolet; //Color of the button
+        public bool useTexture = true;
 
         private int hoverTextColor;
 
@@ -26,8 +27,11 @@ namespace ClientSideTest.UIAssets
             //Draw box cool-ly
             UITools.DrawBoxWith(spriteBatch, (Texture2D)ModContent.Request<Texture2D>("ClientSideTest/Assets/Box"), rect, boxColor);
 
-            //Draw box texture
-            spriteBatch.Draw((Texture2D)ModContent.Request<Texture2D>(texture), new Rectangle(rect.X + 5, rect.Y + 5, rect.Width - 10, rect.Height - 10), Color.White);
+            if (useTexture)
+            {
+                //Draw box texture
+                spriteBatch.Draw((Texture2D)ModContent.Request<Texture2D>(texture), new Rectangle(rect.X + 5, rect.Y + 5, rect.Width - 10, rect.Height - 10), Color.White);
+            }
 
             //Display hover text
             if (IsMouseHovering)

@@ -32,6 +32,7 @@ namespace ClientSideTest.UIAssets.Menus
             {
                 PixelArtHelper.hologramUIState.imageReady = false;
                 PixelArtHelper.imageMenu.state = "main";
+                ModContent.GetInstance<PixelArtHelper>().CancelBlockPlacement();
                 ModContent.GetInstance<PixelArtHelper>().HideUi();
             };
 
