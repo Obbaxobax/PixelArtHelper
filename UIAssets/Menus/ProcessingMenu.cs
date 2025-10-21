@@ -4,13 +4,13 @@ using ClientSideTest.UIAssets.Elements.Buttons;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Color = Microsoft.Xna.Framework.Color;
-using System.Drawing;
-using System.Drawing.Imaging;
 using System.IO;
 using Terraria;
 using Terraria.ModLoader;
 using ReLogic.Content;
 using Rectangle = Microsoft.Xna.Framework.Rectangle;
+using System.Drawing;
+using System.Drawing.Imaging;
 
 namespace ClientSideTest.UIAssets.Menus
 {

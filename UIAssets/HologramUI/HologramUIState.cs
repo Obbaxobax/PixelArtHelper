@@ -4,14 +4,13 @@ using Microsoft.Xna.Framework;
 using Terraria.UI;
 using static Terraria.ModLoader.ModContent;
 using System.Text.Json;
-using System.Drawing;
 using Color = Microsoft.Xna.Framework.Color;
 using System.Linq;
 using ClientSideTest.DataClasses;
 using Terraria;
 using Tile = ClientSideTest.DataClasses.Tile;
 using ClientSideTest.UIAssets.Menus;
-using Microsoft.Xna.Framework.Graphics;
+using System.Drawing;
 
 namespace ClientSideTest.HologramUI
 {

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.IO;
 using System.Net.Http;
 using Terraria;
@@ -11,6 +10,7 @@ using System.Linq;
 using ClientSideTest.UIAssets.Elements.Lists;
 using ClientSideTest.UIAssets.Elements.Buttons;
 using Terraria.Utilities.FileBrowser;
+using System.Drawing;
 
 namespace ClientSideTest.UIAssets.Menus
 {

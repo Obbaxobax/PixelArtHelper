@@ -95,6 +95,7 @@ namespace ClientSideTest
             //iterate through list, comparing to our tile
             foreach (var paint in fields)
             {
+                if (paint.FieldType == typeof(ReLogic.Reflection.IdDictionary)) continue;
                 if (paintIDToName.ContainsKey((byte)paint.GetValue(null))) continue;
 
                 paintIDToName.Add((byte)paint.GetValue(null), paint.Name.Replace("/([A-Z])/g", " $1").Trim());
